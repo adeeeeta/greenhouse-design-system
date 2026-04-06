@@ -1,0 +1,39 @@
+.link {
+    color: var(--link-text);
+    text-decoration: underline;
+    text-decoration-color: var(--link-underline);
+    text-underline-offset: 2px;
+    text-decoration-thickness: 1px;
+  
+    cursor: pointer;
+  
+    transition: color 120ms ease, text-decoration-color 120ms ease;
+  }
+  
+  .link:hover {
+    color: var(--link-text-hover);
+  }
+  
+  .link:focus-visible {
+    outline: 2px solid var(--link-focus-ring);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+  
+  .subtle {
+    color: var(--link-subtle-text);
+    text-decoration: none;
+  }
+  
+  .subtle:hover {
+    color: var(--link-subtle-text-hover);
+    text-decoration: underline;
+  }
+  
+  .externalIcon {
+    display: inline-flex;
+    margin-left: 4px;
+    transform: translateY(1px);
+    opacity: 0.9;
+  }
+  

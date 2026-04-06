@@ -1,0 +1,32 @@
+/* src/styles/rhythm.css
+   Typographic rhythm helpers aligned to 4px baseline + your 8pt system
+*/
+
+/* --- Stack helpers (block flow spacing) --- */
+.gh-stack-4 > * + * { margin-top: var(--space-1); }  /* 4 */
+.gh-stack-8 > * + * { margin-top: var(--space-2); }  /* 8 */
+.gh-stack-12 > * + * { margin-top: var(--space-3); } /* 12 */
+.gh-stack-16 > * + * { margin-top: var(--space-4); } /* 16 */
+.gh-stack-24 > * + * { margin-top: var(--space-6); } /* 24 */
+.gh-stack-32 > * + * { margin-top: var(--space-8); } /* 32 */
+
+/* --- Heading snap rules (tight after, roomy before) --- */
+.gh-spaceBeforeH1 { margin-top: var(--space-8); } /* 32 */
+.gh-spaceAfterH1  { margin-bottom: var(--space-4); } /* 16 */
+
+.gh-spaceBeforeH2 { margin-top: var(--space-6); } /* 24 */
+.gh-spaceAfterH2  { margin-bottom: var(--space-3); } /* 12 */
+
+.gh-spaceBeforeH3 { margin-top: var(--space-4); } /* 16 */
+.gh-spaceAfterH3  { margin-bottom: var(--space-2); } /* 8 */
+
+.gh-spaceBeforeH4 { margin-top: var(--space-4); } /* 16 */
+.gh-spaceAfterH4  { margin-bottom: var(--space-2); } /* 8 */
+
+/* --- Paragraph + list rhythm --- */
+.gh-paragraph + .gh-paragraph { margin-top: var(--space-3); } /* 12 */
+.gh-list > * + * { margin-top: var(--space-2); } /* 8 */
+.gh-listGroup + .gh-listGroup { margin-top: var(--space-4); } /* 16 */
+
+/* --- Section rhythm (for docs pages) --- */
+.gh-section + .gh-section { margin-top: var(--space-8); } /* 32 */

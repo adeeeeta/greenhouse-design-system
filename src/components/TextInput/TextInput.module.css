@@ -1,0 +1,47 @@
+/* TextInput styles */
+.input {
+  height: var(--control-height);
+  padding: 0 var(--control-padding-x);
+  border-radius: var(--control-radius);
+
+  border: 1px solid var(--input-border);
+  background: var(--input-bg);
+  color: var(--input-text);
+
+  /* Lock input text to system body tokens */
+  font-family: var(--font-sans);
+  font-size: var(--type-body-size);
+  line-height: var(--type-body-line);
+  font-weight: var(--font-weight-regular);
+
+  outline: none;
+  transition: border-color 120ms ease, box-shadow 120ms ease, background 120ms ease;
+}
+
+.input::placeholder {
+  color: var(--input-placeholder);
+}
+
+.input:hover {
+  border-color: var(--input-border-hover);
+}
+
+.input:focus-visible {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--input-focus-ring);
+}
+
+.input:disabled {
+  background: var(--input-disabled-bg);
+  color: var(--input-disabled-text);
+  cursor: not-allowed;
+}
+
+.input_error {
+  border-color: var(--input-error-border);
+}
+
+.input_error:focus-visible {
+  border-color: var(--input-error-border);
+  box-shadow: 0 0 0 3px var(--input-error-ring);
+}

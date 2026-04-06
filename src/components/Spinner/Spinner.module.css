@@ -1,0 +1,48 @@
+/* Wrapper */
+.wrapper {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .wrapper.hasLabel {
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+  
+  /* Spinner ring */
+  .spinner {
+    border-radius: 999px;
+    border-style: solid;
+    border-color: currentColor;
+    border-top-color: transparent;
+    animation: spin 0.7s linear infinite;
+    flex-shrink: 0;
+  }
+  
+  /* Size variants */
+  .sm {
+    width: 16px;
+    height: 16px;
+    border-width: 2px;
+  }
+  
+  .md {
+    width: 24px;
+    height: 24px;
+    border-width: 2.5px;
+  }
+  
+  /* Label */
+  .label {
+    font-size: var(--type-caption-size);
+    line-height: var(--type-caption-line);
+    color: currentColor;
+  }
+  
+  /* Animation */
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }

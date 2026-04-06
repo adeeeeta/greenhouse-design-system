@@ -1,0 +1,145 @@
+/* src/styles/typography.css */
+
+/* Assumes 1rem = 16px */
+:root {
+    /* Font family (placeholder until we choose the real typeface) */
+    --font-sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial,
+      "Apple Color Emoji", "Segoe UI Emoji";
+  
+    /* Weights (limited on purpose) */
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+  
+    /* Type scale (size in rem, line-height unitless) */
+    --type-display-size: 2.5rem; /* 40px */
+    --type-display-line: 1.2;    /* 48px */
+  
+    --type-h1-size: 2rem;        /* 32px */
+    --type-h1-line: 1.25;        /* 40px */
+  
+    --type-h2-size: 1.5rem;      /* 24px */
+    --type-h2-line: 1.3333333;   /* 32px */
+  
+    --type-h3-size: 1.25rem;     /* 20px */
+    --type-h3-line: 1.4;         /* 28px */
+  
+    --type-h4-size: 1rem;        /* 16px */
+    --type-h4-line: 1.5;         /* 24px */
+  
+    --type-body-size: 1rem;      /* 16px */
+    --type-body-line: 1.5;       /* 24px */
+  
+    --type-bodySm-size: 0.875rem; /* 14px */
+    --type-bodySm-line: 1.4285714;/* 20px */
+  
+    --type-label-size: 0.8125rem; /* 13px */
+    --type-label-line: 1.2307692; /* 16px */
+  
+    --type-caption-size: 0.75rem; /* 12px */
+    --type-caption-line: 1.3333333; /* 16px */
+  }
+  
+  /* Base defaults (safe + clean) */
+  .gh-text {
+    font-family: var(--font-sans);
+    font-feature-settings: "kern" 1, "liga" 1;
+    text-rendering: optimizeLegibility;
+  }
+  
+  /* Type role utilities */
+  .gh-display {
+    font-size: var(--type-display-size) !important;
+    line-height: var(--type-display-line) !important;
+    font-weight: var(--font-weight-semibold);
+  }
+  
+  .gh-h1 {
+    font-size: var(--type-h1-size);
+    line-height: var(--type-h1-line);
+    font-weight: var(--font-weight-semibold);
+  }
+  
+  .gh-h2 {
+    font-size: var(--type-h2-size);
+    line-height: var(--type-h2-line);
+    font-weight: var(--font-weight-semibold);
+  }
+  
+  .gh-h3 {
+    font-size: var(--type-h3-size);
+    line-height: var(--type-h3-line);
+    font-weight: var(--font-weight-semibold);
+  }
+  
+  .gh-h4 {
+    font-size: var(--type-h4-size);
+    line-height: var(--type-h4-line);
+    font-weight: var(--font-weight-semibold);
+  }
+  
+  .gh-body {
+    font-size: var(--type-body-size);
+    line-height: var(--type-body-line);
+    font-weight: var(--font-weight-regular);
+  }
+  
+  .gh-bodyMedium {
+    font-size: var(--type-body-size);
+    line-height: var(--type-body-line);
+    font-weight: var(--font-weight-medium);
+  }
+  
+  .gh-bodySm {
+    font-size: var(--type-bodySm-size);
+    line-height: var(--type-bodySm-line);
+    font-weight: var(--font-weight-regular);
+  }
+  
+  .gh-bodySmMedium {
+    font-size: var(--type-bodySm-size);
+    line-height: var(--type-bodySm-line);
+    font-weight: var(--font-weight-medium);
+  }
+  
+  .gh-label {
+    font-size: var(--type-label-size);
+    line-height: var(--type-label-line);
+    font-weight: var(--font-weight-medium);
+  }
+  
+  .gh-labelStrong {
+    font-size: var(--type-label-size);
+    line-height: var(--type-label-line);
+    font-weight: var(--font-weight-semibold);
+  }
+  
+  .gh-caption {
+    font-size: var(--type-caption-size);
+    line-height: var(--type-caption-line);
+    font-weight: var(--font-weight-regular);
+  }
+  
+  /* src/styles/spacing.css (or wherever your spacing tokens live) */
+:root {
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-6: 24px;
+    --space-8: 32px;
+  }
+  
+  /* Heading snap rules as reusable utilities */
+  .gh-spaceBeforeH1 { margin-top: var(--space-8); }
+  .gh-spaceAfterH1 { margin-bottom: var(--space-4); }
+  
+  .gh-spaceBeforeH2 { margin-top: var(--space-6); }
+  .gh-spaceAfterH2 { margin-bottom: var(--space-3); }
+  
+  .gh-spaceBeforeH3 { margin-top: var(--space-4); }
+  .gh-spaceAfterH3 { margin-bottom: var(--space-2); }
+  
+  .gh-spaceBeforeH4 { margin-top: var(--space-4); }
+  .gh-spaceAfterH4 { margin-bottom: var(--space-2); }
+  

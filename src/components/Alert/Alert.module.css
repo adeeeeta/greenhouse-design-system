@@ -1,0 +1,107 @@
+.alert {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+}
+
+/* Icon column — stays aligned to the first line of text */
+.icon {
+  display: flex;
+  flex-shrink: 0;
+  margin-top: 1px; /* nudge to optically align with first line of body text */
+}
+
+/* Body: stacks title + message vertically */
+.body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--space-1);
+  min-width: 0;
+}
+
+.title {
+  display: block;
+}
+
+/* Dismiss button */
+.dismiss {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+
+  width: 24px;
+  height: 24px;
+  margin-top: -2px; /* pull up slightly so it aligns with first text line */
+
+  background: none;
+  border: none;
+  border-radius: var(--radius-sm);
+
+  color: inherit;
+  opacity: 0.6;
+  cursor: pointer;
+
+  transition: opacity 120ms ease, background 120ms ease;
+}
+
+.dismiss:hover {
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.06);
+}
+
+.dismiss:focus-visible {
+  outline: 2px solid var(--color-focus-ring);
+  outline-offset: 1px;
+  opacity: 1;
+}
+
+html[data-theme="dark"] .dismiss:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Variants */
+.variant_success {
+  background: var(--alert-success-bg);
+  border-color: var(--alert-success-border);
+  color: var(--color-text);
+}
+
+.variant_success .icon {
+  color: var(--alert-success-icon);
+}
+
+.variant_warning {
+  background: var(--alert-warning-bg);
+  border-color: var(--alert-warning-border);
+  color: var(--color-text);
+}
+
+.variant_warning .icon {
+  color: var(--alert-warning-icon);
+}
+
+.variant_error {
+  background: var(--alert-error-bg);
+  border-color: var(--alert-error-border);
+  color: var(--color-text);
+}
+
+.variant_error .icon {
+  color: var(--alert-error-icon);
+}
+
+.variant_info {
+  background: var(--alert-info-bg);
+  border-color: var(--alert-info-border);
+  color: var(--color-text);
+}
+
+.variant_info .icon {
+  color: var(--alert-info-icon);
+}

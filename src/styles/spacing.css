@@ -1,0 +1,65 @@
+/* src/styles/spacing.css */
+
+:root {
+  /* 4px baseline, 8pt system */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+}
+
+/* =========================
+   Stack utilities
+   ========================= */
+
+.gh-stack-4 > * + *  { margin-top: var(--space-1); }
+.gh-stack-8 > * + *  { margin-top: var(--space-2); }
+.gh-stack-12 > * + * { margin-top: var(--space-3); }
+.gh-stack-16 > * + * { margin-top: var(--space-4); }
+.gh-stack-24 > * + * { margin-top: var(--space-6); }
+.gh-stack-32 > * + * { margin-top: var(--space-8); }
+
+/* =========================
+   Heading rhythm
+   ========================= */
+
+.gh-spaceBeforeH1 { margin-top: var(--space-8); }  /* 32 */
+.gh-spaceAfterH1  { margin-bottom: var(--space-4); } /* 16 */
+
+.gh-spaceBeforeH2 { margin-top: var(--space-6); }  /* 24 */
+.gh-spaceAfterH2  { margin-bottom: var(--space-3); } /* 12 */
+
+.gh-spaceBeforeH3 { margin-top: var(--space-4); }  /* 16 */
+.gh-spaceAfterH3  { margin-bottom: var(--space-2); } /* 8 */
+
+.gh-spaceBeforeH4 { margin-top: var(--space-4); }
+.gh-spaceAfterH4  { margin-bottom: var(--space-2); }
+
+/* =========================
+   Paragraph rhythm
+   ========================= */
+
+.gh-paragraph + .gh-paragraph {
+  margin-top: var(--space-3); /* 12 */
+}
+
+/* =========================
+   Section rhythm
+   ========================= */
+
+.gh-section + .gh-section {
+  margin-top: var(--space-8); /* 32 */
+}
+
+/* =========================
+   Lists
+   ========================= */
+
+.gh-list > * + * {
+  margin-top: var(--space-2); /* 8 */
+}

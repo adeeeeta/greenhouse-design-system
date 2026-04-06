@@ -1,0 +1,107 @@
+.row {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  cursor: pointer;
+  user-select: none;
+
+  /* Key: keep control + labelBlock together */
+  flex-wrap: nowrap;
+  max-width: 100%;
+}
+
+/* hide native input, keep accessibility */
+.native {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+}
+
+.circle {
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  border: 1px solid var(--color-border-strong);
+  background: var(--color-surface);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: border-color 120ms ease, box-shadow 120ms ease, background 120ms ease;
+
+  /* Prevent icon from shrinking */
+  flex: 0 0 18px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: transparent;
+  transform: scale(0.6);
+  transition: transform 120ms ease, background 120ms ease;
+}
+
+.row:hover .circle {
+  border-color: var(--color-text-muted);
+}
+
+.native:focus-visible + .circle {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-focus-ring);
+}
+
+/* Checked state uses selection tokens */
+.native:checked + .circle {
+  border-color: var(--color-selection);
+}
+
+.native:checked + .circle .dot {
+  background: var(--color-selection);
+  transform: scale(1);
+}
+
+.native:disabled + .circle {
+  background: var(--color-surface-muted);
+  border-color: var(--color-border);
+  opacity: 0.7;
+}
+
+.row:has(.native:disabled) {
+  cursor: not-allowed;
+}
+
+/* Error */
+.circle_error {
+  border-color: var(--input-error-border);
+}
+
+.native:focus-visible + .circle_error {
+  border-color: var(--input-error-border);
+  box-shadow: 0 0 0 3px var(--input-error-ring);
+}
+
+/* Label + description block */
+.labelBlock {
+  display: grid;
+  gap: 2px;
+
+  /* Key: label area can shrink + wrap internally */
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+/* Typography handled in TSX via <Text /> */
+.inlineLabel {
+  color: var(--color-text);
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.inlineDesc {
+  color: var(--color-text-muted);
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
