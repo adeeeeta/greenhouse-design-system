@@ -2,7 +2,7 @@
 
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import styles from "./Dropdown.module.css";
-import ChevronDown from "@/components/Icons/ChevronDown";
+import CaretDown from "@/components/Icons/CaretDown";
 import Check from "@/components/Icons/Check";
 import FormField from "@/components/FormField";
 import Text from "@/components/Text";
@@ -174,7 +174,7 @@ export default function Dropdown({
           </span>
 
           <span className={styles.icon}>
-            <ChevronDown />
+            <CaretDown />
           </span>
         </button>
 

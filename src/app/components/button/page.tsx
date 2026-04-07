@@ -1,7 +1,7 @@
 import Button from "@/components/Button";
 import Spinner from "@/components/Spinner";
 import Divider from "@/components/Divider";
-import { ChevronDown, X, Check, InfoCircle } from "@/components/Icons/index";
+import { CaretDown, X, Check, InfoCircle } from "@/components/Icons/index";
 import React from "react";
 
 export default function ButtonDocsPage() {
@@ -50,7 +50,7 @@ export default function ButtonDocsPage() {
       <div style={{ display: "flex", gap: 12, flexWrap: "wrap", alignItems: "center" }}>
         <Button kind="primary" icon={<Check />}>Confirm</Button>
         <Button kind="secondary" icon={<InfoCircle />}>Learn more</Button>
-        <Button kind="ghost" icon={<ChevronDown />}>Expand</Button>
+        <Button kind="ghost" icon={<CaretDown />}>Expand</Button>
       </div>
 
       <Divider />
@@ -63,7 +63,7 @@ export default function ButtonDocsPage() {
       <div style={{ display: "flex", gap: 12, flexWrap: "wrap", alignItems: "center" }}>
         <Button kind="primary" icon={<Check />} iconOnly aria-label="Confirm" />
         <Button kind="secondary" icon={<X />} iconOnly aria-label="Close" size="sm" />
-        <Button kind="ghost" icon={<ChevronDown />} iconOnly aria-label="Expand" size="lg" />
+        <Button kind="ghost" icon={<CaretDown />} iconOnly aria-label="Expand" size="lg" />
       </div>
 
       <Divider />

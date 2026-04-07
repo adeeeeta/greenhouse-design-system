@@ -29,7 +29,9 @@ export default function RootLayout({
           </a>
           <div className="app">
             <aside className="sidebar">
+            <Link href="/" style={{ textDecoration: "none", color: "inherit" }}>
               <div className="brand">Greenhouse Design System</div>
+            </Link>
               <div className="sidebarFooter">
                 <ThemeToggle />
               </div>
