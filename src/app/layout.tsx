@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import ThemeToggle from "@/components/ThemeToggle/ThemeToggle";
 import { ToastProvider } from "@/components/Toast";
+import { DocShell } from "@/components/DocShell";
 import "./globals.css";
 import "./docs.css";
 import "../styles/typography.css";
@@ -27,15 +28,29 @@ export default function RootLayout({
           <a className="skipLink" href="#main-content">
             Skip to content
           </a>
-          <div className="app">
-            <aside className="sidebar">
-            <Link href="/" style={{ textDecoration: "none", color: "inherit" }}>
-              <div className="brand">Greenhouse Design System</div>
-            </Link>
-              <div className="sidebarFooter">
-                <ThemeToggle />
-              </div>
-              <nav className="nav" aria-label="Primary">
+          <DocShell>
+          <aside className="sidebar">
+          <div className="sidebarHeader">
+            <div className="sidebarHeaderRow">
+              <Link href="/" style={{ textDecoration: "none", color: "inherit" }}>
+                <div className="brand">Greenhouse Design System</div>
+              </Link>
+              <button
+                className="sidebarClose"
+                data-close-nav
+                aria-label="Close navigation"
+              >
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+                  <line x1="4" y1="4" x2="16" y2="16" />
+                  <line x1="16" y1="4" x2="4" y2="16" />
+                </svg>
+              </button>
+            </div>
+            <div className="sidebarFooter">
+              <ThemeToggle />
+            </div>
+          </div>
+            <nav className="nav" aria-label="Primary">
                 <div className="navGroup">
                   <div className="navLabel">Foundations</div>
                   <Link className="navLink" href="/foundations/color">Color</Link>
@@ -68,9 +83,9 @@ export default function RootLayout({
               <main id="main-content" className="content" tabIndex={-1}>
                 {children}
               </main>
-            </div>
-          </ToastProvider>
-        </body>
-      </html>
-    );
-  }
+            </DocShell>
+        </ToastProvider>
+      </body>
+    </html>
+  );
+}
