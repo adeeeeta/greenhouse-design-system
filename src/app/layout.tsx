@@ -1,6 +1,7 @@
 // src/layout.tsx
 import type { Metadata } from "next";
 import Link from "next/link";
+import { NavLink } from "@/components/NavLink";
 import ThemeToggle from "@/components/ThemeToggle/ThemeToggle";
 import { ToastProvider } from "@/components/Toast";
 import { DocShell } from "@/components/DocShell";
@@ -53,30 +54,30 @@ export default function RootLayout({
             <nav className="nav" aria-label="Primary">
                 <div className="navGroup">
                   <div className="navLabel">Foundations</div>
-                  <Link className="navLink" href="/foundations/color">Color</Link>
-                  <Link className="navLink" href="/foundations/typography">Typography</Link>
-                  <Link className="navLink" href="/foundations/spacing">Spacing</Link>
-                  <Link className="navLink" href="/foundations/icons">Icons</Link>
+                  <NavLink href="/foundations/color">Color</NavLink>
+                  <NavLink href="/foundations/typography">Typography</NavLink>
+                  <NavLink href="/foundations/spacing">Spacing</NavLink>
+                  <NavLink href="/foundations/icons">Icons</NavLink>
                 </div>
                 <div className="navGroup">
                   <div className="navLabel">Components</div>
-                    <Link className="navLink" href="/components/alert">Alert</Link>
-                    <Link className="navLink" href="/components/avatar">Avatar</Link>
-                    <Link className="navLink" href="/components/badge">Badge</Link>
-                    <Link className="navLink" href="/components/button">Button</Link>
-                    <Link className="navLink" href="/components/card">Card</Link>
-                    <Link className="navLink" href="/components/checkbox">Checkbox</Link>
-                    <Link className="navLink" href="/components/divider">Divider</Link>
-                    <Link className="navLink" href="/components/dropdown">Dropdown</Link>
-                    <Link className="navLink" href="/components/modal">Modal</Link>
-                    <Link className="navLink" href="/components/radio">Radio</Link>
-                    <Link className="navLink" href="/components/spinner">Spinner</Link>
-                    <Link className="navLink" href="/components/tabs">Tabs</Link>
-                    <Link className="navLink" href="/components/tag">Tag</Link>
-                    <Link className="navLink" href="/components/text-input">Text Input</Link>
-                    <Link className="navLink" href="/components/toast">Toast</Link>
-                    <Link className="navLink" href="/components/toggle">Toggle</Link>
-                    <Link className="navLink" href="/components/tooltip">Tooltip</Link>
+                    <NavLink href="/components/alert">Alert</NavLink>
+                    <NavLink href="/components/avatar">Avatar</NavLink>
+                    <NavLink href="/components/badge">Badge</NavLink>
+                    <NavLink href="/components/button">Button</NavLink>
+                    <NavLink href="/components/card">Card</NavLink>
+                    <NavLink href="/components/checkbox">Checkbox</NavLink>
+                    <NavLink href="/components/divider">Divider</NavLink>
+                    <NavLink href="/components/dropdown">Dropdown</NavLink>
+                    <NavLink href="/components/modal">Modal</NavLink>
+                    <NavLink href="/components/radio">Radio</NavLink>
+                    <NavLink href="/components/spinner">Spinner</NavLink>
+                    <NavLink href="/components/tabs">Tabs</NavLink>
+                    <NavLink href="/components/tag">Tag</NavLink>
+                    <NavLink href="/components/text-input">Text Input</NavLink>
+                    <NavLink href="/components/toast">Toast</NavLink>
+                    <NavLink href="/components/toggle">Toggle</NavLink>
+                    <NavLink href="/components/tooltip">Tooltip</NavLink>
                   </div>
                 </nav>
               </aside>

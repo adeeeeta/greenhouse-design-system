@@ -100,6 +100,15 @@ font-weight: var(--font-weight-semibold);
    .navLink:hover {
      background: rgba(0, 0, 0, 0.05);
    }
+
+   .navLinkActive {
+    background: rgba(0, 0, 0, 0.06);
+    font-weight: var(--font-weight-medium);
+  }
+  
+  html[data-theme="dark"] .navLinkActive {
+    background: rgba(255, 255, 255, 0.08);
+  }
    
    html[data-theme="dark"] .navLink:hover {
      background: rgba(255, 255, 255, 0.06);
