@@ -2,14 +2,17 @@
 
 /* Assumes 1rem = 16px */
 :root {
-    /* Font family (placeholder until we choose the real typeface) */
-    --font-sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial,
-      "Apple Color Emoji", "Segoe UI Emoji";
+    /* Font families */
+    --font-sans: var(--font-sans-face), ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial,
+    "Apple Color Emoji", "Segoe UI Emoji";
+    --font-mono: var(--font-mono-face), 'Courier New', Consolas, monospace;
+    --font-display: var(--font-display-face), Georgia, 'Times New Roman', serif;
   
     /* Weights (limited on purpose) */
     --font-weight-regular: 400;
     --font-weight-medium: 500;
     --font-weight-semibold: 600;
+    --font-weight-bold: 700;
   
     /* Type scale (size in rem, line-height unitless) */
     --type-display-size: 2.5rem; /* 40px */
@@ -45,13 +48,6 @@
     font-family: var(--font-sans);
     font-feature-settings: "kern" 1, "liga" 1;
     text-rendering: optimizeLegibility;
-  }
-  
-  /* Type role utilities */
-  .gh-display {
-    font-size: var(--type-display-size) !important;
-    line-height: var(--type-display-line) !important;
-    font-weight: var(--font-weight-semibold);
   }
   
   .gh-h1 {
@@ -119,6 +115,26 @@
     line-height: var(--type-caption-line);
     font-weight: var(--font-weight-regular);
   }
+
+  /* ——— Display headings (Fraunces) ——— */
+.gh-display {
+  font-family: var(--font-display);
+  font-size: var(--type-display-size) !important;
+  line-height: var(--type-display-line) !important;
+  font-weight: var(--font-weight-regular);
+}
+
+.gh-heading-display {
+  font-family: var(--font-display);
+  font-weight: var(--font-weight-medium);
+}
+
+/* ——— Code ——— */
+.gh-code {
+  font-family: var(--font-mono);
+  font-size: var(--type-bodySm-size);
+  line-height: var(--type-bodySm-line);
+}
   
   /* src/styles/spacing.css (or wherever your spacing tokens live) */
 :root {

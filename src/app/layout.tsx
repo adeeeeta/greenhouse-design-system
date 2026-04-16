@@ -1,4 +1,5 @@
 // src/layout.tsx
+import { Plus_Jakarta_Sans, Fira_Code, Fraunces } from 'next/font/google';
 import type { Metadata } from "next";
 import Link from "next/link";
 import { NavLink } from "@/components/NavLink";
@@ -10,6 +11,27 @@ import "./docs.css";
 import "../styles/typography.css";
 import "../styles/spacing.css";
 import "../styles/rhythm.css";
+
+const plusJakarta = Plus_Jakarta_Sans({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-sans-face',
+  display: 'swap',
+});
+
+const firaCode = Fira_Code({
+  subsets: ['latin'],
+  weight: ['400', '500'],
+  variable: '--font-mono-face',
+  display: 'swap',
+});
+
+const fraunces = Fraunces({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-display-face',
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
   title: "Greenhouse Design System",
@@ -23,8 +45,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className="gh-text">
+    <html lang="en" className={`${plusJakarta.variable} ${firaCode.variable} ${fraunces.variable}`}>
+      <body>
         <ToastProvider>
           <a className="skipLink" href="#main-content">
             Skip to content
