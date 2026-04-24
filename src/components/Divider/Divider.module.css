@@ -1,7 +1,7 @@
 /* Base styles shared by all dividers */
 .divider {
     border: none;
-    margin: var(--space-4) 0;
+    margin: var(--space-6) 0;
   }
   
   /* Weight variants */

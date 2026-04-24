@@ -1,0 +1,22 @@
+.control {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.control input {
+  width: 100%;
+}
+
+.toggleRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.toggleLabel {
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-text);
+}

@@ -27,7 +27,7 @@ function Tile({ name, label }: { name: string; label?: string }) {
 export default function Swatch({ title, description, tokens }: SwatchProps) {
   return (
     <section className="swatchCard">
-      <h2>{title}</h2>
+      <h3>{title}</h3>
       {description ? <p>{description}</p> : null}
       <div className="swatchGrid">
         {tokens.map((t) => (

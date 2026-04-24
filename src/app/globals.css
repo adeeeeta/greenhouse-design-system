@@ -1,407 +1,450 @@
 :root {
-  /* =========================
-     1) Color scales (foundation)
-     Raw ramps — no meaning
-     ========================= */
-
-  /* Neutral scale (light) */
-  --neutral-0:   #ffffff; /* surface */
-  --neutral-50:  #fafafa; /* optional elevated surface */
-  --neutral-100: #f5f6f4; /* muted surface */
-  --neutral-200: #e6e8e3; /* soft divider */
-  --neutral-300: #d6d9d3; /* subtle border */
-  --neutral-600: #6f756f; /* strong border / disabled */
-  --neutral-800: #3e443e; /* secondary text */
-  --neutral-900: #0b0d0b; /* primary ink */
-
-  /* Chlorophyll scale (actions) */
-  --green-50:  #e7f1eb; /* subtle action background */
-  --green-600: #1f5e3b; /* primary action */
-  --green-700: #184c30; /* hover/active */
-
-  /* Accents (supporting foliage) */
-  --accent-moss: #6f8f7b;
-  --accent-soil: #6a6258;
-  --accent-leaf: #f0f5f2;
-
-  /* Status — Error (Soil Red) */
-  --red-50:  #f9eaea; /* error badge/alert background */
-  --red-200: #e8b0b0; /* error badge/alert border */
-  --red-600: #8B2E2E; /* primary error */
-  --red-700: #6F2323; /* hover / strong */
-
-  /* Status — Warning (Amber) */
-  --amber-50:  #fef3e2; /* warning background */
-  --amber-200: #f5d68c; /* warning border */
-  --amber-600: #8c5e10; /* warning text / icon */
-  --amber-700: #704b0c; /* warning hover */
-
-  /* Status — Info (Slate Blue) */
-  --blue-50:  #e8f0f8; /* info background */
-  --blue-200: #a8c6de; /* info border */
-  --blue-600: #1b5278; /* info text / icon */
-  --blue-700: #16436a; /* info hover */
-
-  /* Extend Green scale (border level) */
-  --green-200: #b8d8c2; /* success badge/alert border */
-
-  /* =========================
-     2) Named palette (design language)
-     Greenhouse vocabulary — still not UI-facing
-     ========================= */
-
-  /* Surfaces */
-  --surface-primary: var(--neutral-0);
-  --surface-muted:   var(--neutral-100);
-
-  /* Text */
-  --text-primary:   var(--neutral-900);
-  --text-secondary: var(--neutral-800);
-
-  /* Borders */
-  --border-subtle: var(--neutral-300);
-  --border-strong: var(--neutral-600);
-
-  /* Actions */
-  --action-primary: var(--green-600);
-  --action-hover:   var(--green-700);
-  --action-subtle:  var(--green-50);
-
-  /* Semantic — Error */
-  --color-error: var(--red-600);
-  --color-error-strong: var(--red-700);
-
-  /* =========================
-     3) Semantic tokens (UI-facing)
-     Components should consume these
-     ========================= */
-
-  /* Surfaces */
-  --color-surface:        var(--surface-primary);
-  --color-surface-muted:  var(--surface-muted);
-
-  /* Text */
-  --color-text:       var(--text-primary);
-  --color-text-muted: var(--text-secondary);
-
-  /* Borders */
-  --color-border:        var(--border-subtle);
-  --color-border-strong: var(--border-strong);
-
-  /* Actions */
-  --color-primary:        var(--action-primary);
-  --color-primary-hover:  var(--action-hover);
-  --color-primary-subtle: var(--action-subtle);
-
-  /* Semantic — Selection (checkbox/radio states) */
-   --color-selection: var(--color-primary);
-   --color-selection-contrast: #ffffff; /* icon/dot on selection fill */
-
-  /* Focus */
-  --color-focus-ring: #1f5e3b73;
-
-  /* Accents */
-  --color-accent-moss: var(--accent-moss);
-  --color-accent-soil: var(--accent-soil);
-  --color-accent-leaf: var(--accent-leaf);
-
-  /* Status — Error (Soil Red) */
-  --color-error: var(--red-600);
-  --color-error-strong: var(--red-700);
-
-  /* =========================
-   4) Typography
-   ========================= */
-/* Font family — now aliasing the full stack from typography.css */
---font-sans: var(--font-sans-face), ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial,
-  "Apple Color Emoji", "Segoe UI Emoji";
-
-/* LEGACY (do not use in new components)
- Use --type-* tokens from src/styles/typography.css instead.
-*/
---text-1: 12px;
---text-2: 14px;
---text-3: 16px;
---text-4: 20px;
-
-/* =========================
- 5) Spacing
- ========================= */
-/* If you are using src/styles/spacing.css, consider removing these to avoid drift.
- Keeping them for now is okay as long as values match exactly.
-*/
---space-1: 4px;
---space-2: 8px;
---space-3: 12px;
---space-4: 16px;
---space-5: 20px;
---space-6: 24px;
---space-8: 32px;
---space-10: 40px;
---space-12: 48px;
-
-/* =========================
- 6) Radius + shadow
- ========================= */
---radius-sm: 4px;
---radius-md: 8px;
---shadow-1: 0 1px 2px rgba(0, 0, 0, 0.08);
-
-
-  /* =========================
-     7) Form controls (shared sizing)
-     Use across inputs, dropdowns, etc.
-     ========================= */
-  --control-height: 44px;
-  --control-padding-x: var(--space-3);
-  --control-radius: var(--radius-sm);
- /* Legacy control font size (prefer --type-body-* directly in component CSS) */
---control-font-size: var(--type-body-size);
-
-
-  /* =========================
-     8) Component semantics — Button
-     ========================= */
-
-  /* Primary */
-  --button-primary-bg: var(--color-primary);
-  --button-primary-bg-hover: var(--color-primary-hover);
-  --button-primary-text: #ffffff;
-
-  /* Secondary */
-  --button-secondary-bg: transparent;
-  --button-secondary-bg-hover: rgba(0, 0, 0, 0.05);
-  --button-secondary-text: var(--color-text);
-  --button-secondary-border: var(--color-border);
-
-  /* Ghost */
-  --button-ghost-bg: transparent;
-  --button-ghost-bg-hover: rgba(0, 0, 0, 0.05);
-  --button-ghost-text: var(--color-text);
-
-  /* =========================
-     9) Component semantics — Input
-     ========================= */
-  --input-bg: var(--color-surface);
-  --input-text: var(--color-text);
-  --input-placeholder: var(--color-text-muted);
-
-  --input-border: var(--color-border-strong);
-  --input-border-hover: var(--color-border-strong);
-
-  --input-focus-ring: var(--color-focus-ring);
-
-  --input-disabled-bg: var(--color-surface-muted);
-  --input-disabled-text: var(--color-text-muted);
-
-  /* Error (use dedicated status tokens later if desired) */
-  --input-error-border: var(--color-error);
---input-error-ring: rgba(139, 46, 46, 0.35);
-
-  /* =========================
-     10) Component semantics — Dropdown
-     ========================= */
-  --dropdown-trigger-bg: var(--color-surface);
-  --dropdown-trigger-text: var(--color-text);
-  --dropdown-trigger-border: var(--color-border-strong);
-
-  --dropdown-menu-bg: var(--color-surface);
-  --dropdown-menu-border: var(--color-border);
-  --dropdown-menu-shadow: var(--shadow-1);
-
-  --dropdown-item-bg-hover: var(--color-primary-subtle);
-  --dropdown-item-text: var(--color-text);
-  --dropdown-item-text-muted: var(--color-text-muted);
-
-  --dropdown-selected-icon: var(--color-primary);
-
-  /* =========================
-     11) Component semantics — Badge
-     ========================= */
-  --badge-neutral-bg:     var(--neutral-100);
-  --badge-neutral-text:   var(--neutral-800);
-  --badge-neutral-border: var(--neutral-200);
-
-  --badge-success-bg:     var(--green-50);
-  --badge-success-text:   var(--green-600);
-  --badge-success-border: var(--green-200);
-
-  --badge-warning-bg:     var(--amber-50);
-  --badge-warning-text:   var(--amber-600);
-  --badge-warning-border: var(--amber-200);
-
-  --badge-error-bg:     var(--red-50);
-  --badge-error-text:   var(--red-600);
-  --badge-error-border: var(--red-200);
-
-  --badge-info-bg:     var(--blue-50);
-  --badge-info-text:   var(--blue-600);
-  --badge-info-border: var(--blue-200);
-
-  /* =========================
-     12) Component semantics — Alert
-     ========================= */
-  --alert-success-bg:     var(--green-50);
-  --alert-success-border: var(--green-200);
-  --alert-success-icon:   var(--green-600);
-
-  --alert-warning-bg:     var(--amber-50);
-  --alert-warning-border: var(--amber-200);
-  --alert-warning-icon:   var(--amber-600);
-
-  --alert-error-bg:     var(--red-50);
-  --alert-error-border: var(--red-200);
-  --alert-error-icon:   var(--red-600);
-
-  --alert-info-bg:     var(--blue-50);
-  --alert-info-border: var(--blue-200);
-  --alert-info-icon:   var(--blue-600);
-}
-
-/* =========================
    /* =========================
-      11) Component semantics — Link
+      1) Color scales (foundation)
+      Raw ramps — no meaning
       ========================= */
-   :root {
-     --link-text: var(--color-primary);
-     --link-text-hover: var(--color-primary-hover);
-     --link-underline: currentColor;
-
-     --link-subtle-text: var(--color-text);
-     --link-subtle-text-hover: var(--color-primary-hover);
-     --link-focus-ring: var(--color-focus-ring);
-   }
-   
-
-/* =========================
-   Dark mode
-   Apply by setting: <html data-theme="dark">
-   ========================= */
-   html[data-theme="dark"] {
-      /* Neutral scale (dark) */
-      --neutral-0:   #0b0d0b; /* “surface” becomes ink */
-      --neutral-50:  #121412; /* optional elevated surface */
-      --neutral-100: #161916; /* muted surface */
-      --neutral-200: #1e221e; /* soft divider */
-      --neutral-300: #2a2f2a; /* subtle border */
-      --neutral-600: #8b948b; /* strong border / disabled */
-      --neutral-800: #cfd6cf; /* secondary text */
-      --neutral-900: #ffffff; /* primary text becomes white */
-    
-      /* Chlorophyll (slightly brighter for dark) */
-      --green-50:  #102417;  /* subtle action background (darker) */
-      --green-600: #2a7a4a;  /* primary action */
-      --green-700: #22643e;  /* hover/active */
-    
-      /* Accents */
-      --accent-moss: #88a693;
-      --accent-soil: #8a7f72;
-      --accent-leaf: #161916;
-    
-      /* Focus ring stronger on dark */
-      --color-focus-ring: rgba(42, 122, 74, 0.55);
-    
-      /* Error colors (dark mode) */
-      --red-600: #E28A8A; /* readable red on dark */
-      --red-700: #CF6E6E; /* stronger */
-      --input-error-ring: rgba(226, 138, 138, 0.55);
-    
-      /* Button hover surfaces */
-      --button-secondary-bg-hover: rgba(255, 255, 255, 0.08);
-      --button-ghost-bg-hover: rgba(255, 255, 255, 0.08);
-    
-      /* Selection in dark mode: slightly brighter than action green for contrast */
---color-selection: #3FA86A;
---color-selection-contrast: #0b0d0b; /* optional if you prefer dark icon */
-
-      /* Dropdown menu shadow in dark mode */
-      --dropdown-menu-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
-
-      /* Amber (warning) dark */
-      --amber-50:  #241a05;
-      --amber-200: #6b450d;
-      --amber-600: #e6a93b;
-      --amber-700: #d4952e;
-
-      /* Blue (info) dark */
-      --blue-50:  #0c1d2e;
-      --blue-200: #2d5878;
-      --blue-600: #5fa3d0;
-      --blue-700: #4a88b8;
-
-      /* Red — extend dark */
-      --red-50:  #2a0d0d;
-      --red-200: #8a3030;
-
-      /* Green — extend dark */
-      --green-200: #1a4d2a;
-    }
-
-    /* =========================
-   Base reset + a11y utilities
-   ========================= */
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-html,
-body {
-  height: 100%;
-}
-
-body {
-  margin: 0;
-  background: var(--color-surface);
-  color: var(--color-text);
-  font-family: var(--font-sans);
-}
-
-code, pre, kbd, samp {
-   font-family: var(--font-mono);
-   font-size: var(--type-bodySm-size);
+ 
+   /* Neutral scale (light) */
+   --neutral-0:   #ffffff; /* surface */
+   --neutral-50:  #fafafa; /* optional elevated surface */
+   --neutral-100: #f5f6f4; /* muted surface */
+   --neutral-200: #e6e8e3; /* soft divider */
+   --neutral-300: #d6d9d3; /* subtle border */
+   --neutral-600: #6f756f; /* strong border / disabled */
+   --neutral-800: #3e443e; /* secondary text */
+   --neutral-900: #0b0d0b; /* primary ink */
+ 
+   /* Chlorophyll scale (actions) */
+   --green-50:  #e7f1eb; /* subtle action background */
+   --green-600: #1f5e3b; /* primary action */
+   --green-700: #184c30; /* hover/active */
+ 
+   /* Accents (supporting foliage) */
+   --accent-moss: #6f8f7b;
+   --accent-soil: #6a6258;
+   --accent-leaf: #f0f5f2;
+ 
+   /* Status — Error (Soil Red) */
+   --red-50:  #f9eaea; /* error badge/alert background */
+   --red-200: #e8b0b0; /* error badge/alert border */
+   --red-600: #8B2E2E; /* primary error */
+   --red-700: #6F2323; /* hover / strong */
+ 
+   /* Status — Warning (Amber) */
+   --amber-50:  #fef3e2; /* warning background */
+   --amber-200: #f5d68c; /* warning border */
+   --amber-600: #8c5e10; /* warning text / icon */
+   --amber-700: #704b0c; /* warning hover */
+ 
+   /* Status — Info (Slate Blue) */
+   --blue-50:  #e8f0f8; /* info background */
+   --blue-200: #a8c6de; /* info border */
+   --blue-600: #1b5278; /* info text / icon */
+   --blue-700: #16436a; /* info hover */
+ 
+   /* Extend Green scale (border level) */
+   --green-200: #b8d8c2; /* success badge/alert border */
+ 
+   /* =========================
+      2) Named palette (design language)
+      Greenhouse vocabulary — still not UI-facing
+      ========================= */
+ 
+   /* Surfaces */
+   --surface-primary: var(--neutral-0);
+   --surface-muted:   var(--neutral-100);
+ 
+   /* Text */
+   --text-primary:   var(--neutral-900);
+   --text-secondary: var(--neutral-800);
+ 
+   /* Borders */
+   --border-subtle: var(--neutral-300);
+   --border-strong: var(--neutral-600);
+ 
+   /* Actions */
+   --action-primary: var(--green-600);
+   --action-hover:   var(--green-700);
+   --action-subtle:  var(--green-50);
+ 
+   /* Semantic — Error */
+   --color-error: var(--red-600);
+   --color-error-strong: var(--red-700);
+ 
+   /* =========================
+      3) Semantic tokens (UI-facing)
+      Components should consume these
+      ========================= */
+ 
+   /* Surfaces */
+   --color-surface:        var(--surface-primary);
+   --color-surface-muted:  var(--surface-muted);
+ 
+   /* Text */
+   --color-text:       var(--text-primary);
+   --color-text-muted: var(--text-secondary);
+ 
+   /* Borders */
+   --color-border:        var(--border-subtle);
+   --color-border-strong: var(--border-strong);
+ 
+   /* Actions */
+   --color-primary:        var(--action-primary);
+   --color-primary-hover:  var(--action-hover);
+   --color-primary-subtle: var(--action-subtle);
+ 
+   /* Semantic — Selection (checkbox/radio states) */
+    --color-selection: var(--color-primary);
+    --color-selection-contrast: #ffffff; /* icon/dot on selection fill */
+ 
+   /* Focus */
+   --color-focus-ring: #1f5e3b73;
+ 
+   /* Accents */
+   --color-accent-moss: var(--accent-moss);
+   --color-accent-soil: var(--accent-soil);
+   --color-accent-leaf: var(--accent-leaf);
+ 
+   /* Status — Error (Soil Red) */
+   --color-error: var(--red-600);
+   --color-error-strong: var(--red-700);
+ 
+   /* =========================
+    4) Typography
+    ========================= */
+ /* Font family — now aliasing the full stack from typography.css */
+ --font-sans: var(--font-sans-face), ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial,
+   "Apple Color Emoji", "Segoe UI Emoji";
+ 
+ /* LEGACY (do not use in new components)
+  Use --type-* tokens from src/styles/typography.css instead.
+ */
+ --text-1: 12px;
+ --text-2: 14px;
+ --text-3: 16px;
+ --text-4: 20px;
+ 
+ /* =========================
+  5) Spacing
+  ========================= */
+ /* If you are using src/styles/spacing.css, consider removing these to avoid drift.
+  Keeping them for now is okay as long as values match exactly.
+ */
+ --space-1: 4px;
+ --space-2: 8px;
+ --space-3: 12px;
+ --space-4: 16px;
+ --space-5: 20px;
+ --space-6: 24px;
+ --space-8: 32px;
+ --space-10: 40px;
+ --space-12: 48px;
+ 
+ /* =========================
+  6) Radius + shadow
+  ========================= */
+ --radius-sm: 4px;
+ --radius-md: 8px;
+ --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.08);
+ 
+ 
+   /* =========================
+      7) Form controls (shared sizing)
+      Use across inputs, dropdowns, etc.
+      ========================= */
+   --control-height: 44px;
+   --control-padding-x: var(--space-3);
+   --control-radius: var(--radius-sm);
+  /* Legacy control font size (prefer --type-body-* directly in component CSS) */
+ --control-font-size: var(--type-body-size);
+ 
+ 
+   /* =========================
+      8) Component semantics — Button
+      ========================= */
+ 
+   /* Primary */
+   --button-primary-bg: var(--color-primary);
+   --button-primary-bg-hover: var(--color-primary-hover);
+   --button-primary-text: #ffffff;
+ 
+   /* Secondary */
+   --button-secondary-bg: transparent;
+   --button-secondary-bg-hover: rgba(0, 0, 0, 0.05);
+   --button-secondary-text: var(--color-text);
+   --button-secondary-border: var(--color-border);
+ 
+   /* Ghost */
+   --button-ghost-bg: transparent;
+   --button-ghost-bg-hover: rgba(0, 0, 0, 0.05);
+   --button-ghost-text: var(--color-text);
+ 
+   /* =========================
+      9) Component semantics — Input
+      ========================= */
+   --input-bg: var(--color-surface);
+   --input-text: var(--color-text);
+   --input-placeholder: var(--color-text-muted);
+ 
+   --input-border: var(--color-border-strong);
+   --input-border-hover: var(--color-border-strong);
+ 
+   --input-focus-ring: var(--color-focus-ring);
+ 
+   --input-disabled-bg: var(--color-surface-muted);
+   --input-disabled-text: var(--color-text-muted);
+ 
+   /* Error (use dedicated status tokens later if desired) */
+   --input-error-border: var(--color-error);
+ --input-error-ring: rgba(139, 46, 46, 0.35);
+ 
+   /* =========================
+      10) Component semantics — Dropdown
+      ========================= */
+   --dropdown-trigger-bg: var(--color-surface);
+   --dropdown-trigger-text: var(--color-text);
+   --dropdown-trigger-border: var(--color-border-strong);
+ 
+   --dropdown-menu-bg: var(--color-surface);
+   --dropdown-menu-border: var(--color-border);
+   --dropdown-menu-shadow: var(--shadow-1);
+ 
+   --dropdown-item-bg-hover: var(--color-primary-subtle);
+   --dropdown-item-text: var(--color-text);
+   --dropdown-item-text-muted: var(--color-text-muted);
+ 
+   --dropdown-selected-icon: var(--color-primary);
+ 
+   /* =========================
+      11) Component semantics — Badge
+      ========================= */
+   --badge-neutral-bg:     var(--neutral-100);
+   --badge-neutral-text:   var(--neutral-800);
+   --badge-neutral-border: var(--neutral-200);
+ 
+   --badge-success-bg:     var(--green-50);
+   --badge-success-text:   var(--green-600);
+   --badge-success-border: var(--green-200);
+ 
+   --badge-warning-bg:     var(--amber-50);
+   --badge-warning-text:   var(--amber-600);
+   --badge-warning-border: var(--amber-200);
+ 
+   --badge-error-bg:     var(--red-50);
+   --badge-error-text:   var(--red-600);
+   --badge-error-border: var(--red-200);
+ 
+   --badge-info-bg:     var(--blue-50);
+   --badge-info-text:   var(--blue-600);
+   --badge-info-border: var(--blue-200);
+ 
+   /* =========================
+      12) Component semantics — Alert
+      ========================= */
+   --alert-success-bg:     var(--green-50);
+   --alert-success-border: var(--green-200);
+   --alert-success-icon:   var(--green-600);
+ 
+   --alert-warning-bg:     var(--amber-50);
+   --alert-warning-border: var(--amber-200);
+   --alert-warning-icon:   var(--amber-600);
+ 
+   --alert-error-bg:     var(--red-50);
+   --alert-error-border: var(--red-200);
+   --alert-error-icon:   var(--red-600);
+ 
+   --alert-info-bg:     var(--blue-50);
+   --alert-info-border: var(--blue-200);
+   --alert-info-icon:   var(--blue-600);
  }
-
-/* Make default focus visible and consistent across the system */
-:focus-visible {
-  outline: 2px solid var(--color-focus-ring);
-  outline-offset: 2px;
-}
-
-/* =========================
-   Skip link (layout utility)
-   Hidden until focused
-   ========================= */
-
-.skipLink {
-  position: absolute;
-  top: var(--space-2);
-  left: var(--space-2);
-  z-index: 1000;
-
-  display: inline-flex;
-  align-items: center;
-
-  padding: var(--space-2) var(--space-3);
-  border-radius: var(--radius-md);
-
-  background: var(--color-surface);
-  color: var(--color-text);
-  border: 1px solid var(--color-border-strong);
-  box-shadow: var(--shadow-1);
-
-  /* visually hide until focus */
-  transform: translateY(-200%);
-  transition: transform 120ms ease;
-}
-
-.skipLink:focus-visible {
-  transform: translateY(0);
-}
-
-/* If you ever add a sticky header/topbar, this prevents the jump being hidden under it */
-#main-content {
-  scroll-margin-top: 56px;
-}
+ 
+ /* =========================
+    /* =========================
+       11) Component semantics — Link
+       ========================= */
+    :root {
+      --link-text: var(--color-primary);
+      --link-text-hover: var(--color-primary-hover);
+      --link-underline: currentColor;
+ 
+      --link-subtle-text: var(--color-text);
+      --link-subtle-text-hover: var(--color-primary-hover);
+      --link-focus-ring: var(--color-focus-ring);
+    }
+    
+ 
+ /* =========================
+    Dark mode
+    Apply by setting: <html data-theme="dark">
+    ========================= */
+    html[data-theme="dark"],
+    [data-theme="dark"] {
+       /* Neutral scale (dark) */
+       --neutral-0:   #0b0d0b; /* "surface" becomes ink */
+       --neutral-50:  #121412; /* optional elevated surface */
+       --neutral-100: #161916; /* muted surface */
+       --neutral-200: #1e221e; /* soft divider */
+       --neutral-300: #2a2f2a; /* subtle border */
+       --neutral-600: #8b948b; /* strong border / disabled */
+       --neutral-800: #cfd6cf; /* secondary text */
+       --neutral-900: #ffffff; /* primary text becomes white */
+     
+       /* Chlorophyll (slightly brighter for dark) */
+       --green-50:  #102417;  /* subtle action background (darker) */
+       --green-600: #2a7a4a;  /* primary action */
+       --green-700: #22643e;  /* hover/active */
+     
+       /* Accents */
+       --accent-moss: #88a693;
+       --accent-soil: #8a7f72;
+       --accent-leaf: #161916;
+     
+       /* Focus ring stronger on dark */
+       --color-focus-ring: rgba(42, 122, 74, 0.55);
+     
+       /* Error colors (dark mode) */
+       --red-600: #E28A8A; /* readable red on dark */
+       --red-700: #CF6E6E; /* stronger */
+       --input-error-ring: rgba(226, 138, 138, 0.55);
+     
+       /* Button hover surfaces */
+       --button-secondary-bg-hover: rgba(255, 255, 255, 0.08);
+       --button-ghost-bg-hover: rgba(255, 255, 255, 0.08);
+     
+       /* Selection in dark mode: slightly brighter than action green for contrast */
+ --color-selection: #3FA86A;
+ --color-selection-contrast: #0b0d0b; /* optional if you prefer dark icon */
+ 
+       /* Dropdown menu shadow in dark mode */
+       --dropdown-menu-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+ 
+       /* Amber (warning) dark */
+       --amber-50:  #241a05;
+       --amber-200: #6b450d;
+       --amber-600: #e6a93b;
+       --amber-700: #d4952e;
+ 
+       /* Blue (info) dark */
+       --blue-50:  #0c1d2e;
+       --blue-200: #2d5878;
+       --blue-600: #5fa3d0;
+       --blue-700: #4a88b8;
+ 
+       /* Red — extend dark */
+       --red-50:  #2a0d0d;
+       --red-200: #8a3030;
+ 
+       /* Green — extend dark */
+       --green-200: #1a4d2a;
+     }
+ 
+    /* =========================
+       Light mode (explicit, for theme islands)
+       Used when a nested element needs to stay light
+       inside a dark-mode page
+       ========================= */
+    [data-theme="light"] {
+       --neutral-0:   #ffffff;
+       --neutral-50:  #fafafa;
+       --neutral-100: #f5f6f4;
+       --neutral-200: #e6e8e3;
+       --neutral-300: #d6d9d3;
+       --neutral-600: #6f756f;
+       --neutral-800: #3e443e;
+       --neutral-900: #0b0d0b;
+       --green-50:  #e7f1eb;
+       --green-600: #1f5e3b;
+       --green-700: #184c30;
+       --green-200: #b8d8c2;
+       --accent-moss: #6f8f7b;
+       --accent-soil: #6a6258;
+       --accent-leaf: #f0f5f2;
+       --red-50:  #f9eaea;
+       --red-200: #e8b0b0;
+       --red-600: #8B2E2E;
+       --red-700: #6F2323;
+       --amber-50:  #fef3e2;
+       --amber-200: #f5d68c;
+       --amber-600: #8c5e10;
+       --amber-700: #704b0c;
+       --blue-50:  #e8f0f8;
+       --blue-200: #a8c6de;
+       --blue-600: #1b5278;
+       --blue-700: #16436a;
+       --color-focus-ring: #1f5e3b73;
+       --input-error-ring: rgba(139, 46, 46, 0.35);
+       --button-secondary-bg-hover: rgba(0, 0, 0, 0.05);
+       --button-ghost-bg-hover: rgba(0, 0, 0, 0.05);
+       --color-selection: var(--green-600);
+       --color-selection-contrast: #ffffff;
+       --dropdown-menu-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+    }
+ 
+     /* =========================
+    Base reset + a11y utilities
+    ========================= */
+ 
+ *,
+ *::before,
+ *::after {
+   box-sizing: border-box;
+ }
+ 
+ html,
+ body {
+   height: 100%;
+ }
+ 
+ body {
+   margin: 0;
+   background: var(--color-surface);
+   color: var(--color-text);
+   font-family: var(--font-sans);
+ }
+ 
+ code, pre, kbd, samp {
+    font-family: var(--font-mono);
+    font-size: var(--type-bodySm-size);
+  }
+ 
+ /* Make default focus visible and consistent across the system */
+ :focus-visible {
+   outline: 2px solid var(--color-focus-ring);
+   outline-offset: 2px;
+ }
+ 
+ /* =========================
+    Skip link (layout utility)
+    Hidden until focused
+    ========================= */
+ 
+ .skipLink {
+   position: absolute;
+   top: var(--space-2);
+   left: var(--space-2);
+   z-index: 1000;
+ 
+   display: inline-flex;
+   align-items: center;
+ 
+   padding: var(--space-2) var(--space-3);
+   border-radius: var(--radius-md);
+ 
+   background: var(--color-surface);
+   color: var(--color-text);
+   border: 1px solid var(--color-border-strong);
+   box-shadow: var(--shadow-1);
+ 
+   /* visually hide until focus */
+   transform: translateY(-200%);
+   transition: transform 120ms ease;
+ }
+ 
+ .skipLink:focus-visible {
+   transform: translateY(0);
+ }
+ 
+ /* If you ever add a sticky header/topbar, this prevents the jump being hidden under it */
+ #main-content {
+   scroll-margin-top: 56px;
+ }
