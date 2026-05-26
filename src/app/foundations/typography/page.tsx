@@ -124,7 +124,7 @@ export default function TypographyPage() {
 
       <Divider />
 
-      <h2>Typefaces</h2>
+      <h2 id="typefaces">Typefaces</h2>
       <p>
         Each typeface serves a distinct purpose in the system. Together they
         cover interfaces, expressive headings, and code.
@@ -210,7 +210,7 @@ export default function TypographyPage() {
 
       <Divider />
 
-      <h2>Scale</h2>
+      <h2 id="scale">Scale</h2>
       <p>
         The type scale covers display, headings, body, and utility sizes.
         Display through H2 can use either Plus Jakarta Sans or Fraunces. Switch between them
@@ -235,7 +235,7 @@ export default function TypographyPage() {
 
       <Divider />
 
-      <h2>Component rules</h2>
+      <h2 id="component-rules">Component rules</h2>
       <p>
         Components never set font sizes directly. Typography is always applied
         via the <code>Text</code> component or <code>--type-*</code> tokens.
@@ -267,7 +267,7 @@ export default function TypographyPage() {
 
       <Divider />
 
-      <h2>Usage</h2>
+      <h2 id="usage">Usage</h2>
       <p>
         Use the <code>Text</code> component with a <code>variant</code> prop
         to apply typographic styles. Use the <code>as</code> prop to control

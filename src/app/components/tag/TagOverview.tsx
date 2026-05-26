@@ -22,7 +22,7 @@ export default function TagOverview() {
     <>
       <Divider />
 
-      <h2>Variants</h2>
+      <h2 id="variants">Variants</h2>
       <p>
         Five variants are available, matching the same semantic meanings as
         Badge. Use the variant that best reflects the nature of the tag.
@@ -37,7 +37,7 @@ export default function TagOverview() {
 
       <Divider />
 
-      <h2>Sizes</h2>
+      <h2 id="sizes">Sizes</h2>
       <p>
         Two sizes are available. Use <code>sm</code> for compact contexts like
         input fields and <code>md</code> as the default.
@@ -49,7 +49,7 @@ export default function TagOverview() {
 
       <Divider />
 
-      <h2>With icon</h2>
+      <h2 id="with-icon">With icon</h2>
       <p>
         Pass an icon via the <code>icon</code> prop to add a leading visual
         that helps identify the type of tag at a glance.
@@ -62,7 +62,7 @@ export default function TagOverview() {
 
       <Divider />
 
-      <h2>Dismissible</h2>
+      <h2 id="dismissible">Dismissible</h2>
       <p>
         Pass <code>onDismiss</code> to show a remove button. The parent
         component is responsible for removing the tag from its list when
@@ -87,7 +87,7 @@ export default function TagOverview() {
 
       <Divider />
 
-      <h2>Greenhouse examples</h2>
+      <h2 id="greenhouse-example">Greenhouse examples</h2>
       <p>
         Tags work well for plant attributes, applied filters, and care labels
         that users can add and remove.
@@ -114,7 +114,7 @@ export default function TagOverview() {
 
       <Divider />
 
-      <h2>Usage</h2>
+      <h2 id="usage">Usage</h2>
       <p>
         Pass a <code>label</code> and optional <code>variant</code> to control
         appearance. Add <code>onDismiss</code> to show a remove button — the

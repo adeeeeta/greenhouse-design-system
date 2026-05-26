@@ -18,7 +18,7 @@ export default function ModalOverview() {
     <>
       <Divider />
 
-      <h2>Sizes</h2>
+      <h2 id="sizes">Sizes</h2>
       <p>
         Three sizes are available — <code>sm</code>, <code>md</code>, and{" "}
         <code>lg</code>. The default is <code>md</code>.
@@ -64,7 +64,7 @@ export default function ModalOverview() {
 
       <Divider />
 
-      <h2>Examples</h2>
+      <h2 id="examples">Examples</h2>
       <p>
         Modals work well for forms and destructive confirmations where the user
         needs to make a deliberate decision before continuing.
@@ -150,7 +150,7 @@ export default function ModalOverview() {
 
       <Divider />
 
-      <h2>Usage</h2>
+      <h2 id="usage">Usage</h2>
       <p>
         Control the modal with <code>isOpen</code> and <code>onClose</code>.
         Pass <code>primaryAction</code> and <code>secondaryAction</code> to

@@ -6,7 +6,7 @@ import { CaretDown, X, Check, InfoCircle } from "@/components/Icons/index"
 export default function ButtonOverview() {
   return (
     <>
-      <h2>Kinds</h2>
+      <h2 id="kinds">Kinds</h2>
       <p>
         Use <code>primary</code> for the main action, <code>secondary</code> for
         supporting actions, and <code>ghost</code> for low-emphasis actions.
@@ -17,7 +17,7 @@ export default function ButtonOverview() {
         <Button kind="ghost">Ghost</Button>
       </div>
       <Divider />
-      <h2>Sizes</h2>
+      <h2 id="sizes">Sizes</h2>
       <p>
         Three sizes are available. Use <code>sm</code> for compact interfaces,{" "}
         <code>md</code> as the default, and <code>lg</code> for prominent calls
@@ -29,7 +29,7 @@ export default function ButtonOverview() {
         <Button size="lg">Large</Button>
       </div>
       <Divider />
-      <h2>With icon</h2>
+      <h2 id="with-icons">With icon</h2>
       <p>
         Pass an icon component via the <code>icon</code> prop to display it to
         the left of the label.
@@ -40,7 +40,7 @@ export default function ButtonOverview() {
         <Button kind="ghost" icon={<CaretDown />}>Expand</Button>
       </div>
       <Divider />
-      <h2>Icon only</h2>
+      <h2 id="icon-only">Icon only</h2>
       <p>
         Use <code>iconOnly</code> for actions that don't need a label. Always
         provide an <code>aria-label</code> for accessibility.
@@ -51,7 +51,7 @@ export default function ButtonOverview() {
         <Button kind="ghost" icon={<CaretDown />} iconOnly aria-label="Expand" size="lg" />
       </div>
       <Divider />
-      <h2>Loading state</h2>
+      <h2 id="loading-state">Loading state</h2>
       <p>
         Pass a <code>Spinner</code> via the <code>icon</code> prop to indicate
         a loading state. The spinner inherits the button's color automatically.
@@ -62,7 +62,7 @@ export default function ButtonOverview() {
         <Button kind="primary" icon={<Spinner size="sm" />} iconOnly aria-label="Loading" />
       </div>
       <Divider />
-      <h2>Disabled</h2>
+      <h2 id="disabled">Disabled</h2>
       <p>
         Add the <code>disabled</code> prop to prevent interaction. Disabled
         buttons retain their visual style at reduced opacity.

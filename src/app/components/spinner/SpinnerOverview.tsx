@@ -7,7 +7,7 @@ export default function SpinnerOverview() {
     <>
       <Divider />
 
-      <h2>Sizes</h2>
+      <h2 id="sizes">Sizes</h2>
       <p>
         Two sizes are available. Use <code>sm</code> for inline or compact
         contexts and <code>md</code> as the default.
@@ -19,7 +19,7 @@ export default function SpinnerOverview() {
 
       <Divider />
 
-      <h2>With label</h2>
+      <h2 id="with-label">With label</h2>
       <p>
         Pass a <code>label</code> to display descriptive text below the spinner.
       </p>
@@ -30,7 +30,7 @@ export default function SpinnerOverview() {
 
       <Divider />
 
-      <h2>Inside a button</h2>
+      <h2 id="inside-a-button">Inside a button</h2>
       <p>
         Spinners inherit the current color, so they adapt automatically when
         placed inside other components. Use the <code>icon</code> prop on{" "}
@@ -44,7 +44,7 @@ export default function SpinnerOverview() {
 
       <Divider />
 
-      <h2>Greenhouse examples</h2>
+      <h2 id="greenhouse-examples">Greenhouse examples</h2>
       <p>
         Use spinners alongside status text to give users context on what is
         loading.
@@ -67,7 +67,7 @@ export default function SpinnerOverview() {
 
       <Divider />
 
-      <h2>Usage</h2>
+      <h2 id="usage">Usage</h2>
       <p>
         Use <code>size</code> to control the spinner dimensions. Pass a{" "}
         <code>label</code> to display descriptive text below the spinner.

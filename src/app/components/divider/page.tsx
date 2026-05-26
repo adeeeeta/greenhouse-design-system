@@ -11,7 +11,7 @@ export default function DividerPage() {
 
       <Divider />
 
-      <h2>Weight</h2>
+      <h2 id="weight">Weight</h2>
         <p>
         Visual weight is a combination of border color and thickness.
         </p>
@@ -44,7 +44,7 @@ export default function DividerPage() {
 
       <Divider />
 
-      <h2>Labeled</h2>
+      <h2 id="labeled">Labeled</h2>
       <p>
         Add a <code>label</code> to display centered text between two lines.
         Useful for separating form sections or grouping options.
@@ -57,7 +57,7 @@ export default function DividerPage() {
 
       <Divider />
 
-      <h2>Usage</h2>
+      <h2 id="usage">Usage</h2>
       <p>
         Use <code>weight</code> to control visual prominence. Add a{" "}
         <code>label</code> to display centered text between two lines.

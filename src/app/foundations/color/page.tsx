@@ -1,5 +1,6 @@
 import Swatch from "@/components/Swatch/Swatch"
 import Divider from "@/components/Divider"
+import { meta } from "./meta"
 
 export default function ColorPage() {
   return (
@@ -13,7 +14,7 @@ export default function ColorPage() {
 
       <Divider />
 
-      <h2>Token layers</h2>
+      <h2 id="token-layers">Token layers</h2>
       <p>
         Colors are organized into three layers so components stay stable as the
         theme evolves. Components should always consume semantic tokens, never
@@ -48,7 +49,7 @@ export default function ColorPage() {
 
       <Divider />
 
-      <h2>Usage rules</h2>
+      <h2 id="usage-rules">Usage rules</h2>
       <div style={{ display: "flex", flexDirection: "column", gap: "var(--space-4)" }}>
         <div>
           <p style={{ margin: "0 0 var(--space-2) 0", fontWeight: "var(--font-weight-medium)" }}>Neutrals first</p>
@@ -86,7 +87,7 @@ export default function ColorPage() {
           LAYER 1 — SCALES
           ================================ */}
 
-      <h2>Scales</h2>
+      <h2 id="scales">Scales</h2>
       <p>
         Raw color ramps that power light and dark mode. These have no
         assigned meaning — palette and semantic tokens reference them so
@@ -158,7 +159,7 @@ export default function ColorPage() {
           LAYER 2 — PALETTE
           ================================ */}
 
-      <h2>Palette</h2>
+      <h2 id="palette">Palette</h2>
       <p>
         Greenhouse vocabulary tokens that map scale values to design intent.
         These sit between the raw ramps and the semantic layer — useful for
@@ -215,7 +216,7 @@ export default function ColorPage() {
           LAYER 3 — SEMANTIC TOKENS
           ================================ */}
 
-      <h2>Semantic tokens</h2>
+      <h2 id="semantic-tokens">Semantic tokens</h2>
       <p>
         The tokens components should consume directly. These cascade
         automatically in dark mode — no component-level overrides needed.
@@ -263,7 +264,7 @@ export default function ColorPage() {
           STATUS
           ================================ */}
 
-      <h2>Status</h2>
+      <h2 id="status">Status</h2>
       <p>
         Semantic status colors grouped by meaning. Each status has a
         background, border, and foreground token — enough to build badges,
@@ -318,7 +319,7 @@ export default function ColorPage() {
           COMPONENT TOKENS
           ================================ */}
 
-      <h2>Component tokens</h2>
+      <h2 id="component-tokens">Component tokens</h2>
       <p>
         Scoped tokens that individual components consume. These reference
         semantic tokens under the hood, so dark mode cascades automatically.

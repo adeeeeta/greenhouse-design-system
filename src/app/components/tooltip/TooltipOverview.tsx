@@ -7,7 +7,7 @@ export default function TooltipOverview() {
     <>
       <Divider />
 
-      <h2>Positions</h2>
+      <h2 id="positions">Positions</h2>
       <p>
         Use the <code>position</code> prop to control which side of the trigger
         the tooltip appears on.
@@ -29,7 +29,7 @@ export default function TooltipOverview() {
 
       <Divider />
 
-      <h2>Usage</h2>
+      <h2 id="usage">Usage</h2>
       <p>
         Wrap any element with a Tooltip and pass a <code>content</code> string.
         The <code>position</code> prop defaults to <code>above</code> if not specified.

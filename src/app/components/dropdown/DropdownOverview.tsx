@@ -26,7 +26,7 @@ export default function DropdownOverview() {
     <>
       <Divider />
 
-      <h2>Default</h2>
+      <h2 id="default">Default</h2>
       <p>
         A standard dropdown with a label and placeholder. Options are revealed
         on click or by pressing Enter or Space.
@@ -41,7 +41,7 @@ export default function DropdownOverview() {
 
       <Divider />
 
-      <h2>With descriptions</h2>
+      <h2 id="with-descriptions">With descriptions</h2>
       <p>
         Add a <code>description</code> to individual options to provide
         additional context below the option label.
@@ -56,7 +56,7 @@ export default function DropdownOverview() {
 
       <Divider />
 
-      <h2>Hint</h2>
+      <h2 id="hint">Hint</h2>
       <p>
         Use <code>hint</code> to provide additional context below the dropdown.
       </p>
@@ -71,7 +71,7 @@ export default function DropdownOverview() {
 
       <Divider />
 
-      <h2>Error</h2>
+      <h2 id="error">Error</h2>
       <p>
         Use <code>error</code> to show a validation message below the dropdown.
       </p>
@@ -86,7 +86,7 @@ export default function DropdownOverview() {
 
       <Divider />
 
-      <h2>Disabled</h2>
+      <h2 id="disabled">Disabled</h2>
       <p>
         Add <code>disabled</code> to prevent interaction.
       </p>
@@ -101,7 +101,7 @@ export default function DropdownOverview() {
 
       <Divider />
 
-      <h2>Usage</h2>
+      <h2 id="usage">Usage</h2>
       <p>
         Pass an <code>options</code> array where each item has a{" "}
         <code>value</code> and <code>label</code>. Control the selected value

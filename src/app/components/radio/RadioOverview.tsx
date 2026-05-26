@@ -6,7 +6,7 @@ export default function RadioOverview() {
     <>
       <Divider />
 
-      <h2>Default</h2>
+      <h2 id="default">Default</h2>
       <p>
         A standard radio group. Only one option can be selected at a time
         within the same <code>name</code> group.
@@ -19,7 +19,7 @@ export default function RadioOverview() {
 
       <Divider />
 
-      <h2>With hint</h2>
+      <h2 id="with-hint">With hint</h2>
       <p>
         Use <code>hint</code> to provide additional context below a radio option.
       </p>
@@ -46,7 +46,7 @@ export default function RadioOverview() {
 
       <Divider />
 
-      <h2>Disabled</h2>
+      <h2 id="disabled">Disabled</h2>
       <p>
         Add <code>disabled</code> to prevent interaction on individual options.
       </p>
@@ -57,7 +57,7 @@ export default function RadioOverview() {
 
       <Divider />
 
-      <h2>Usage</h2>
+      <h2 id="usage">Usage</h2>
       <p>
         Group radio buttons by giving them the same <code>name</code> prop.
         Each option needs a unique <code>value</code>. Use <code>hint</code>{" "}

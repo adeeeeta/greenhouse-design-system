@@ -20,26 +20,25 @@
       min-height: 100vh;
     }
    
-   .sidebar {
-    border-right: 1px solid var(--color-border);
-    padding: var(--space-6) var(--space-4);
-    background: var(--color-surface);
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    overflow-y: auto;
-    position: sticky;
-    top: 0;
-    transform: none;
-  }
+    .sidebar {
+      border-right: 1px solid var(--color-border);
+      padding: 0 var(--space-4) var(--space-6);
+      background: var(--color-surface);
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      overflow-y: auto;
+      position: sticky;
+      top: 0;
+      transform: none;
+    }
    
    .brand {
     font-family: var(--font-sans);
-font-size: var(--type-h3-size);     /* 20px */
-line-height: var(--type-h3-line);   /* 28px */
-font-weight: var(--font-weight-semibold);
-
-     margin-bottom: var(--space-6);
+    font-size: var(--type-h3-size);
+    line-height: var(--type-h3-line);
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: var(--space-6);
    }
 
    .nav {
@@ -52,7 +51,9 @@ font-weight: var(--font-weight-semibold);
     background: var(--color-surface);
     z-index: 1;
     padding-top: var(--space-6);
-    padding-bottom: var(--space-2);
+    padding-bottom: var(--space-3);
+    border-bottom: 1px solid var(--color-border);
+    margin-bottom: var(--space-3);
   }
 
   .sidebarHeaderRow {
@@ -66,9 +67,7 @@ font-weight: var(--font-weight-semibold);
   }
 
   .sidebarFooter {
-    padding-bottom: var(--space-4);
-    margin-bottom: var(--space-4);
-    border-bottom: 1px solid var(--color-border);
+    padding-bottom: var(--space-2);
   }
 
    .navGroup { margin-bottom: var(--space-6); }
@@ -93,8 +92,6 @@ font-weight: var(--font-weight-semibold);
      font-size: var(--type-bodySm-size);
      line-height: var(--type-bodySm-line);
      font-weight: var(--font-weight-regular);
-     
-
    }
    
    .navLink:hover {
@@ -142,8 +139,7 @@ font-weight: var(--font-weight-semibold);
       .card h2:first-child {
         margin-top: 0;
       }
-      
-   
+
       .content p {
         color: var(--color-text);
         font-size: var(--type-body-size);
@@ -335,9 +331,11 @@ font-weight: var(--font-weight-semibold);
       top: 0;
       background: var(--color-surface);
       z-index: 1;
-      padding: var(--space-6) var(--space-4) var(--space-2);
+      padding: var(--space-6) var(--space-4) var(--space-3);
       margin: 0 calc(-1 * var(--space-4));
       width: calc(100% + 2 * var(--space-4));
+      border-bottom: 1px solid var(--color-border);
+      margin-bottom: var(--space-3);
     }
 
     .nav {

@@ -4,9 +4,7 @@ import Divider from "@/components/Divider"
 export default function AvatarOverview() {
   return (
     <>
-      <Divider />
-
-      <h2>Sizes</h2>
+      <h2 id="sizes">Sizes</h2>
       <p>
         Three sizes are available — <code>sm</code>, <code>md</code>, and{" "}
         <code>lg</code>. The default is <code>md</code>.
@@ -19,7 +17,7 @@ export default function AvatarOverview() {
 
       <Divider />
 
-      <h2>Shapes</h2>
+      <h2 id="shapes">Shapes</h2>
       <p>
         Use <code>circle</code> for people and <code>square</code> for
         entities like plants, teams, or organisations.
@@ -31,7 +29,7 @@ export default function AvatarOverview() {
 
       <Divider />
 
-      <h2>Fallbacks</h2>
+      <h2 id="fallbacks">Fallbacks</h2>
       <p>
         When no image is provided, Avatar falls back to initials. When neither
         is provided, it shows a generic person icon.
@@ -47,7 +45,7 @@ export default function AvatarOverview() {
 
       <Divider />
 
-      <h2>Greenhouse examples</h2>
+      <h2 id="greenhouse-examples">Greenhouse examples</h2>
       <p>
         Avatars work well in lists of team members or plant profiles where a
         visual identifier helps with scanning.
@@ -92,7 +90,7 @@ export default function AvatarOverview() {
 
       <Divider />
 
-      <h2>Usage</h2>
+      <h2 id="usage">Usage</h2>
       <p>
         Pass <code>src</code> and <code>alt</code> for an image avatar. Pass{" "}
         <code>initials</code> as a fallback when no image is available. If

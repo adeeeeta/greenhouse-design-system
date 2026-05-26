@@ -9,9 +9,7 @@ export default function AlertOverview() {
 
   return (
     <>
-      <Divider />
-
-      <h2>Variants</h2>
+    <h2 id="variants">Variants</h2>
       <p>
         Four variants are available to match the nature of the message:
       </p>
@@ -36,7 +34,7 @@ export default function AlertOverview() {
 
       <Divider />
 
-      <h2>With title</h2>
+      <h2 id="with-title">With title</h2>
       <p>
         Pass a <code>title</code> to add a heading above the body text. Use
         this when the alert needs extra emphasis or context.
@@ -52,7 +50,7 @@ export default function AlertOverview() {
 
       <Divider />
 
-      <h2>With dismiss</h2>
+      <h2 id="with-dismiss">With dismiss</h2>
       <p>
         Pass <code>onDismiss</code> to show a close button. Use this for
         non-critical alerts the user can choose to hide.
@@ -89,7 +87,7 @@ export default function AlertOverview() {
 
       <Divider />
 
-      <h2>Usage</h2>
+      <h2 id="usage">Usage</h2>
       <p>
         Pass a <code>variant</code> to control the color and icon. Use{" "}
         <code>title</code> for a heading above the body text. Add{" "}

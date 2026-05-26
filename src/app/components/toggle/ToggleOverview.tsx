@@ -11,7 +11,7 @@ export default function ToggleOverview() {
     <>
       <Divider />
 
-      <h2>Default</h2>
+      <h2 id="default">Default</h2>
       <p>
         A basic uncontrolled toggle that manages its own on/off state.
       </p>
@@ -19,7 +19,7 @@ export default function ToggleOverview() {
 
       <Divider />
 
-      <h2>With state label</h2>
+      <h2 id="with-state-label">With state label</h2>
       <p>
         Pass <code>showLabel</code> to display an <code>On</code> or{" "}
         <code>Off</code> label beside the track.
@@ -28,7 +28,7 @@ export default function ToggleOverview() {
 
       <Divider />
 
-      <h2>Default checked</h2>
+      <h2 id="default-checked">Default checked</h2>
       <p>
         Use <code>defaultChecked</code> to set the initial state to on.
       </p>
@@ -36,7 +36,7 @@ export default function ToggleOverview() {
 
       <Divider />
 
-      <h2>Controlled</h2>
+      <h2 id="controlled">Controlled</h2>
       <p>
         Use <code>checked</code> and <code>onChange</code> together to control
         the toggle from a parent component. Current state:{" "}
@@ -46,7 +46,7 @@ export default function ToggleOverview() {
 
       <Divider />
 
-      <h2>Disabled</h2>
+      <h2 id="disabled">Disabled</h2>
       <p>
         Add <code>disabled</code> to prevent interaction. Disabled toggles
         retain their visual style at reduced opacity.
@@ -58,7 +58,7 @@ export default function ToggleOverview() {
 
       <Divider />
 
-      <h2>Greenhouse examples</h2>
+      <h2 id="greenhouse-examples">Greenhouse examples</h2>
       <p>
         Toggles work well for settings that take effect immediately, like
         enabling or disabling greenhouse automations.
@@ -92,7 +92,7 @@ export default function ToggleOverview() {
 
       <Divider />
 
-      <h2>Usage</h2>
+      <h2 id="usage">Usage</h2>
       <p>
         Use <code>defaultChecked</code> for an uncontrolled toggle that manages
         its own state. Use <code>checked</code> with <code>onChange</code> when

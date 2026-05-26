@@ -1,0 +1,9 @@
+.wrapper {
+    padding: var(--space-3) 0 var(--space-2);
+  }
+  
+  .input {
+    width: 100%;
+    height: 32px;
+    font-size: var(--type-bodySm-size);
+  }

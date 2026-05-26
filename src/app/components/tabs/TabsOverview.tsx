@@ -9,7 +9,7 @@ export default function TabsOverview() {
     <>
       <Divider />
 
-      <h2>Underline</h2>
+      <h2 id="underline">Underline</h2>
       <p>
         The default tab style. Use for primary navigation within a page or
         content area.
@@ -61,7 +61,7 @@ export default function TabsOverview() {
 
       <Divider />
 
-      <h2>Pill</h2>
+      <h2 id="pill">Pill</h2>
       <p>
         Use the pill variant for secondary navigation or filtering within a
         section.
@@ -114,7 +114,7 @@ export default function TabsOverview() {
 
       <Divider />
 
-      <h2>Usage</h2>
+      <h2 id="usage">Usage</h2>
       <p>
         Pass a <code>tabs</code> array where each item has an <code>id</code>,{" "}
         <code>label</code>, and <code>content</code>. Use <code>variant</code> to

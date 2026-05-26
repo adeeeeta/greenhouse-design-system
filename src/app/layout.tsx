@@ -11,6 +11,9 @@ import "./docs.css";
 import "../styles/typography.css";
 import "../styles/spacing.css";
 import "../styles/rhythm.css";
+import SidebarNav from "@/components/SidebarNav/SidebarNav";
+import TextInput from "@/components/TextInput/TextInput";
+import SidebarSearchInput from "@/components/SidebarSearch/SidebarSearchInput";
 
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ['latin'],
@@ -72,36 +75,9 @@ export default function RootLayout({
             <div className="sidebarFooter">
               <ThemeToggle />
             </div>
+            <SidebarSearchInput />
           </div>
-            <nav className="nav" aria-label="Primary">
-                <div className="navGroup">
-                  <div className="navLabel">Foundations</div>
-                  <NavLink href="/foundations/color">Color</NavLink>
-                  <NavLink href="/foundations/typography">Typography</NavLink>
-                  <NavLink href="/foundations/spacing">Spacing</NavLink>
-                  <NavLink href="/foundations/icons">Icons</NavLink>
-                </div>
-                <div className="navGroup">
-                  <div className="navLabel">Components</div>
-                    <NavLink href="/components/alert">Alert</NavLink>
-                    <NavLink href="/components/avatar">Avatar</NavLink>
-                    <NavLink href="/components/badge">Badge</NavLink>
-                    <NavLink href="/components/button">Button</NavLink>
-                    <NavLink href="/components/card">Card</NavLink>
-                    <NavLink href="/components/checkbox">Checkbox</NavLink>
-                    <NavLink href="/components/divider">Divider</NavLink>
-                    <NavLink href="/components/dropdown">Dropdown</NavLink>
-                    <NavLink href="/components/modal">Modal</NavLink>
-                    <NavLink href="/components/radio">Radio</NavLink>
-                    <NavLink href="/components/spinner">Spinner</NavLink>
-                    <NavLink href="/components/tabs">Tabs</NavLink>
-                    <NavLink href="/components/tag">Tag</NavLink>
-                    <NavLink href="/components/text-input">Text Input</NavLink>
-                    <NavLink href="/components/toast">Toast</NavLink>
-                    <NavLink href="/components/toggle">Toggle</NavLink>
-                    <NavLink href="/components/tooltip">Tooltip</NavLink>
-                  </div>
-                </nav>
+          <SidebarNav />
               </aside>
               <main id="main-content" className="content" tabIndex={-1}>
                 {children}

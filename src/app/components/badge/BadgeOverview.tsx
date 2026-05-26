@@ -4,9 +4,7 @@ import Divider from "@/components/Divider"
 export default function BadgeOverview() {
   return (
     <>
-      <Divider />
-
-      <h2>Variants</h2>
+      <h2 id="variants">Variants</h2>
       <p>
         Five variants are available to match the semantic meaning of the status
         being communicated.
@@ -21,7 +19,7 @@ export default function BadgeOverview() {
 
       <Divider />
 
-      <h2>Sizes</h2>
+      <h2 id="sizes">Sizes</h2>
       <p>
         Two sizes are available. Use <code>sm</code> for compact contexts like
         table cells or tags, and <code>md</code> as the default.
@@ -33,7 +31,7 @@ export default function BadgeOverview() {
 
       <Divider />
 
-      <h2>Greenhouse examples</h2>
+      <h2 id="greenhouse-examples">Greenhouse examples</h2>
       <p>
         Badges work well for communicating plant health, growth stage, or care
         status at a glance.
@@ -48,7 +46,7 @@ export default function BadgeOverview() {
 
       <Divider />
 
-      <h2>Usage</h2>
+      <h2 id="usage">Usage</h2>
       <p>
         Pass a <code>label</code> string and a <code>variant</code> to control
         the color. Use <code>size</code> to switch between <code>sm</code> and{" "}

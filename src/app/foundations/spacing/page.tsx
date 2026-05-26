@@ -23,7 +23,7 @@ export default function SpacingPage() {
 
       <Divider />
 
-      <h2>Scale</h2>
+      <h2 id="scale">Scale</h2>
       <p>
         The spacing scale is based on a 4px grid. Each step is a multiple of
         4px, giving layouts a consistent rhythm.
@@ -62,7 +62,7 @@ export default function SpacingPage() {
 
       <Divider />
 
-      <h2>Usage rules</h2>
+      <h2 id="usage-rules">Usage rules</h2>
       <div style={{ display: "flex", flexDirection: "column", gap: "var(--space-4)" }}>
         <div>
           <p style={{ margin: "0 0 var(--space-2) 0", fontWeight: "var(--font-weight-medium)" }}>Always use tokens</p>
@@ -91,7 +91,7 @@ export default function SpacingPage() {
 
       <Divider />
 
-      <h2>Usage</h2>
+      <h2 id="usage">Usage</h2>
       <p>
         Reference spacing tokens in CSS via <code>var(--space-*)</code> or
         inline in JSX via{" "}

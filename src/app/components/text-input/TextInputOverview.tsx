@@ -6,7 +6,7 @@ export default function TextInputOverview() {
     <>
       <Divider />
 
-      <h2>Default</h2>
+      <h2 id="default">Default</h2>
       <p>
         A standard text input with a label. Use the <code>placeholder</code>{" "}
         prop to provide an example value.
@@ -18,7 +18,7 @@ export default function TextInputOverview() {
 
       <Divider />
 
-      <h2>Hint</h2>
+      <h2 id="hint">Hint</h2>
       <p>
         Use <code>hint</code> to provide additional context below the input.
       </p>
@@ -30,7 +30,7 @@ export default function TextInputOverview() {
 
       <Divider />
 
-      <h2>Error</h2>
+      <h2 id="error">Error</h2>
       <p>
         Use <code>error</code> to show a validation message below the input.
         The border and text turn red to draw attention to the issue.
@@ -43,7 +43,7 @@ export default function TextInputOverview() {
 
       <Divider />
 
-      <h2>Disabled</h2>
+      <h2 id="disabled">Disabled</h2>
       <p>
         Add <code>disabled</code> to prevent interaction. Disabled inputs
         are visually dimmed and cannot be focused.
@@ -57,7 +57,7 @@ export default function TextInputOverview() {
 
       <Divider />
 
-      <h2>Required</h2>
+      <h2 id="required">Required</h2>
       <p>
         Add <code>required</code> to mark a field as mandatory. A visual
         indicator is shown alongside the label.
@@ -70,7 +70,7 @@ export default function TextInputOverview() {
 
       <Divider />
 
-      <h2>Usage</h2>
+      <h2 id="usage">Usage</h2>
       <p>
         Always provide a <code>label</code> for accessibility. Use{" "}
         <code>hint</code> for helper text and <code>error</code> for

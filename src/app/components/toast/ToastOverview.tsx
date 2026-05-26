@@ -11,7 +11,7 @@ export default function ToastOverview() {
     <>
       <Divider />
 
-      <h2>Variants</h2>
+      <h2 id="variants">Variants</h2>
       <p>
         Four variants are available to match the nature of the notification —
         success, error, warning, and info.
@@ -45,7 +45,7 @@ export default function ToastOverview() {
 
       <Divider />
 
-      <h2>Auto dismiss</h2>
+      <h2 id="auto-dismiss">Auto dismiss</h2>
       <p>
         Toasts dismiss automatically after 4 seconds by default. Pass{" "}
         <code>autoDismiss: false</code> to keep them on screen until manually
@@ -68,7 +68,7 @@ export default function ToastOverview() {
 
       <Divider />
 
-      <h2>Greenhouse examples</h2>
+      <h2 id="greenhouse-examples">Greenhouse examples</h2>
       <p>
         Toasts work well for confirming actions like logging a watering, or
         surfacing time-sensitive alerts like frost warnings.
@@ -102,7 +102,7 @@ export default function ToastOverview() {
 
       <Divider />
 
-      <h2>Usage</h2>
+      <h2 id="usage">Usage</h2>
       <p>
         Import <code>useToast</code> and call <code>showToast</code> with a{" "}
         <code>message</code> and <code>variant</code>. The{" "}

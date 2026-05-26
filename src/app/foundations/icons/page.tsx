@@ -11,6 +11,7 @@ import {
   Barn, City, Mountains, Park, Tent
 } from "@/components/Icons"
 import Divider from "@/components/Divider"
+import { meta } from "./meta"
 
 const icons = [
   { label: "Alert Circle", name: "AlertCircle", component: AlertCircle, category: "Status" },
@@ -107,7 +108,7 @@ export default function IconsPage() {
       {categories.map((category) => (
         <div key={category}>
           <Divider />
-          <h2>{category}</h2>
+          <h2 id={category.toLowerCase().replace(/\s+/g, '-').replace(/&/g, '')}>{category}</h2>
           <p>{categoryDescriptions[category]}</p>
           <div style={{
             display: "grid",
@@ -177,7 +178,7 @@ export default function IconsPage() {
 
       <Divider />
 
-      <h2>Usage</h2>
+      <h2 id="usage">Usage</h2>
       <p>
         Import icons by name from <code>@/components/Icons</code>. Use the{" "}
         <code>size</code> prop to control dimensions — the default is{" "}

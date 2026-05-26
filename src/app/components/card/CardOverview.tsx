@@ -11,7 +11,7 @@ export default function CardOverview() {
     <>
       <Divider />
 
-      <h2>Variants</h2>
+      <h2 id="variants">Variants</h2>
       <p>
         Use <code>flat</code> for low-emphasis content, <code>elevated</code>{" "}
         as the default, and <code>outlined</code> for a bordered style without
@@ -34,7 +34,7 @@ export default function CardOverview() {
 
       <Divider />
 
-      <h2>With header and footer</h2>
+      <h2 id="with-header-and-footer">With header and footer</h2>
       <p>
         Pass <code>header</code> and <code>footer</code> props to add structured
         sections above and below the card body.
@@ -66,7 +66,7 @@ export default function CardOverview() {
 
       <Divider />
 
-      <h2>With cover image</h2>
+      <h2 id="with-cover-image">With cover image</h2>
       <p>
         Use the <code>cover</code> prop for an image or visual at the top of
         the card. The cover always spans the full width.
@@ -104,7 +104,7 @@ export default function CardOverview() {
 
       <Divider />
 
-      <h2>Interactive</h2>
+      <h2 id="interactive">Interactive</h2>
       <p>
         Add <code>onClick</code> or <code>href</code> to make the entire card
         clickable. Interactive cards lift on hover to signal they are actionable.
@@ -132,7 +132,7 @@ export default function CardOverview() {
 
       <Divider />
 
-      <h2>Usage</h2>
+      <h2 id="usage">Usage</h2>
       <p>
         Use <code>variant</code> to control the visual style. Pass{" "}
         <code>header</code> and <code>footer</code> as props to add structured
