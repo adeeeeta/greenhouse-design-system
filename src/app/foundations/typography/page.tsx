@@ -162,7 +162,6 @@ export default function TypographyPage() {
             fontFamily: "var(--font-display)",
             fontSize: "var(--type-h2-size)",
             lineHeight: "var(--type-h2-line)",
-            fontWeight: "var(--font-weight-semibold)",
           }}>
             Fraunces
           </p>

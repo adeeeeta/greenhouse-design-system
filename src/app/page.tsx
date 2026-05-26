@@ -72,7 +72,7 @@ export default function HomePage() {
             Greenhouse Design System
           </span>
         </div>
-        <h1 style={{ fontSize: "var(--type-display-size)", lineHeight: "var(--type-display-line)", margin: "0 0 var(--space-4) 0" }}>
+        <h1 style={{ fontFamily: "var(--font-display-face)", fontWeight: "var(--font-weight-500)", fontSize: "var(--type-display-size)", lineHeight: "var(--type-display-line)", margin: "0 0 var(--space-4) 0" }}>
           Good systems start<br />with good roots.
         </h1>
         <p style={{

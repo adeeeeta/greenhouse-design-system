@@ -97,13 +97,22 @@ export default function ButtonDemo() {
           <SelectControl
             label="Icon"
             value={icon}
-            options={[
-              { value: "none", label: "None" },
-              { value: "Check", label: "Check" },
-              { value: "X", label: "X" },
-              { value: "CaretDown", label: "Caret down" },
-              { value: "InfoCircle", label: "Info circle" },
-            ]}
+            options={
+              iconOnly
+                ? [
+                    { value: "Check", label: "Check" },
+                    { value: "X", label: "X" },
+                    { value: "CaretDown", label: "Caret down" },
+                    { value: "InfoCircle", label: "Info circle" },
+                  ]
+                : [
+                    { value: "none", label: "None" },
+                    { value: "Check", label: "Check" },
+                    { value: "X", label: "X" },
+                    { value: "CaretDown", label: "Caret down" },
+                    { value: "InfoCircle", label: "Info circle" },
+                  ]
+            }
             onChange={setIcon}
           />
 
@@ -115,9 +124,12 @@ export default function ButtonDemo() {
             onChange={setDisabled}
           />
           <ToggleControl
-            label="iconOnly"
+            label="Icon only"
             checked={iconOnly}
-            onChange={setIconOnly}
+            onChange={(val) => {
+              setIconOnly(val)
+              if (val && icon === "none") setIcon("Check")
+            }}
           />
 
           <Divider></Divider>

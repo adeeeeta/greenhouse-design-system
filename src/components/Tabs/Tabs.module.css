@@ -38,15 +38,15 @@
   .tab:focus-visible {
     outline: 2px solid var(--color-focus-ring);
     outline-offset: 2px;
-    border-radius: var(--radius-sm);
   }
   
   /* Underline tab */
   .tab.underline {
     padding: var(--space-2) var(--space-4);
-    border-bottom: 2px solid transparent;
     margin-bottom: -1px;
-    border-radius: 0;
+    border-radius: var(--radius-sm);
+    position: relative;
+    border: none;
   }
   
   .tab.underline:hover {
@@ -55,7 +55,16 @@
   
   .tab.underline.active {
     color: var(--color-primary);
-    border-bottom-color: var(--color-primary);
+  }
+
+  .tab.underline.active::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--color-primary);
   }
   
   /* Pill tab */

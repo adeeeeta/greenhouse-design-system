@@ -22,7 +22,7 @@ export default function ButtonDocsPage() {
           },
           {
             id: "demo",
-            label: "Demo (WIP)",
+            label: "Demo",
             content: <ButtonDemo />,
           },
         ]}

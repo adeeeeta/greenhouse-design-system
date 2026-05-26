@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
+import { Check, Copy } from "@/components/Icons/index"
 import styles from "./ComponentDemo.module.css"
 
 interface ComponentDemoProps {
@@ -11,6 +12,7 @@ interface ComponentDemoProps {
 
 export default function ComponentDemo({ preview, code, controls }: ComponentDemoProps) {
   const [inverseTheme, setInverseTheme] = useState<string>("dark")
+  const [copied, setCopied] = useState(false)
 
   useEffect(() => {
     const root = document.documentElement
@@ -26,19 +28,34 @@ export default function ComponentDemo({ preview, code, controls }: ComponentDemo
     return () => observer.disconnect()
   }, [])
 
+  function handleCopy() {
+    navigator.clipboard.writeText(code)
+    setCopied(true)
+    setTimeout(() => setCopied(false), 2000)
+  }
+
   return (
     <div className={styles.wrapper}>
-      <div className={styles.previewArea}>
-        <div className={styles.preview}>
-          {preview}
+      <div className={styles.preview}>
+        {preview}
+      </div>
+      <div className={styles.bottomRow}>
+        <div className={styles.controls}>
+          <p className={styles.controlsTitle}>Properties</p>
+          {controls}
         </div>
         <div className={styles.codeBlockInverse} data-theme={inverseTheme}>
+          <div className={styles.codeHeader}>
+            <button
+              className={styles.copyButton}
+              onClick={handleCopy}
+              aria-label="Copy code"
+            >
+              {copied ? <Check /> : <Copy />}
+            </button>
+          </div>
           <pre>{code}</pre>
         </div>
-      </div>
-      <div className={styles.controls}>
-        <p className={styles.controlsTitle}>Properties</p>
-        {controls}
       </div>
     </div>
   )
