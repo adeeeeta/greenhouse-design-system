@@ -44,17 +44,18 @@ export default function ComponentDemo({ preview, code, controls }: ComponentDemo
           <p className={styles.controlsTitle}>Properties</p>
           {controls}
         </div>
-        <div className={styles.codeBlockInverse} data-theme={inverseTheme}>
+        <div className={styles.codeBlockWrapper} data-theme={inverseTheme}>
           <div className={styles.codeHeader}>
             <button
               className={styles.copyButton}
               onClick={handleCopy}
               aria-label="Copy code"
+              data-theme={inverseTheme}
             >
               {copied ? <Check /> : <Copy />}
             </button>
           </div>
-          <pre>{code}</pre>
+          <pre className={styles.codeBlockPre}>{code}</pre>
         </div>
       </div>
     </div>
