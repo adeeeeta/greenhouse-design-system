@@ -6,6 +6,7 @@ import { NavLink } from "@/components/NavLink";
 import ThemeToggle from "@/components/ThemeToggle/ThemeToggle";
 import { ToastProvider } from "@/components/Toast";
 import { DocShell } from "@/components/DocShell";
+import { Analytics } from '@vercel/analytics/next';
 import "./globals.css";
 import "./docs.css";
 import "../styles/typography.css";
@@ -84,6 +85,7 @@ export default function RootLayout({
               </main>
             </DocShell>
         </ToastProvider>
+        <Analytics />
       </body>
     </html>
   );
