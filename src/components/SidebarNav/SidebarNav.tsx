@@ -24,6 +24,7 @@ import { meta as toastMeta } from "@/app/components/toast/meta";
 import { meta as toggleMeta } from "@/app/components/toggle/meta";
 import { meta as tooltipMeta } from "@/app/components/tooltip/meta";
 import styles from "./SidebarNav.module.css";
+import Badge from "@/components/Badge/Badge";
 
 const pages = [
   colorMeta, iconsMeta, typographyMeta, spacingMeta,
@@ -120,6 +121,13 @@ export default function SidebarNav() {
             <NavLink href="/components/toggle">Toggle</NavLink>
             <NavLink href="/components/tooltip">Tooltip</NavLink>
           </div>
+          <hr className="navDivider" />
+          <NavLink href="/field-notes">
+            <span style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+            Field Notes
+            <Badge label="v1.5.1" variant="info" size="sm" />
+            </span>
+          </NavLink>
         </nav>
       )}
     </>
