@@ -4,6 +4,7 @@ import Link from "next/link"
 import Divider from "@/components/Divider"
 import Badge from "@/components/Badge"
 import { Leaf } from "@/components/Icons"
+import styles from "./page.module.css"
 
 const foundations = [
   {
@@ -95,11 +96,7 @@ export default function HomePage() {
       <p>
       What every component is rooted in: color, type, spacing, and icons.
       </p>
-      <div style={{
-        display: "grid",
-        gridTemplateColumns: "repeat(2, 1fr)",
-        gap: "var(--space-4)",
-      }}>
+      <div className={styles.foundationsGrid}>
         {foundations.map((item) => (
           <Link
             key={item.href}
@@ -152,11 +149,7 @@ export default function HomePage() {
         {components.length} production-ready components, each documented with
         usage guidance, variants, and examples.
       </p>
-      <div style={{
-        display: "grid",
-        gridTemplateColumns: "repeat(3, 1fr)",
-        gap: "var(--space-3)",
-      }}>
+      <div className={styles.componentsGrid}>
         {components.map((item) => (
           <Link
             key={item.href}

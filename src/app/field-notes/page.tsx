@@ -9,6 +9,17 @@ export const metadata = {
 
 const entries = [
   {
+    version: "v1.6.1",
+    tag: "Patch",
+    tagType: "patch",
+    date: "June 19, 2026",
+    added: [],
+    changed: [],
+    fixed: [
+      "Fixed mobile resizing issues for cards on the Homepage",
+    ],
+  },
+  {
     version: "v1.6.0",
     tag: "Minor",
     tagType: "minor",

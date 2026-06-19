@@ -1,0 +1,32 @@
+/* =========================
+   Homepage layout grids
+   ========================= */
+
+/* Foundations grid
+   Fixed 2 columns, collapsing to 1 on narrow screens.
+   Capped at 2 (rather than fluid auto-fit) so 4 items
+   never wrap to an awkward 3 + 1. Mirrors .swatchGrid
+   in docs.css. Revisit if more foundations are added.
+   minmax(0, 1fr) lets columns shrink below content. */
+   .foundationsGrid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-4);
+  }
+  
+  @media (max-width: 600px) {
+    .foundationsGrid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  /* Components grid
+     Fluid auto-fit — fills as many columns as fit,
+     collapsing on its own as the viewport narrows.
+     The min(200px, 100%) lets a track shrink to full
+     width on very small screens instead of overflowing. */
+  .componentsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
+    gap: var(--space-3);
+  }
