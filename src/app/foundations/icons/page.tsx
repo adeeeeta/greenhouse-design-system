@@ -181,7 +181,7 @@ export default function IconsPage() {
       <h2 id="usage">Usage</h2>
       <p>
         Import icons by name from <code>@/components/Icons</code>. Use the{" "}
-        <code>size</code> prop to control dimensions — the default is{" "}
+        <code>size</code> prop to control dimensions. Default sizing for icons is{" "}
         <code>16</code>. Icons inherit color from their parent via{" "}
         <code>currentColor</code>.
       </p>
