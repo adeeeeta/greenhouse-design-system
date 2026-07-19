@@ -53,6 +53,9 @@
    /* Surfaces */
    --surface-primary: var(--neutral-0);
    --surface-muted:   var(--neutral-100);
+
+   /* Overlays */
+   --color-overlay: rgba(0, 0, 0, 0.4);
  
    /* Text */
    --text-primary:   var(--neutral-900);
@@ -298,6 +301,9 @@
        --accent-moss: #88a693;
        --accent-soil: #8a7f72;
        --accent-leaf: #161916;
+
+       /* Overlays */
+       --color-overlay: rgba(0, 0, 0, 0.6);
      
        /* Focus ring stronger on dark */
        --color-focus-ring: rgba(42, 122, 74, 0.55);
@@ -312,8 +318,8 @@
        --button-ghost-bg-hover: rgba(255, 255, 255, 0.08);
      
        /* Selection in dark mode: slightly brighter than action green for contrast */
- --color-selection: #3FA86A;
- --color-selection-contrast: #0b0d0b; /* optional if you prefer dark icon */
+      --color-selection: #3FA86A;
+      --color-selection-contrast: #0b0d0b; /* optional if you prefer dark icon */
  
        /* Dropdown menu shadow in dark mode */
        --dropdown-menu-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);

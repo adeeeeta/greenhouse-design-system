@@ -9,6 +9,17 @@ export const metadata = {
 
 const entries = [
   {
+    version: "v1.6.3",
+    tag: "Patch",
+    tagType: "patch",
+    date: "July 19, 2026",
+    added: [],
+    changed: [],
+    fixed: [
+      "Identified and fixed critical accessibility issues with the Modal and Tooltip components.",
+    ],
+  },
+  {
     version: "v1.6.2",
     tag: "Patch",
     tagType: "patch",

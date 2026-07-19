@@ -9,7 +9,8 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "next": "16.1.4",
+    "@floating-ui/react": "^0.27.20",
+    "next": "^16.2.10",
     "react": "19.2.3",
     "react-dom": "19.2.3"
   },
