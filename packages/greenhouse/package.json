@@ -1,0 +1,16 @@
+{
+  "name": "@greenhouse/react",
+  "version": "1.0.0",
+  "private": true,
+  "exports": {
+    ".": "./src/index.ts",
+    "./tokens.css": "./src/styles/tokens.css"
+  },
+  "dependencies": {
+    "@floating-ui/react": "^0.27.20"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  }
+}

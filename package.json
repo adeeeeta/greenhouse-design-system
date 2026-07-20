@@ -1,25 +1,11 @@
 {
-  "name": "design-system-site",
-  "version": "0.1.0",
+  "name": "greenhouse",
+  "version": "0.0.0",
   "private": true,
+  "workspaces": ["apps/*", "packages/*"],
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "eslint"
-  },
-  "dependencies": {
-    "@floating-ui/react": "^0.27.20",
-    "next": "^16.2.10",
-    "react": "19.2.3",
-    "react-dom": "19.2.3"
-  },
-  "devDependencies": {
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "eslint": "^9",
-    "eslint-config-next": "16.1.4",
-    "typescript": "^5"
+    "dev": "npm run dev --workspace apps/docs",
+    "dev:playground": "npm run dev --workspace apps/playground",
+    "build": "npm run build --workspace apps/docs"
   }
 }
