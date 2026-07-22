@@ -6,6 +6,6 @@
   "scripts": {
     "dev": "npm run dev --workspace apps/docs",
     "dev:playground": "npm run dev --workspace apps/playground",
-    "build": "npm run build --workspace apps/docs"
+    "build": "npm run build --workspace @adeeeeta/greenhouse && npm run build --workspace apps/docs"
   }
 }
