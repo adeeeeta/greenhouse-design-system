@@ -1,7 +1,8 @@
 import type { Metadata } from "next"
 import { Plus_Jakarta_Sans, Fira_Code, Fraunces } from "next/font/google"
-import { ToastProvider } from "@greenhouse/react"
-import "@greenhouse/react/tokens.css"
+import { ToastProvider } from "@adeeeeta/greenhouse"
+import "@adeeeeta/greenhouse/styles.css"
+import "@adeeeeta/greenhouse/tokens.css"
 import "./globals.css"
 
 const plusJakarta = Plus_Jakarta_Sans({

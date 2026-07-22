@@ -1,0 +1,90 @@
+/* Shared base — folded into every variant since there's no global .gh-text here */
+.display,
+.h1,
+.h2,
+.h3,
+.h4,
+.body,
+.bodyMedium,
+.bodySm,
+.bodySmMedium,
+.label,
+.labelStrong,
+.caption {
+  font-family: var(--font-sans);
+  font-feature-settings: "kern" 1, "liga" 1;
+  text-rendering: optimizeLegibility;
+}
+
+.display {
+  font-family: var(--font-display);
+  font-size: var(--type-display-size);
+  line-height: var(--type-display-line);
+  font-weight: var(--font-weight-regular);
+}
+
+.h1 {
+  font-size: var(--type-h1-size);
+  line-height: var(--type-h1-line);
+  font-weight: var(--font-weight-semibold);
+}
+
+.h2 {
+  font-size: var(--type-h2-size);
+  line-height: var(--type-h2-line);
+  font-weight: var(--font-weight-semibold);
+}
+
+.h3 {
+  font-size: var(--type-h3-size);
+  line-height: var(--type-h3-line);
+  font-weight: var(--font-weight-semibold);
+}
+
+.h4 {
+  font-size: var(--type-h4-size);
+  line-height: var(--type-h4-line);
+  font-weight: var(--font-weight-semibold);
+}
+
+.body {
+  font-size: var(--type-body-size);
+  line-height: var(--type-body-line);
+  font-weight: var(--font-weight-regular);
+}
+
+.bodyMedium {
+  font-size: var(--type-body-size);
+  line-height: var(--type-body-line);
+  font-weight: var(--font-weight-medium);
+}
+
+.bodySm {
+  font-size: var(--type-bodySm-size);
+  line-height: var(--type-bodySm-line);
+  font-weight: var(--font-weight-regular);
+}
+
+.bodySmMedium {
+  font-size: var(--type-bodySm-size);
+  line-height: var(--type-bodySm-line);
+  font-weight: var(--font-weight-medium);
+}
+
+.label {
+  font-size: var(--type-label-size);
+  line-height: var(--type-label-line);
+  font-weight: var(--font-weight-medium);
+}
+
+.labelStrong {
+  font-size: var(--type-label-size);
+  line-height: var(--type-label-line);
+  font-weight: var(--font-weight-semibold);
+}
+
+.caption {
+  font-size: var(--type-caption-size);
+  line-height: var(--type-caption-line);
+  font-weight: var(--font-weight-regular);
+}

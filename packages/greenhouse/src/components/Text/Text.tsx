@@ -1,4 +1,5 @@
 import React from "react";
+import styles from "./Text.module.css";
 
 type TextVariant =
   | "display"
@@ -15,18 +16,18 @@ type TextVariant =
   | "caption";
 
 const variantClass: Record<TextVariant, string> = {
-  display: "gh-display",
-  h1: "gh-h1",
-  h2: "gh-h2",
-  h3: "gh-h3",
-  h4: "gh-h4",
-  body: "gh-body",
-  bodyMedium: "gh-bodyMedium",
-  bodySm: "gh-bodySm",
-  bodySmMedium: "gh-bodySmMedium",
-  label: "gh-label",
-  labelStrong: "gh-labelStrong",
-  caption: "gh-caption",
+  display: styles.display,
+  h1: styles.h1,
+  h2: styles.h2,
+  h3: styles.h3,
+  h4: styles.h4,
+  body: styles.body,
+  bodyMedium: styles.bodyMedium,
+  bodySm: styles.bodySm,
+  bodySmMedium: styles.bodySmMedium,
+  label: styles.label,
+  labelStrong: styles.labelStrong,
+  caption: styles.caption,
 };
 
 type TextProps<T extends React.ElementType> = {
@@ -45,7 +46,6 @@ export default function Text<T extends React.ElementType = "p">({
 }: TextProps<T>) {
   const Comp = (as ?? "p") as React.ElementType;
   const cls = `${variantClass[variant]} ${className}`.trim();
-
   return (
     <Comp className={cls} {...rest}>
       {children}

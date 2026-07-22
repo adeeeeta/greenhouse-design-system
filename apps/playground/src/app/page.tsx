@@ -11,7 +11,7 @@ import {
   Tooltip,
   Modal,
   useToast,
-} from "@greenhouse/react"
+} from "@adeeeeta/greenhouse"
 
 export default function Home() {
   const { showToast } = useToast()
@@ -51,7 +51,7 @@ export default function Home() {
             margin: 0,
           }}
         >
-          Every component here renders from the <code>@greenhouse/react</code>{" "}
+          Every component here renders from the <code>@adeeeeta/greenhouse</code>{" "}
           package, styled entirely by its own tokens.
         </p>
       </header>
