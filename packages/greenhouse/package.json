@@ -1,7 +1,10 @@
 {
-  "name": "@greenhouse/react",
+  "name": "@adeeeeta/greenhouse",
   "version": "1.0.0",
   "private": true,
+  "scripts": {
+    "build": "vite build"
+  },
   "exports": {
     ".": "./src/index.ts",
     "./tokens.css": "./src/styles/tokens.css"
@@ -12,5 +15,10 @@
   "peerDependencies": {
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.0.3",
+    "vite": "^8.1.5",
+    "vite-plugin-dts": "^5.0.3"
   }
 }
