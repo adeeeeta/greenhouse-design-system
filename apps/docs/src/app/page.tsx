@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import styles from "./page.module.css"
-import { Divider, Badge, Leaf } from "@greenhouse/react";
+import { Divider, Badge, Leaf } from "@adeeeeta/greenhouse";
 
 const foundations = [
   {

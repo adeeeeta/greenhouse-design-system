@@ -1,7 +1,7 @@
 "use client"
 
 import styles from "./DemoControls.module.css"
-import { Dropdown, TextInput, Toggle, type DropdownOption } from "@greenhouse/react";
+import { Dropdown, TextInput, Toggle, type DropdownOption } from "@adeeeeta/greenhouse";
 
 interface SelectControlProps {
   label: string

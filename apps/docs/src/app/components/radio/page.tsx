@@ -2,7 +2,7 @@
 
 import RadioOverview from "./RadioOverview"
 import RadioDemo from "./RadioDemo"
-import { Tabs } from "@greenhouse/react";
+import { Tabs } from "@adeeeeta/greenhouse";
 
 export default function RadioDocsPage() {
   return (

@@ -2,7 +2,7 @@
 
 import AlertOverview from "./AlertOverview"
 import AlertDemo from "./AlertDemo"
-import { Tabs } from "@greenhouse/react";
+import { Tabs } from "@adeeeeta/greenhouse";
 
 export default function AlertDocsPage() {
   return (

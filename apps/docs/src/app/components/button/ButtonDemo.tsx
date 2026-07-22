@@ -3,7 +3,7 @@
 import { useState } from "react"
 import ComponentDemo from "../_demo/ComponentDemo"
 import { SelectControl, ToggleControl, TextControl } from "../_demo/DemoControls"
-import { Button, Check, X, CaretDown, InfoCircle, Divider } from "@greenhouse/react";
+import { Button, Check, X, CaretDown, InfoCircle, Divider } from "@adeeeeta/greenhouse";
 
 const iconMap: Record<string, React.ReactNode | null> = {
   none: null,

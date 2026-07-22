@@ -1,4 +1,4 @@
-import { Tooltip, Button, Divider } from "@greenhouse/react";
+import { Tooltip, Button, Divider } from "@adeeeeta/greenhouse";
 
 export default function TooltipOverview() {
   return (

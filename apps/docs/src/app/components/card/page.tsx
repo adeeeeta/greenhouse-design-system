@@ -2,7 +2,7 @@
 
 import CardOverview from "./CardOverview"
 import CardDemo from "./CardDemo"
-import { Tabs } from "@greenhouse/react";
+import { Tabs } from "@adeeeeta/greenhouse";
 
 export default function CardPage() {
   return (

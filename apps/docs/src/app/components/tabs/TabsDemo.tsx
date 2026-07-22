@@ -3,7 +3,7 @@
 import { useState } from "react"
 import ComponentDemo from "../_demo/ComponentDemo"
 import { SelectControl } from "../_demo/DemoControls"
-import { Tabs } from "@greenhouse/react";
+import { Tabs } from "@adeeeeta/greenhouse";
 
 function generateCode(props: {
   variant: string

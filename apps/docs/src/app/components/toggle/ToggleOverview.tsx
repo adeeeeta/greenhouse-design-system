@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Toggle, Divider } from "@greenhouse/react";
+import { Toggle, Divider } from "@adeeeeta/greenhouse";
 
 export default function ToggleOverview() {
   const [controlled, setControlled] = useState(false)

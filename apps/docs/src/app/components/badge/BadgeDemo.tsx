@@ -3,7 +3,7 @@
 import { useState } from "react"
 import ComponentDemo from "../_demo/ComponentDemo"
 import { SelectControl, TextControl } from "../_demo/DemoControls"
-import { Badge } from "@greenhouse/react";
+import { Badge } from "@adeeeeta/greenhouse";
 
 function generateCode(props: {
   variant: string

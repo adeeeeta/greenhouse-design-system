@@ -1,4 +1,4 @@
-import { Radio, Divider } from "@greenhouse/react";
+import { Radio, Divider } from "@adeeeeta/greenhouse";
 
 export default function RadioOverview() {
   return (

@@ -1,4 +1,4 @@
-import { Button, Spinner, Divider, CaretDown, X, Check, InfoCircle } from "@greenhouse/react";
+import { Button, Spinner, Divider, CaretDown, X, Check, InfoCircle } from "@adeeeeta/greenhouse";
 
 export default function ButtonOverview() {
   return (

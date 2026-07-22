@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Dropdown, Divider } from "@greenhouse/react";
+import { Dropdown, Divider } from "@adeeeeta/greenhouse";
 
 const zoneOptions = [
   { value: "tropical", label: "Tropical zone" },

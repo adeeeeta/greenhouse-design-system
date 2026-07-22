@@ -2,7 +2,7 @@
 
 import BadgeOverview from "./BadgeOverview"
 import BadgeDemo from "./BadgeDemo"
-import { Tabs } from "@greenhouse/react";
+import { Tabs } from "@adeeeeta/greenhouse";
 
 export default function BadgeDocsPage() {
   return (

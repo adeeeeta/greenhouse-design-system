@@ -1,4 +1,4 @@
-import { Divider } from "@greenhouse/react";
+import { Divider } from "@adeeeeta/greenhouse";
 
 const tokens = [
   { name: "--space-1", value: "4px" },

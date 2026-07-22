@@ -2,7 +2,7 @@
 
 import ButtonOverview from "./ButtonOverview"
 import ButtonDemo from "./ButtonDemo"
-import { Tabs } from "@greenhouse/react";
+import { Tabs } from "@adeeeeta/greenhouse";
 
 export default function ButtonDocsPage() {
   return (

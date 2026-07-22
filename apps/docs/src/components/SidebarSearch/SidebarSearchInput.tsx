@@ -2,7 +2,7 @@
 
 import { useSidebarSearch } from "./SidebarSearchContext";
 import styles from "./SidebarSearchInput.module.css";
-import { TextInput } from "@greenhouse/react";
+import { TextInput } from "@adeeeeta/greenhouse";
 
 export default function SidebarSearchInput() {
   const { query, setQuery } = useSidebarSearch();

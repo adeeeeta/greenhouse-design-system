@@ -2,7 +2,7 @@
 
 import ToastOverview from "./ToastOverview"
 import ToastDemo from "./ToastDemo"
-import { Tabs } from "@greenhouse/react";
+import { Tabs } from "@adeeeeta/greenhouse";
 
 export default function ToastPage() {
   return (

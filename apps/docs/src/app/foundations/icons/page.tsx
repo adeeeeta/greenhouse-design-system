@@ -10,7 +10,7 @@ import {
   Moon, MoonStars, Snowflake, Sun, SunHorizon, Wind,
   Barn, City, Mountains, Park, Tent,
   Divider,
-} from "@greenhouse/react"
+} from "@adeeeeta/greenhouse"
 import { meta } from "./meta"
 
 const icons = [

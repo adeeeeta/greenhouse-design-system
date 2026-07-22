@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Tag, Divider, CheckCircle, AlertCircle, InfoCircle } from "@greenhouse/react";
+import { Tag, Divider, CheckCircle, AlertCircle, InfoCircle } from "@adeeeeta/greenhouse";
 
 export default function TagOverview() {
   const [tags, setTags] = useState([

@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Modal, Button, TextInput, Divider, Badge } from "@greenhouse/react";
+import { Modal, Button, TextInput, Divider, Badge } from "@adeeeeta/greenhouse";
 
 export default function ModalOverview() {
   const [basicOpen, setBasicOpen] = useState(false)

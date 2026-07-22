@@ -2,7 +2,7 @@
 
 import TooltipOverview from "./TooltipOverview"
 import TooltipDemo from "./TooltipDemo"
-import { Tabs } from "@greenhouse/react";
+import { Tabs } from "@adeeeeta/greenhouse";
 
 export default function TooltipPage() {
   return (

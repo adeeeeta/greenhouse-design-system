@@ -1,4 +1,4 @@
-import { Spinner, Button, Divider } from "@greenhouse/react";
+import { Spinner, Button, Divider } from "@adeeeeta/greenhouse";
 
 export default function SpinnerOverview() {
   return (

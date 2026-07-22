@@ -1,6 +1,6 @@
 "use client"
 
-import { useToast, Button, Divider } from "@greenhouse/react";
+import { useToast, Button, Divider } from "@adeeeeta/greenhouse";
 
 
 export default function ToastOverview() {

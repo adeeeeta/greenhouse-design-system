@@ -2,7 +2,7 @@
 
 import TabsOverview from "./TabsOverview"
 import TabsDemo from "./TabsDemo"
-import { Tabs } from "@greenhouse/react";
+import { Tabs } from "@adeeeeta/greenhouse";
 
 export default function TabsPage() {
   return (

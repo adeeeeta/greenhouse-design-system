@@ -3,7 +3,7 @@
 import { useState } from "react"
 import ComponentDemo from "../_demo/ComponentDemo"
 import { ToggleControl, TextControl } from "../_demo/DemoControls"
-import { Radio, Divider } from "@greenhouse/react";
+import { Radio, Divider } from "@adeeeeta/greenhouse";
 
 function generateCode(props: {
   label: string

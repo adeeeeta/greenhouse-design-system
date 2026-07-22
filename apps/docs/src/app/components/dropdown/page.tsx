@@ -2,7 +2,7 @@
 
 import DropdownOverview from "./DropdownOverview"
 import DropdownDemo from "./DropdownDemo"
-import { Tabs } from "@greenhouse/react";
+import { Tabs } from "@adeeeeta/greenhouse";
 
 export default function DropdownDocsPage() {
   return (

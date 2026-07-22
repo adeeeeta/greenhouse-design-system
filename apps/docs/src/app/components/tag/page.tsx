@@ -2,7 +2,7 @@
 
 import TagOverview from "./TagOverview"
 import TagDemo from "./TagDemo"
-import { Tabs } from "@greenhouse/react";
+import { Tabs } from "@adeeeeta/greenhouse";
 
 export default function TagPage() {
   return (

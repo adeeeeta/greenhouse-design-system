@@ -1,6 +1,6 @@
 "use client"
 
-import { Text, Divider, Tabs } from "@greenhouse/react";
+import { Text, Divider, Tabs } from "@adeeeeta/greenhouse";
 
 
 function ScaleDisplay({ font }: { font: string }) {

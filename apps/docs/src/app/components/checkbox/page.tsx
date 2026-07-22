@@ -2,7 +2,7 @@
 
 import CheckboxOverview from "./CheckboxOverview"
 import CheckboxDemo from "./CheckboxDemo"
-import { Tabs } from "@greenhouse/react";
+import { Tabs } from "@adeeeeta/greenhouse";
 
 export default function CheckboxDocsPage() {
   return (

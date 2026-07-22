@@ -1,4 +1,4 @@
-import { TextInput, Divider } from "@greenhouse/react";
+import { TextInput, Divider } from "@adeeeeta/greenhouse";
 
 export default function TextInputOverview() {
   return (

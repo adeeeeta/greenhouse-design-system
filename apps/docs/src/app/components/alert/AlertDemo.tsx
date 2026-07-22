@@ -3,7 +3,7 @@
 import { useState } from "react"
 import ComponentDemo from "../_demo/ComponentDemo"
 import { SelectControl, ToggleControl, TextControl } from "../_demo/DemoControls"
-import { Alert, Divider } from "@greenhouse/react";
+import { Alert, Divider } from "@adeeeeta/greenhouse";
 
 function generateCode(props: {
   variant: string

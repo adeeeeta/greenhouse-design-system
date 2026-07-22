@@ -1,6 +1,6 @@
 "use client"
 
-import { Card, Badge, Button, Divider, Check } from "@greenhouse/react";
+import { Card, Badge, Button, Divider, Check } from "@adeeeeta/greenhouse";
 
 
 export default function CardOverview() {

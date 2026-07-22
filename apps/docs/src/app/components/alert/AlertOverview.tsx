@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Alert, Divider } from "@greenhouse/react";
+import { Alert, Divider } from "@adeeeeta/greenhouse";
 
 export default function AlertOverview() {
   const [dismissed, setDismissed] = useState(false)

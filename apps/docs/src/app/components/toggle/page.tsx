@@ -2,7 +2,7 @@
 
 import ToggleOverview from "./ToggleOverview"
 import ToggleDemo from "./ToggleDemo"
-import { Tabs } from "@greenhouse/react";
+import { Tabs } from "@adeeeeta/greenhouse";
 
 export default function TogglePage() {
   return (

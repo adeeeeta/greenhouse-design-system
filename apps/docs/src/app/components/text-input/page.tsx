@@ -2,7 +2,7 @@
 
 import TextInputOverview from "./TextInputOverview"
 import TextInputDemo from "./TextInputDemo"
-import { Tabs } from "@greenhouse/react";
+import { Tabs } from "@adeeeeta/greenhouse";
 
 export default function TextInputDocsPage() {
   return (

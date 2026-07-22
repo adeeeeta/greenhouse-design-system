@@ -2,7 +2,7 @@
 
 import SpinnerOverview from "./SpinnerOverview"
 import SpinnerDemo from "./SpinnerDemo"
-import { Tabs } from "@greenhouse/react";
+import { Tabs } from "@adeeeeta/greenhouse";
 
 export default function SpinnerPage() {
   return (

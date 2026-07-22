@@ -1,4 +1,4 @@
-import { Divider } from "@greenhouse/react";
+import { Divider } from "@adeeeeta/greenhouse";
 
 export default function DividerPage() {
   return (

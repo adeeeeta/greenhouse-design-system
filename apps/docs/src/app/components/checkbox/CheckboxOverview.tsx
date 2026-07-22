@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Checkbox, Divider } from "@greenhouse/react";
+import { Checkbox, Divider } from "@adeeeeta/greenhouse";
 
 export default function CheckboxOverview() {
   const [checked, setChecked] = useState(true)

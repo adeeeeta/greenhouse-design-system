@@ -1,4 +1,4 @@
-import { Badge, Divider } from "@greenhouse/react";
+import { Badge, Divider } from "@adeeeeta/greenhouse";
 
 export default function BadgeOverview() {
   return (

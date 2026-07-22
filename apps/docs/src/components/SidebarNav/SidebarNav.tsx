@@ -24,7 +24,7 @@ import { meta as toastMeta } from "@/app/components/toast/meta";
 import { meta as toggleMeta } from "@/app/components/toggle/meta";
 import { meta as tooltipMeta } from "@/app/components/tooltip/meta";
 import styles from "./SidebarNav.module.css";
-import { Badge } from "@greenhouse/react";
+import { Badge } from "@adeeeeta/greenhouse";
 
 const pages = [
   colorMeta, iconsMeta, typographyMeta, spacingMeta,

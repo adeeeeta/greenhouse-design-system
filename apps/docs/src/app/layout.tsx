@@ -5,6 +5,12 @@ import Link from "next/link";
 import { NavLink } from "@/components/NavLink";
 import ThemeToggle from "@/components/ThemeToggle/ThemeToggle";
 import { DocShell } from "@/components/DocShell";
+import "@adeeeeta/greenhouse/styles.css";
+import "./globals.css";
+import "./docs.css";
+import "../styles/typography.css";
+import "../styles/spacing.css";
+import "../styles/rhythm.css";
 import "./globals.css";
 import "./docs.css";
 import "../styles/typography.css";
@@ -12,7 +18,7 @@ import "../styles/spacing.css";
 import "../styles/rhythm.css";
 import SidebarNav from "@/components/SidebarNav/SidebarNav";
 import SidebarSearchInput from "@/components/SidebarSearch/SidebarSearchInput";
-import { ToastProvider, TextInput } from "@greenhouse/react";
+import { ToastProvider, TextInput } from "@adeeeeta/greenhouse";
 
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ['latin'],

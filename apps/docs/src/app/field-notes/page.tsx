@@ -1,5 +1,5 @@
 import styles from "./field-notes.module.css";
-import { Divider, Card, Badge } from "@greenhouse/react";
+import { Divider, Card, Badge } from "@adeeeeta/greenhouse";
 
 export const metadata = {
   title: "Field Notes — Greenhouse Design System",

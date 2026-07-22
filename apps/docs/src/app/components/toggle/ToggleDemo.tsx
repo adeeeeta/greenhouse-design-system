@@ -3,7 +3,7 @@
 import { useState } from "react"
 import ComponentDemo from "../_demo/ComponentDemo"
 import { ToggleControl } from "../_demo/DemoControls"
-import { Toggle, Divider } from "@greenhouse/react";
+import { Toggle, Divider } from "@adeeeeta/greenhouse";
 
 function generateCode(props: {
   checked: boolean

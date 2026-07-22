@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react"
 import styles from "./ComponentDemo.module.css"
-import { Check, Copy } from "@greenhouse/react";
+import { Check, Copy } from "@adeeeeta/greenhouse";
 
 interface ComponentDemoProps {
   preview: React.ReactNode

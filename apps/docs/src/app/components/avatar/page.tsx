@@ -2,7 +2,7 @@
 
 import AvatarOverview from "./AvatarOverview"
 import AvatarDemo from "./AvatarDemo"
-import { Tabs } from "@greenhouse/react";
+import { Tabs } from "@adeeeeta/greenhouse";
 
 export default function AvatarPage() {
   return (

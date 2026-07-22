@@ -3,7 +3,7 @@
 import { useState } from "react"
 import ComponentDemo from "../_demo/ComponentDemo"
 import { ToggleControl, TextControl } from "../_demo/DemoControls"
-import { Dropdown, Divider } from "@greenhouse/react";
+import { Dropdown, Divider } from "@adeeeeta/greenhouse";
 
 const demoOptions = [
   { value: "tropical", label: "Tropical zone" },

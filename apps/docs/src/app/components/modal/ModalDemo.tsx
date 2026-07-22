@@ -3,7 +3,7 @@
 import { useState } from "react"
 import ComponentDemo from "../_demo/ComponentDemo"
 import { SelectControl, ToggleControl, TextControl } from "../_demo/DemoControls"
-import { Modal, Button, Divider } from "@greenhouse/react";
+import { Modal, Button, Divider } from "@adeeeeta/greenhouse";
 
 function generateCode(props: {
   size: string

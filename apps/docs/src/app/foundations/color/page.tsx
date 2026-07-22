@@ -1,6 +1,6 @@
 import Swatch from "@/components/Swatch/Swatch"
 import { meta } from "./meta"
-import { Divider } from "@greenhouse/react";
+import { Divider } from "@adeeeeta/greenhouse";
 
 export default function ColorPage() {
   return (

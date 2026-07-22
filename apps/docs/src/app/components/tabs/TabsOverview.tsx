@@ -1,6 +1,6 @@
 "use client"
 
-import { Tabs, Badge, Divider } from "@greenhouse/react";
+import { Tabs, Badge, Divider } from "@adeeeeta/greenhouse";
 
 
 export default function TabsOverview() {

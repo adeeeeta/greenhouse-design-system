@@ -3,7 +3,7 @@
 import { useState } from "react"
 import ComponentDemo from "../_demo/ComponentDemo"
 import { SelectControl, TextControl } from "../_demo/DemoControls"
-import { Spinner } from "@greenhouse/react";
+import { Spinner } from "@adeeeeta/greenhouse";
 
 function generateCode(props: {
   size: string

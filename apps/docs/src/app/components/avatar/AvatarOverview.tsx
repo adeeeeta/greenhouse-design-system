@@ -1,4 +1,4 @@
-import { Avatar, Divider } from "@greenhouse/react";
+import { Avatar, Divider } from "@adeeeeta/greenhouse";
 
 export default function AvatarOverview() {
   return (

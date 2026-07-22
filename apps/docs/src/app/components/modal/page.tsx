@@ -2,7 +2,7 @@
 
 import ModalOverview from "./ModalOverview"
 import ModalDemo from "./ModalDemo"
-import { Tabs } from "@greenhouse/react";
+import { Tabs } from "@adeeeeta/greenhouse";
 
 export default function ModalPage() {
   return (
