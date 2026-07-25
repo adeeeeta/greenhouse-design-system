@@ -125,7 +125,7 @@ export default function SidebarNav() {
           <NavLink href="/field-notes">
             <span style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
             Field Notes
-            <Badge label="v1.6.3" variant="info" size="sm" />
+            <Badge label="v1.7.0" variant="info" size="sm" />
             </span>
           </NavLink>
           <NavLink href="/resources">Resources</NavLink>
