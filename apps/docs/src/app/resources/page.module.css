@@ -1,0 +1,26 @@
+.linkGrid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-4);
+    margin-top: var(--space-4);
+  }
+  
+  .linkName {
+    display: block;
+    font-weight: var(--font-weight-semibold);
+    font-size: var(--type-body-size);
+    color: var(--color-text);
+  }
+  
+  .linkDescription {
+    margin: var(--space-1) 0 0 0;
+    font-size: var(--type-bodySm-size);
+    color: var(--color-text-muted);
+    line-height: 1.6;
+  }
+  
+  @media (max-width: 1024px) {
+    .linkGrid {
+      grid-template-columns: 1fr;
+    }
+  }

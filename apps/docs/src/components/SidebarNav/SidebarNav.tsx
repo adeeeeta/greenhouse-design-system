@@ -128,6 +128,7 @@ export default function SidebarNav() {
             <Badge label="v1.6.3" variant="info" size="sm" />
             </span>
           </NavLink>
+          <NavLink href="/resources">Resources</NavLink>
         </nav>
       )}
     </>

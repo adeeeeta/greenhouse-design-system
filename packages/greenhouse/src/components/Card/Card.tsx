@@ -7,6 +7,8 @@ type CardVariant = "flat" | "elevated" | "outlined"
 interface CardProps {
     variant?: CardVariant
     href?: string
+    target?: string
+    rel?: string
     onClick?: () => void
     cover?: React.ReactNode
     header?: React.ReactNode
@@ -19,6 +21,8 @@ interface CardProps {
   export default function Card({
     variant = "elevated",
     href,
+    target,
+    rel,
     onClick,
     cover,
     header,
@@ -60,12 +64,20 @@ interface CardProps {
   )
 
   if (href) {
+    const computedRel =
+      rel ?? (target === "_blank" ? "noopener noreferrer" : undefined)
     return (
-      <a href={href} className={classes} style={style}>
-        {content}
-      </a>
-    )
-  } 
+      <a
+        href={href}
+        target={target}
+          rel={computedRel}
+          className={classes}
+          style={style}
+        >
+          {content}
+        </a>
+      )
+    }
 
   if (onClick) {
     return (
