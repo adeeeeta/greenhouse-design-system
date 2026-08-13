@@ -7,6 +7,19 @@ export const metadata = {
 
 const entries = [
   {
+    version: "v1.7.0",
+    tag: "Minor",
+    tagType: "minor",
+    date: "July 25, 2026",
+    added: [
+      "Resources page — install and setup instructions plus links to the npm package, GitHub repo, and Figma file",
+      "Reusable CodeBlock component with copy-to-clipboard and inverse-theme code display",
+      "Card now supports target and rel props for external links, opening in a new tab with safe rel defaults",
+    ],
+    changed: [],
+    fixed: [],
+  },
+  {
     version: "v1.6.3",
     tag: "Patch",
     tagType: "patch",
