@@ -19,16 +19,16 @@
 }
 
 .box {
-  width: 18px;
-  height: 18px;
-  border-radius: 5px;
+  width: 20px;
+  height: 20px;
+  border-radius: var(--radius-sm);
   border: 1px solid var(--color-border-strong);
   background: var(--color-surface);
   display: inline-block;
   transition: border-color 120ms ease, box-shadow 120ms ease, background 120ms ease;
 
   /* Prevent icon from shrinking */
-  flex: 0 0 18px;
+  flex: 0 0 20px;
 }
 
 .row:hover .box {
