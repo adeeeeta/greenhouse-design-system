@@ -16,7 +16,6 @@ sections:
       - level: should
         statement: Use Dropdown to choose one option from a longer list, such as a growing zone.
         checkedBy: manual
-      # TODO(adi): confirm the cut-off. Inferred, not from the docsite.
       - level: should-not
         statement: Do not use Dropdown for five or fewer options that fit on screen; use <dsds:radio> so every choice stays visible.
         alternatives:

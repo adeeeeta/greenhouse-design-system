@@ -35,7 +35,6 @@ sections:
       - level: should
         statement: Set type to match the content, such as email, number or search, so phones show the right keyboard.
         checkedBy: manual
-      # TODO(adi): confirm. Inferred, not from the docsite.
       - level: should
         statement: Write error messages that say how to fix the problem, such as "Enter a watering interval in days".
         checkedBy: manual

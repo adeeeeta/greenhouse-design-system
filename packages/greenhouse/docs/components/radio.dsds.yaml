@@ -36,7 +36,6 @@ sections:
         statement: Wrap the group in a fieldset with a legend that asks the question, such as "Growth stage".
         checkedBy: manual
         tags: [accessibility]
-      # TODO(adi): confirm. Inferred, not from the docsite.
       - level: should
         statement: Preselect the most common option unless choosing nothing is a valid answer.
         checkedBy: manual

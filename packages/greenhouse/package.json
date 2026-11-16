@@ -18,7 +18,8 @@
     "build": "vite build",
     "docs:validate": "dsds-validate docs/index.dsds.yaml docs/components/*.dsds.yaml",
     "docs:lint": "dsds-lint docs/index.dsds.yaml docs/components/*.dsds.yaml",
-    "docs:format": "dsds-format docs"
+    "docs:format": "dsds-format docs",
+    "docs:todos": "! grep -rn 'TODO(adi)' docs"
   },
   "dependencies": {
     "@floating-ui/react": "^0.27.20"

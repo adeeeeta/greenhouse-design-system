@@ -72,6 +72,18 @@ refs:
   - href: ./components/form-field.dsds.yaml
     rel: file
     role: FormField component
+  - href: ./components/badge.dsds.yaml
+    rel: file
+    role: Badge component
+  - href: ./components/tag.dsds.yaml
+    rel: file
+    role: Tag component
+  - href: ./components/tabs.dsds.yaml
+    rel: file
+    role: Tabs component
+  - href: ./components/tooltip.dsds.yaml
+    rel: file
+    role: Tooltip component
   - href: https://www.npmjs.com/package/@adeeeeta/greenhouse
     rel: source
     role: npm package
