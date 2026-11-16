@@ -1,0 +1,79 @@
+kind: component
+id: tabs
+name: Tabs
+description: Switches between related views of the same content in place, such as a plant's overview, care schedule and history.
+
+metadata:
+  updated: {date: 2026-11-16}
+  tags: [navigation]
+  status: {status: stable}
+
+sections:
+  - kind: guidelines
+    for: all
+    framing: when-to-use
+    items:
+      - level: should
+        statement: Use Tabs to switch between peer views of one subject without leaving the page.
+        checkedBy: manual
+      - level: should-not
+        statement: Do not use Tabs when each view needs its own URL or should work with the back button; use <dsds:link> to separate pages.
+        alternatives:
+          - to: link
+        checkedBy: manual
+      - level: should-not
+        statement: Do not use Tabs for steps the user must complete in order.
+        checkedBy: manual
+  - kind: guidelines
+    for: all
+    items:
+      - level: should
+        statement: Use underline (the default) for the main views of a page or area, and pill for secondary navigation or filtering within a section.
+        checkedBy: manual
+      - level: should
+        statement: Keep tab labels to one or two words, and use no more than five tabs.
+        checkedBy: manual
+  - kind: guidelines
+    for: agent
+    title: Common misreadings
+    items:
+      - level: must
+        statement: Pass tabs as an array of objects with id, label and content. Do not write Tab children.
+        checkedBy: manual
+      - level: must
+        statement: Set the starting tab with defaultTab. Tabs is uncontrolled; there is no activeTab or onTabChange, so a URL or parent state can't change the open tab.
+        checkedBy: manual
+      - level: must
+        statement: Use tab ids that are unique on the whole page, not just within one Tabs. The ids become element ids.
+        checkedBy: manual
+      - level: must
+        statement: Expect every tab's content to be rendered at once and hidden. Keep heavy content, such as large images or data fetches, out of tabs that may never be opened.
+        checkedBy: manual
+
+alternatives:
+  - to: link
+
+refs:
+  - href: https://greenhouse-design-system.vercel.app/components/tabs
+    rel: demo
+    role: docsite
+
+sourceFiles:
+  - platform: react
+    file: components/Tabs/Tabs.tsx
+
+imports:
+  - platform: react
+    code: 'import { Tabs } from "@adeeeeta/greenhouse";'
+    package: "@adeeeeta/greenhouse"
+
+traits:
+  - traitType: variant
+    kind: enum
+    id: variant
+    description: Visual style of the tab list.
+    values:
+      - id: underline
+        description: The default. The main views of a page or area.
+      - id: pill
+        description: Secondary navigation or filtering within a section.
