@@ -1,0 +1,106 @@
+kind: component
+id: alert
+name: Alert
+description: Shows a persistent message about the page or a form, in success, warning, error or info styles.
+
+metadata:
+  updated: {date: 2026-11-15}
+  tags: [feedback]
+  status: {status: stable}
+
+sections:
+  - kind: guidelines
+    for: all
+    framing: when-to-use
+    items:
+      - level: should
+        statement: Use Alert for a message that stays on the page until the problem is fixed or the user dismisses it.
+        checkedBy: manual
+      - level: should-not
+        statement: Do not use Alert to confirm an action that just finished; use <dsds:toast>.
+        alternatives:
+          - to: toast
+        checkedBy: manual
+      - level: should-not
+        statement: Do not use Alert when the user must make a decision before continuing; use <dsds:modal>.
+        alternatives:
+          - to: modal
+        checkedBy: manual
+  - kind: guidelines
+    for: all
+    items:
+      - level: must
+        statement: Set variant to match the message. Use error for something that failed, warning for something that needs attention soon, success for a completed outcome and info for neutral context.
+        checkedBy: manual
+      - level: should
+        statement: Place an error alert next to the form or content it describes, not only at the top of the page.
+        checkedBy: manual
+      # TODO(adi): confirm. Inferred from the docsite ("non-critical alerts the user can choose to hide").
+      - level: should-not
+        statement: Do not make error alerts dismissible. They should disappear when the problem is fixed.
+        checkedBy: manual
+      - level: must-not
+        statement: Do not add padding to content inside an Alert. It already pads itself.
+        checkedBy: manual
+      - level: must-not
+        statement: Do not pass paragraphs, lists or other block content as children. The body renders inside a span, so keep it to a sentence or two of text.
+        checkedBy: manual
+  - kind: guidelines
+    for: agent
+    title: Common misreadings
+    items:
+      - level: must
+        statement: Always pass variant. It is required and has no default.
+        checkedBy: manual
+      - level: must
+        statement: Remove the alert yourself when onDismiss fires. The component shows the close button but does not hide itself.
+        checkedBy: manual
+  - kind: definitions
+    for: all
+    context: anatomy
+    items:
+      - id: icon
+        term: Icon
+        definition: Set automatically by variant. It can't be changed.
+      - id: title
+        term: Title
+        definition: Optional short heading above the body, passed as title.
+      - id: body
+        term: Body
+        definition: The message, passed as children.
+      - id: dismiss
+        term: Dismiss button
+        definition: Shown only when onDismiss is passed.
+
+alternatives:
+  - to: toast
+  - to: modal
+
+refs:
+  - href: https://greenhouse-design-system.vercel.app/components/alert
+    rel: demo
+    role: docsite
+
+sourceFiles:
+  - platform: react
+    file: components/Alert/Alert.tsx
+
+imports:
+  - platform: react
+    code: 'import { Alert } from "@adeeeeta/greenhouse";'
+    package: "@adeeeeta/greenhouse"
+
+traits:
+  - traitType: variant
+    kind: enum
+    id: variant
+    description: Sets the color and icon. Required.
+    values:
+      - id: success
+        description: A completed outcome.
+      - id: warning
+        description: Something that needs attention soon.
+      - id: error
+        description: Something failed and needs fixing.
+      - id: info
+        description: Neutral context or a heads-up.
