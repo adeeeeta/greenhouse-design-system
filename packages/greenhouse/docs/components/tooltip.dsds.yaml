@@ -24,15 +24,15 @@ sections:
   - kind: guidelines
     for: all
     items:
-      - level: must-not
-        statement: Do not put information the user needs only in a tooltip. It never appears on touch screens.
+      - level: must
+        statement: On an icon-only button, still set aria-label, using the same words as the tooltip.
         checkedBy: manual
         tags: [accessibility]
       - level: should
         statement: Keep the content to a few words, such as "Water now".
         checkedBy: manual
-      - level: must
-        statement: On an icon-only button, still set aria-label, using the same words as the tooltip.
+      - level: must-not
+        statement: Do not put information the user needs only in a tooltip. It never appears on touch screens.
         checkedBy: manual
         tags: [accessibility]
   - kind: guidelines
@@ -42,11 +42,11 @@ sections:
       - level: must
         statement: Wrap exactly one element that can receive focus, such as a Button or Link. Tooltip opens on hover and on keyboard focus.
         checkedBy: manual
-      - level: must-not
-        statement: Do not wrap a disabled button. Disabled buttons don't receive hover or focus, so the tooltip never opens.
-        checkedBy: manual
       - level: must
         statement: Pass content as a plain string. Tooltip does not accept elements.
+        checkedBy: manual
+      - level: must-not
+        statement: Do not wrap a disabled button. Disabled buttons don't receive hover or focus, so the tooltip never opens.
         checkedBy: manual
       - level: must-not
         statement: Do not add your own collision handling. Tooltip already flips and shifts to stay on screen, and renders in a portal so containers can't clip it.

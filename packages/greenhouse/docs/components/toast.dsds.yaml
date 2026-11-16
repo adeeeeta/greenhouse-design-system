@@ -29,13 +29,13 @@ sections:
   - kind: guidelines
     for: all
     items:
-      - level: should
-        statement: Keep the message to one short sentence that names what happened.
-        checkedBy: manual
       - level: must
         statement: Set autoDismiss to false for any warning or error the user needs to read. Four seconds is not long enough for everyone.
         checkedBy: manual
         tags: [accessibility]
+      - level: should
+        statement: Keep the message to one short sentence that names what happened.
+        checkedBy: manual
   - kind: guidelines
     for: agent
     title: Common misreadings

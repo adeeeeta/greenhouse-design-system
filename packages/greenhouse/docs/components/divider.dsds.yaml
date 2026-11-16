@@ -32,11 +32,11 @@ sections:
     for: agent
     title: Common misreadings
     items:
-      - level: must-not
-        statement: Do not add margin or padding around Divider. It already has --space-6 above and below.
-        checkedBy: manual
       - level: must
         statement: Expect Divider to be horizontal only. There is no vertical option.
+        checkedBy: manual
+      - level: must-not
+        statement: Do not add margin or padding around Divider. It already has --space-6 above and below.
         checkedBy: manual
 
 refs:

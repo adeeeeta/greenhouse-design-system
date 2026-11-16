@@ -11,17 +11,17 @@ metadata:
 sections:
   - kind: guidelines
     for: all
+    framing: when-to-use
     items:
       - level: must
         statement: Set all text with Text, or with --type-* tokens in your own CSS. Do not use ad-hoc font sizes.
         checkedBy: manual
+  - kind: guidelines
+    for: all
+    items:
       - level: must
         statement: Choose the element with as and the look with variant, separately. A card title can be an h3 element styled as h4.
         checkedBy: manual
-      - level: must-not
-        statement: Do not skip heading levels in the page outline, such as an h2 followed by an h4. Use variant to change the size instead.
-        checkedBy: manual
-        tags: [accessibility]
       - level: should
         statement: Use one h1 per page, naming the page.
         checkedBy: manual
@@ -29,6 +29,10 @@ sections:
       - level: should
         statement: Use the display variant, which is set in Fraunces, only for expressive moments such as page heroes. Do not use it on utility screens such as settings, forms or tables.
         checkedBy: manual
+      - level: must-not
+        statement: Do not skip heading levels in the page outline, such as an h2 followed by an h4. Use variant to change the size instead.
+        checkedBy: manual
+        tags: [accessibility]
   - kind: guidelines
     for: agent
     title: Common misreadings

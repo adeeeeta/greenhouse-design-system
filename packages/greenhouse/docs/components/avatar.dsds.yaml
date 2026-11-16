@@ -11,14 +11,24 @@ metadata:
 sections:
   - kind: guidelines
     for: all
+    framing: when-to-use
     items:
       - level: should
-        statement: Use the circle shape for people and the square shape for things such as plants, teams or organisations.
+        statement: Use Avatar to identify a person or a plant in lists, comments and profiles, where a picture helps people scan.
         checkedBy: manual
+      - level: should-not
+        statement: Do not use Avatar for decoration, or for an image that doesn't identify someone or something.
+        checkedBy: manual
+  - kind: guidelines
+    for: all
+    items:
       - level: must
         statement: Pass alt with the full name, such as "Aditya Patel", even when the avatar shows initials.
         checkedBy: manual
         tags: [accessibility]
+      - level: should
+        statement: Use the circle shape for people and the square shape for things such as plants, teams or organisations.
+        checkedBy: manual
       - level: should
         statement: Pass initials as well as src, so the avatar still identifies the person if the image fails to load.
         checkedBy: manual

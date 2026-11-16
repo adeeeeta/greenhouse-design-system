@@ -41,11 +41,11 @@ sections:
       - level: should
         statement: For a destructive confirmation, name the consequence in the primary action label, such as "Delete plant".
         checkedBy: manual
-      - level: must-not
-        statement: Do not add padding to content inside a Modal. The header, body and footer pad themselves.
-        checkedBy: manual
       - level: should-not
         statement: Do not open a modal from inside another modal.
+        checkedBy: manual
+      - level: must-not
+        statement: Do not add padding to content inside a Modal. The header, body and footer pad themselves.
         checkedBy: manual
   - kind: guidelines
     for: agent

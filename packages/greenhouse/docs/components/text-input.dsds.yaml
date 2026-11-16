@@ -42,11 +42,6 @@ sections:
     for: agent
     title: Common misreadings
     items:
-      - level: must-not
-        statement: Do not wrap TextInput in FormField. It already includes one.
-        alternatives:
-          - to: form-field
-        checkedBy: manual
       - level: must
         statement: Expect only one message below the field. When both error and hint are set, error replaces hint.
         checkedBy: manual
@@ -55,6 +50,11 @@ sections:
         checkedBy: manual
       - level: must
         statement: Pass native input props such as name, value, onChange, type and autoComplete straight to TextInput. They reach the input element.
+        checkedBy: manual
+      - level: must-not
+        statement: Do not wrap TextInput in FormField. It already includes one.
+        alternatives:
+          - to: form-field
         checkedBy: manual
 
 alternatives:

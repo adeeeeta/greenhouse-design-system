@@ -1,8 +1,6 @@
 schemaVersion: "0.23.1"
 $schema: https://designsystemdocspec.org/v0.23.1/dsds.bundled.yaml
- 
 name: Greenhouse
- 
 entries:
   - kind: system
     id: greenhouse
@@ -16,25 +14,16 @@ entries:
       license: MIT
       sourceRoot: ../src/
     sections:
-      - kind: steps
-        for: all
-        title: Setup
-        items:
-          - title: Import tokens.css and styles.css once at the app root.
-          - title: Load Plus Jakarta Sans, Fraunces and Fira Code and set --font-sans-face, --font-display-face and --font-mono-face.
-          - optional: true
-            title: Wrap the app in ToastProvider inside a client component.
       - kind: guidelines
         for: all
         title: Spacing
         items:
-          - level: must-not
-            statement: Do not add padding to content placed directly inside Card, Alert or Modal; they pad themselves.
-            checkedBy: manual
           - level: should
             statement: Space children inside a component with gap on a flex or grid wrapper, not margins.
             checkedBy: manual
- 
+          - level: must-not
+            statement: Do not add padding to content placed directly inside Card, Alert or Modal; they pad themselves.
+            checkedBy: manual
       - kind: guidelines
         for: agent
         title: Known gaps
@@ -48,6 +37,14 @@ entries:
           - level: must-not
             statement: Do not use legacy tokens (--text-1 to --text-4, --control-font-size) or component tokens (--button-*, --badge-* and similar) in your own CSS.
             checkedBy: manual
+      - kind: steps
+        for: all
+        title: Setup
+        items:
+          - title: Import tokens.css and styles.css once at the app root.
+          - title: Load Plus Jakarta Sans, Fraunces and Fira Code and set --font-sans-face, --font-display-face and --font-mono-face.
+          - optional: true
+            title: Wrap the app in ToastProvider inside a client component.
 
 refs:
   - href: ./components/button.dsds.yaml
