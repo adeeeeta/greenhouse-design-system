@@ -1,0 +1,107 @@
+kind: component
+id: tag
+name: Tag
+description: A small label for a category, attribute or applied filter, which the user can optionally remove.
+
+metadata:
+  updated: {date: 2026-11-16}
+  tags: [data-display]
+  status: {status: stable}
+
+sections:
+  - kind: guidelines
+    for: all
+    framing: when-to-use
+    items:
+      - level: should
+        statement: Use Tag for plant attributes, care labels and applied filters, especially ones the user can add and remove.
+        checkedBy: manual
+      - level: should-not
+        statement: Do not use Tag to show a status; use <dsds:badge>.
+        alternatives:
+          - to: badge
+        checkedBy: manual
+  - kind: guidelines
+    for: all
+    items:
+      - level: should
+        statement: Use the neutral variant for most tags. Use a colored variant only when the color means something, such as a frost-sensitive label in warning.
+        checkedBy: manual
+      - level: should
+        statement: Add an icon only when it helps tell tag types apart at a glance.
+        checkedBy: manual
+      - level: should
+        statement: Use sm inside compact places such as input fields, and md (the default) elsewhere.
+        checkedBy: manual
+  - kind: guidelines
+    for: agent
+    title: Common misreadings
+    items:
+      - level: must
+        statement: Remove the tag from your list when onDismiss fires. Tag shows the remove button but does not hide itself.
+        checkedBy: manual
+      - level: must
+        statement: Pass the text as the label prop, not as children.
+        checkedBy: manual
+      - level: must-not
+        statement: Do not make a Tag clickable to select it. Tag has no onClick or selected state; only its remove button is interactive.
+        checkedBy: manual
+      - level: must-not
+        statement: Do not pass className. Tag does not accept it.
+        checkedBy: manual
+  - kind: definitions
+    for: all
+    context: anatomy
+    items:
+      - id: icon
+        term: Icon
+        definition: Optional leading visual, passed as icon. Hidden from screen readers.
+      - id: label
+        term: Label
+        definition: The text, passed as label.
+      - id: dismiss
+        term: Remove button
+        definition: Shown only when onDismiss is passed. Screen readers announce it as "Remove" followed by the label.
+
+alternatives:
+  - to: badge
+
+refs:
+  - href: https://greenhouse-design-system.vercel.app/components/tag
+    rel: demo
+    role: docsite
+
+sourceFiles:
+  - platform: react
+    file: components/Tag/Tag.tsx
+
+imports:
+  - platform: react
+    code: 'import { Tag } from "@adeeeeta/greenhouse";'
+    package: "@adeeeeta/greenhouse"
+
+traits:
+  - traitType: variant
+    kind: enum
+    id: variant
+    description: Color, with the same meanings as Badge.
+    values:
+      - id: neutral
+        description: The default.
+      - id: success
+        description: A positive attribute.
+      - id: warning
+        description: An attribute that needs care, such as frost-sensitive.
+      - id: error
+        description: A problem attribute.
+      - id: info
+        description: A neutral fact.
+  - traitType: variant
+    kind: enum
+    id: size
+    description: Overall scale.
+    values:
+      - id: sm
+        description: Compact places such as input fields.
+      - id: md
+        description: The default.
