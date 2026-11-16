@@ -1,0 +1,89 @@
+kind: component
+id: form-field
+name: FormField
+description: Adds a label, hint and error message around a custom input that Greenhouse doesn't provide.
+
+metadata:
+  updated: {date: 2026-11-15}
+  tags: [form]
+  status: {status: stable}
+
+sections:
+  - kind: guidelines
+    for: all
+    framing: when-to-use
+    items:
+      - level: should
+        statement: Use FormField only around a custom input, such as a date picker or a slider, so it matches the other fields.
+        checkedBy: manual
+      - level: must-not
+        statement: Do not wrap TextInput, Dropdown, Checkbox or Radio in FormField. They already include one.
+        alternatives:
+          - to: text-input
+          - to: dropdown
+          - to: checkbox
+          - to: radio
+        checkedBy: manual
+  - kind: guidelines
+    for: all
+    items:
+      - level: must
+        statement: Give FormField a label, or give the input its own aria-label when hideLabel is set.
+        checkedBy: manual
+        tags: [accessibility]
+      - level: should
+        statement: Use the stacked layout (the default) unless the field sits in a row of short inline settings.
+        checkedBy: manual
+  - kind: guidelines
+    for: agent
+    title: Common misreadings
+    items:
+      - level: must
+        statement: Pass FormField the same id as the input inside it. The label points at the input by that id.
+        checkedBy: manual
+      - level: must
+        statement: Connect the message yourself. When hint or error is set, give the input aria-describedby set to the id followed by "-help", and set aria-invalid when there's an error.
+        checkedBy: manual
+      - level: must
+        statement: Expect hideLabel to remove the label completely, not just hide it visually.
+        checkedBy: manual
+
+alternatives:
+  - to: text-input
+
+refs:
+  - href: https://greenhouse-design-system.vercel.app/components/text-input
+    rel: demo
+    role: closest docsite page; FormField has no page of its own
+
+sourceFiles:
+  - platform: react
+    file: components/FormField/FormField.tsx
+
+imports:
+  - platform: react
+    code: 'import { FormField } from "@adeeeeta/greenhouse";'
+    package: "@adeeeeta/greenhouse"
+
+traits:
+  - traitType: variant
+    kind: enum
+    id: layout
+    description: Where the label sits relative to the input.
+    values:
+      - id: stacked
+        description: The default. Label above the input.
+      - id: inline
+        description: Label beside the input.
+  - traitType: variant
+    kind: boolean
+    id: hideLabel
+    description: Removes the label from the page.
+  - traitType: variant
+    kind: boolean
+    id: required
+    description: Shows an asterisk after the label.
+  - traitType: state
+    kind: boolean
+    id: disabled
+    description: Marks the field as disabled for styling. Disable the input itself too.

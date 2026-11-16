@@ -54,6 +54,24 @@ refs:
   - href: ./components/modal.dsds.yaml
     rel: file
     role: Modal component
+  - href: ./components/text-input.dsds.yaml
+    rel: file
+    role: TextInput component
+  - href: ./components/dropdown.dsds.yaml
+    rel: file
+    role: Dropdown component
+  - href: ./components/checkbox.dsds.yaml
+    rel: file
+    role: Checkbox component
+  - href: ./components/radio.dsds.yaml
+    rel: file
+    role: Radio component
+  - href: ./components/toggle.dsds.yaml
+    rel: file
+    role: Toggle component
+  - href: ./components/form-field.dsds.yaml
+    rel: file
+    role: FormField component
   - href: https://www.npmjs.com/package/@adeeeeta/greenhouse
     rel: source
     role: npm package
