@@ -1,0 +1,89 @@
+kind: component
+id: checkbox
+name: Checkbox
+description: A box the user ticks to turn one choice on or off, usually submitted with a form.
+
+metadata:
+  updated: {date: 2026-11-15}
+  tags: [form]
+  status: {status: stable}
+
+sections:
+  - kind: guidelines
+    for: all
+    framing: when-to-use
+    items:
+      - level: should
+        statement: Use Checkbox for choices that are saved when a form is submitted, or when the user can pick several options from a list.
+        checkedBy: manual
+      - level: should-not
+        statement: Do not use Checkbox for a setting that takes effect immediately; use <dsds:toggle>.
+        alternatives:
+          - to: toggle
+        checkedBy: manual
+      - level: should-not
+        statement: Do not use Checkbox when only one option in a group can be chosen; use <dsds:radio>.
+        alternatives:
+          - to: radio
+        checkedBy: manual
+  - kind: guidelines
+    for: all
+    items:
+      - level: must
+        statement: Give every Checkbox a label.
+        checkedBy: manual
+        tags: [accessibility]
+      - level: must
+        statement: Wrap a group of related checkboxes in a fieldset with a legend that names the group.
+        checkedBy: manual
+        tags: [accessibility]
+      - level: should
+        statement: Write labels as positive statements, such as "Send frost alerts", not "Don't send frost alerts".
+        checkedBy: manual
+  - kind: guidelines
+    for: agent
+    title: Common misreadings
+    items:
+      - level: must
+        statement: Give each Checkbox in a group its own id. Without one, every checkbox that shares a name gets the same id.
+        checkedBy: manual
+      - level: must
+        statement: Expect hint to appear beside the label and error to appear below the checkbox.
+        checkedBy: manual
+      - level: must-not
+        statement: Do not wrap Checkbox in FormField. It already includes one.
+        alternatives:
+          - to: form-field
+        checkedBy: manual
+
+alternatives:
+  - to: toggle
+  - to: radio
+
+refs:
+  - href: https://greenhouse-design-system.vercel.app/components/checkbox
+    rel: demo
+    role: docsite
+
+sourceFiles:
+  - platform: react
+    file: components/Checkbox/Checkbox.tsx
+
+imports:
+  - platform: react
+    code: 'import { Checkbox } from "@adeeeeta/greenhouse";'
+    package: "@adeeeeta/greenhouse"
+
+traits:
+  - traitType: state
+    kind: boolean
+    id: checked
+    description: Ticked. Use checked with onChange, or defaultChecked to set only the starting state.
+  - traitType: state
+    kind: boolean
+    id: disabled
+    description: Dimmed and can't be changed.
+  - traitType: variant
+    kind: boolean
+    id: required
+    description: Shows an asterisk after the label.
