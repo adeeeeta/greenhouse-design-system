@@ -1,0 +1,89 @@
+kind: component
+id: text
+name: Text
+description: Sets all typography, from display headings to captions, separating the HTML element from how it looks.
+
+metadata:
+  updated: {date: 2026-11-16}
+  tags: [typography]
+  status: {status: stable}
+
+sections:
+  - kind: guidelines
+    for: all
+    items:
+      - level: must
+        statement: Set all text with Text, or with --type-* tokens in your own CSS. Do not use ad-hoc font sizes.
+        checkedBy: manual
+      - level: must
+        statement: Choose the element with as and the look with variant, separately. A card title can be an h3 element styled as h4.
+        checkedBy: manual
+      - level: must-not
+        statement: Do not skip heading levels in the page outline, such as an h2 followed by an h4. Use variant to change the size instead.
+        checkedBy: manual
+        tags: [accessibility]
+      - level: should
+        statement: Use one h1 per page, naming the page.
+        checkedBy: manual
+        tags: [accessibility]
+      - level: should
+        statement: Use the display variant, which is set in Fraunces, only for expressive moments such as page heroes. Do not use it on utility screens such as settings, forms or tables.
+        checkedBy: manual
+  - kind: guidelines
+    for: agent
+    title: Common misreadings
+    items:
+      - level: must
+        statement: Set as when the text isn't a paragraph. Text renders a p element by default, and a p inside a button, label or another p is invalid HTML.
+        checkedBy: manual
+      - level: must
+        statement: Expect only the display variant to use Fraunces. h1 to h4 use Plus Jakarta Sans. There is no gh-heading-display class in the package.
+        checkedBy: manual
+      - level: must
+        statement: Use the exact variant names, which are camelCase, such as bodySm and labelStrong. Names like body-sm or small don't exist.
+        checkedBy: manual
+
+refs:
+  - href: https://greenhouse-design-system.vercel.app/foundations/typography
+    rel: demo
+    role: docsite typography page
+
+sourceFiles:
+  - platform: react
+    file: components/Text/Text.tsx
+
+imports:
+  - platform: react
+    code: 'import { Text } from "@adeeeeta/greenhouse";'
+    package: "@adeeeeta/greenhouse"
+
+traits:
+  - traitType: variant
+    kind: enum
+    id: variant
+    description: Visual style. It doesn't change the element; use as for that.
+    values:
+      - id: display
+        description: Largest size, set in Fraunces. Expressive moments only.
+      - id: h1
+        description: Page title size.
+      - id: h2
+        description: Section title size.
+      - id: h3
+        description: Subsection title size.
+      - id: h4
+        description: Card and group title size.
+      - id: body
+        description: The default. Running text.
+      - id: bodyMedium
+        description: Running text with medium weight, for emphasis.
+      - id: bodySm
+        description: Smaller supporting text.
+      - id: bodySmMedium
+        description: Smaller supporting text with medium weight.
+      - id: label
+        description: Form labels and UI text.
+      - id: labelStrong
+        description: Emphasised labels.
+      - id: caption
+        description: The smallest text, for metadata and footnotes.
