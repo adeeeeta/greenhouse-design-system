@@ -1,0 +1,85 @@
+kind: component
+id: tooltip
+name: Tooltip
+description: A short text hint that appears when the user hovers over or focuses an element.
+
+metadata:
+  updated: {date: 2026-11-16}
+  tags: [overlay]
+  status: {status: stable}
+
+sections:
+  - kind: guidelines
+    for: all
+    framing: when-to-use
+    items:
+      - level: should
+        statement: Use Tooltip to name an icon-only button or add a brief hint to a control.
+        checkedBy: manual
+      - level: should-not
+        statement: Do not use Tooltip for content with links or buttons; use <dsds:modal>.
+        alternatives:
+          - to: modal
+        checkedBy: manual
+  - kind: guidelines
+    for: all
+    items:
+      - level: must-not
+        statement: Do not put information the user needs only in a tooltip. It never appears on touch screens.
+        checkedBy: manual
+        tags: [accessibility]
+      - level: should
+        statement: Keep the content to a few words, such as "Water now".
+        checkedBy: manual
+      - level: must
+        statement: On an icon-only button, still set aria-label, using the same words as the tooltip.
+        checkedBy: manual
+        tags: [accessibility]
+  - kind: guidelines
+    for: agent
+    title: Common misreadings
+    items:
+      - level: must
+        statement: Wrap exactly one element that can receive focus, such as a Button or Link. Tooltip opens on hover and on keyboard focus.
+        checkedBy: manual
+      - level: must-not
+        statement: Do not wrap a disabled button. Disabled buttons don't receive hover or focus, so the tooltip never opens.
+        checkedBy: manual
+      - level: must
+        statement: Pass content as a plain string. Tooltip does not accept elements.
+        checkedBy: manual
+      - level: must-not
+        statement: Do not add your own collision handling. Tooltip already flips and shifts to stay on screen, and renders in a portal so containers can't clip it.
+        checkedBy: manual
+
+alternatives:
+  - to: modal
+
+refs:
+  - href: https://greenhouse-design-system.vercel.app/components/tooltip
+    rel: demo
+    role: docsite
+
+sourceFiles:
+  - platform: react
+    file: components/Tooltip/Tooltip.tsx
+
+imports:
+  - platform: react
+    code: 'import { Tooltip } from "@adeeeeta/greenhouse";'
+    package: "@adeeeeta/greenhouse"
+
+traits:
+  - traitType: variant
+    kind: enum
+    id: position
+    description: Which side of the trigger the tooltip prefers. It moves to another side when there isn't room.
+    values:
+      - id: above
+        description: The default.
+      - id: below
+        description: Below the trigger.
+      - id: left
+        description: Left of the trigger.
+      - id: right
+        description: Right of the trigger.
