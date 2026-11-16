@@ -1,0 +1,97 @@
+kind: component
+id: toast
+name: Toast
+description: A brief notification that confirms an action or flags something time-sensitive, shown in the corner of the screen.
+
+metadata:
+  updated: {date: 2026-11-15}
+  tags: [feedback]
+  status: {status: stable}
+
+sections:
+  - kind: guidelines
+    for: all
+    framing: when-to-use
+    items:
+      - level: should
+        statement: Use a toast to confirm an action the user just took, such as logging a watering.
+        checkedBy: manual
+      # TODO(adi): confirm. The docsite shows error toasts with autoDismiss false; this rule sends fixable errors to Alert instead.
+      - level: should-not
+        statement: Do not use a toast for an error the user has to fix; use <dsds:alert> next to the problem.
+        alternatives:
+          - to: alert
+        checkedBy: manual
+      - level: should-not
+        statement: Do not use a toast when the user must decide something; use <dsds:modal>.
+        alternatives:
+          - to: modal
+        checkedBy: manual
+  - kind: guidelines
+    for: all
+    items:
+      - level: should
+        statement: Keep the message to one short sentence that names what happened.
+        checkedBy: manual
+      # TODO(adi): confirm. Toasts disappear after 4 seconds; the docsite already uses autoDismiss false for sync failures and frost alerts.
+      - level: must
+        statement: Set autoDismiss to false for any warning or error the user needs to read. Four seconds is not long enough for everyone.
+        checkedBy: manual
+        tags: [accessibility]
+  - kind: guidelines
+    for: agent
+    title: Common misreadings
+    items:
+      - level: must
+        statement: Show a toast by calling showToast from useToast. Do not render the Toast component directly.
+        checkedBy: manual
+      - level: must
+        statement: Wrap the app in ToastProvider once. useToast throws an error outside it.
+        checkedBy: manual
+      - level: must
+        statement: Call useToast only in a client component, because it is a React hook.
+        checkedBy: manual
+  - kind: steps
+    for: all
+    title: Setup
+    items:
+      - title: Create a client component that wraps children in ToastProvider, and use it in the root layout.
+      - title: In a client component, get showToast from useToast().
+      - title: Call showToast with a message and a variant.
+
+alternatives:
+  - to: alert
+  - to: modal
+
+refs:
+  - href: https://greenhouse-design-system.vercel.app/components/toast
+    rel: demo
+    role: docsite
+
+sourceFiles:
+  - platform: react
+    file: components/Toast/ToastContext.tsx
+
+imports:
+  - platform: react
+    code: 'import { ToastProvider, useToast } from "@adeeeeta/greenhouse";'
+    package: "@adeeeeta/greenhouse"
+
+traits:
+  - traitType: variant
+    kind: enum
+    id: variant
+    description: Sets the color and icon. Passed to showToast, and required.
+    values:
+      - id: success
+        description: An action completed.
+      - id: error
+        description: An action failed.
+      - id: warning
+        description: Something time-sensitive, such as a frost alert.
+      - id: info
+        description: Neutral information.
+  - traitType: variant
+    kind: boolean
+    id: autoDismiss
+    description: Passed to showToast. When true (the default), the toast disappears after 4 seconds. When false, it stays until the user closes it.
