@@ -3,10 +3,10 @@ id: button
 name: Button
 description: Triggers an in-page action, such as saving, opening a dialog or submitting a form.
 metadata:
+  updated: {date: 2026-11-15}
   tags: [actions]
   since: 1.0.0
   status: {status: stable}
-  updated: {date: 2026-11-15}
 
 sections:
   - kind: guidelines
@@ -43,9 +43,14 @@ alternatives:
   - to: link
   - to: card
 
+refs:
+  - href: https://greenhouse-design-system.vercel.app/components/button
+    rel: demo
+    role: docsite
 sourceFiles:
   - platform: react
     file: components/Button/Button.tsx
+
 imports:
   - platform: react
     code: 'import { Button } from "@adeeeeta/greenhouse";'
@@ -82,8 +87,3 @@ traits:
     kind: boolean
     id: disabled
     description: Dimmed and non-interactive; set with the disabled prop.
-
-refs:
-  - href: https://greenhouse-design-system.vercel.app/components/button
-    rel: demo
-    role: docsite
