@@ -1,0 +1,67 @@
+kind: component
+id: divider
+name: Divider
+description: A horizontal line that separates groups of content, with an optional centered label.
+
+metadata:
+  updated: {date: 2026-11-16}
+  tags: [layout]
+  status: {status: stable}
+
+sections:
+  - kind: guidelines
+    for: all
+    framing: when-to-use
+    items:
+      - level: should
+        statement: Use Divider to separate groups when spacing alone doesn't make the break clear.
+        checkedBy: manual
+      - level: should-not
+        statement: Do not add a divider between every item. Try spacing with --space-* tokens first.
+        checkedBy: manual
+  - kind: guidelines
+    for: all
+    items:
+      - level: should
+        statement: Use subtle inside a component such as a Card, default between sections of a page, and strong only for a major break.
+        checkedBy: manual
+      - level: should
+        statement: Add label to name the next group, such as a form section or "or" between two options.
+        checkedBy: manual
+  - kind: guidelines
+    for: agent
+    title: Common misreadings
+    items:
+      - level: must-not
+        statement: Do not add margin or padding around Divider. It already has --space-6 above and below.
+        checkedBy: manual
+      - level: must
+        statement: Expect Divider to be horizontal only. There is no vertical option.
+        checkedBy: manual
+
+refs:
+  - href: https://greenhouse-design-system.vercel.app/components/divider
+    rel: demo
+    role: docsite
+
+sourceFiles:
+  - platform: react
+    file: components/Divider/Divider.tsx
+
+imports:
+  - platform: react
+    code: 'import { Divider } from "@adeeeeta/greenhouse";'
+    package: "@adeeeeta/greenhouse"
+
+traits:
+  - traitType: variant
+    kind: enum
+    id: weight
+    description: How prominent the line is.
+    values:
+      - id: subtle
+        description: The border color at half opacity.
+      - id: default
+        description: The default. The border color at 1px.
+      - id: strong
+        description: The strong border color at 2px.
