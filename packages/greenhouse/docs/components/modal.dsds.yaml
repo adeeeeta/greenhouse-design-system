@@ -1,0 +1,117 @@
+kind: component
+id: modal
+name: Modal
+description: A dialog that opens over the page for a decision or a short focused task, and blocks the page until it closes.
+
+metadata:
+  updated: {date: 2026-11-15}
+  tags: [overlay]
+  status: {status: stable}
+
+sections:
+  - kind: guidelines
+    for: all
+    framing: when-to-use
+    items:
+      - level: should
+        statement: Use Modal for a short form or a decision the user must make before continuing.
+        checkedBy: manual
+      - level: should-not
+        statement: Do not use Modal for information that doesn't need a response; use <dsds:alert>.
+        alternatives:
+          - to: alert
+        checkedBy: manual
+      - level: should-not
+        statement: Do not use Modal to confirm an action that already happened; use <dsds:toast>.
+        alternatives:
+          - to: toast
+        checkedBy: manual
+  - kind: guidelines
+    for: all
+    items:
+      - level: must
+        statement: Give every modal a title that names the task, such as "Add a new plant".
+        checkedBy: manual
+      - level: should
+        statement: Label primaryAction with the specific action, such as "Add plant", not "OK".
+        checkedBy: manual
+      - level: should
+        statement: Use sm for confirmations, md (the default) for most content and lg for longer forms.
+        checkedBy: manual
+      - level: should
+        statement: For a destructive confirmation, name the consequence in the primary action label, such as "Delete plant".
+        checkedBy: manual
+      - level: must-not
+        statement: Do not add padding to content inside a Modal. The header, body and footer pad themselves.
+        checkedBy: manual
+      - level: should-not
+        statement: Do not open a modal from inside another modal.
+        checkedBy: manual
+  - kind: guidelines
+    for: agent
+    title: Common misreadings
+    items:
+      - level: must
+        statement: Keep the open state yourself. Pass isOpen, and set it to false inside onClose. The modal does not close itself.
+        checkedBy: manual
+      - level: must
+        statement: Pass only label and onClick in primaryAction and secondaryAction. Their style, disabled state and loading state can't be set. For custom footer buttons, leave both out and put your own Buttons in children.
+        checkedBy: manual
+      - level: must-not
+        statement: Do not add your own Escape handling, focus trap or scroll lock. Modal already does all three, and returns focus to the trigger when it closes.
+        checkedBy: manual
+  - kind: definitions
+    for: all
+    context: anatomy
+    items:
+      - id: header
+        term: Header
+        definition: Shows title and a close button.
+      - id: body
+        term: Body
+        definition: The content, passed as children.
+      - id: footer
+        term: Footer
+        definition: Shown when primaryAction or secondaryAction is passed. The secondary action is on the left, the primary action on the right.
+      - id: backdrop
+        term: Backdrop
+        definition: The dimmed layer behind the dialog. Clicking it closes the modal unless closeOnBackdropClick is false.
+
+alternatives:
+  - to: alert
+  - to: toast
+
+refs:
+  - href: https://greenhouse-design-system.vercel.app/components/modal
+    rel: demo
+    role: docsite
+
+sourceFiles:
+  - platform: react
+    file: components/Modal/Modal.tsx
+
+imports:
+  - platform: react
+    code: 'import { Modal } from "@adeeeeta/greenhouse";'
+    package: "@adeeeeta/greenhouse"
+
+traits:
+  - traitType: variant
+    kind: enum
+    id: size
+    description: Width of the dialog.
+    values:
+      - id: sm
+        description: Simple confirmations and short messages.
+      - id: md
+        description: The default, for most content.
+      - id: lg
+        description: Longer forms or detailed content.
+  - traitType: variant
+    kind: boolean
+    id: closeOnBackdropClick
+    description: When true (the default), clicking the backdrop closes the modal. Set it to false when closing by accident would lose the user's work.
+  - traitType: state
+    kind: boolean
+    id: isOpen
+    description: Whether the modal is shown. Controlled by the caller.

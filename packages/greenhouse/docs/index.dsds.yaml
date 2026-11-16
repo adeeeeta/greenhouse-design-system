@@ -1,8 +1,8 @@
 schemaVersion: "0.23.1"
 $schema: https://designsystemdocspec.org/v0.23.1/dsds.bundled.yaml
-
+ 
 name: Greenhouse
-
+ 
 entries:
   - kind: system
     id: greenhouse
@@ -34,7 +34,7 @@ entries:
           - level: should
             statement: Space children inside a component with gap on a flex or grid wrapper, not margins.
             checkedBy: manual
-
+ 
 refs:
   - href: ./components/button.dsds.yaml
     rel: file
@@ -45,6 +45,15 @@ refs:
   - href: ./components/link.dsds.yaml
     rel: file
     role: Link component
+  - href: ./components/alert.dsds.yaml
+    rel: file
+    role: Alert component
+  - href: ./components/toast.dsds.yaml
+    rel: file
+    role: Toast component
+  - href: ./components/modal.dsds.yaml
+    rel: file
+    role: Modal component
   - href: https://www.npmjs.com/package/@adeeeeta/greenhouse
     rel: source
     role: npm package
