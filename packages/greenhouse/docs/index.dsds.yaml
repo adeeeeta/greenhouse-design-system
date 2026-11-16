@@ -1,5 +1,5 @@
-$schema: https://designsystemdocspec.org/v0.23.1/dsds.bundled.yaml
 schemaVersion: "0.23.1"
+$schema: https://designsystemdocspec.org/v0.23.1/dsds.bundled.yaml
 
 name: Greenhouse
 
@@ -9,12 +9,12 @@ entries:
     name: Greenhouse
     description: A React component library and token system for calm, plant-themed interfaces.
     metadata:
-      version: 1.2.0
-      url: https://greenhouse-design-system.vercel.app
-      license: MIT
-      platforms: [react]
-      sourceRoot: ../src/
       status: {status: stable}
+      url: https://greenhouse-design-system.vercel.app
+      version: 1.2.0
+      platforms: [react]
+      license: MIT
+      sourceRoot: ../src/
     sections:
       - kind: steps
         for: all
@@ -22,8 +22,8 @@ entries:
         items:
           - title: Import tokens.css and styles.css once at the app root.
           - title: Load Plus Jakarta Sans, Fraunces and Fira Code and set --font-sans-face, --font-display-face and --font-mono-face.
-          - title: Wrap the app in ToastProvider inside a client component.
-            optional: true
+          - optional: true
+            title: Wrap the app in ToastProvider inside a client component.
       - kind: guidelines
         for: all
         title: Spacing
@@ -39,6 +39,12 @@ refs:
   - href: ./components/button.dsds.yaml
     rel: file
     role: Button component
+  - href: ./components/card.dsds.yaml
+    rel: file
+    role: Card component
+  - href: ./components/link.dsds.yaml
+    rel: file
+    role: Link component
   - href: https://www.npmjs.com/package/@adeeeeta/greenhouse
     rel: source
     role: npm package

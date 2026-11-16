@@ -1,0 +1,123 @@
+kind: component
+id: card
+name: Card
+description: Groups related content and actions into one container, with flat, elevated, and outlined styles.
+
+metadata:
+  updated: {date: 2026-11-15}
+  tags: [layout]
+  status: {status: stable}
+
+sections:
+  - kind: guidelines
+    for: all
+    framing: when-to-use
+    items:
+      - level: should
+        statement: Use Card to group related content and actions into a single container.
+        checkedBy: manual
+      - level: should-not
+        statement: Do not use Card for a text navigation on its own; use <dsds:link>.
+        alternatives:
+          - to: link
+        checkedBy: manual
+      - level: should-not
+        statement: Do not use Card for a single action with no grouped content; use <dsds:button>.
+        alternatives:
+          - to: button
+        checkedBy: manual
+  - kind: guidelines
+    for: all
+    items:
+      - level: must
+        statement: Do not add padding to content in the header, body, or footer. Those regions already include padding.
+        checkedBy: manual
+      - level: must
+        statement: Include text in an interactive card so the anchor or button has an accessible name.
+        checkedBy: manual
+        tags: [accessibility]
+      - level: should
+        statement: Use flat for low-emphasis content, elevated as the default, and outlined for a bordered style without shadow.
+        checkedBy: manual
+      - level: should
+        statement: Pass header and footer to add structured sections above and below the body.
+        checkedBy: manual
+      - level: should
+        statement: Use cover for an image or visual at the top. The cover spans the full width of the card.
+        checkedBy: manual
+      - level: should
+        statement: Add href or onClick to make the whole card clickable. Interactive cards lift on hover.
+        checkedBy: manual
+      - level: must-not
+        statement: Do not put links, buttons, or other interactive controls inside a card that sets href or onClick. It’s invalid HTML, and keyboard and screen-reader users can’t reliably reach the inner control.
+        checkedBy: manual
+        tags: [accessibility]
+      - level: must-not
+        statement: Do not put an onClick card inside a form. It renders a button with no type, so activating it submits the form.
+        checkedBy: manual
+  - kind: guidelines
+    for: agent
+    title: Common misreadings
+    items:
+      - level: must
+        statement: Choose the root element from the props. href renders an anchor, onClick without href renders a button, and neither renders a div.
+        checkedBy: manual
+      - level: must
+        statement: If both href and onClick are passed, render the anchor and drop onClick. href wins.
+        checkedBy: manual
+      - level: must
+        statement: When target is "_blank" and rel is omitted, set rel to "noopener noreferrer". A passed rel replaces that default.
+        checkedBy: manual
+      - level: must-not
+        statement: Do not expect an href card to render <dsds:link>. The anchor is plain, with inherited color and no underline.
+        checkedBy: manual
+      - level: must-not
+        statement: Do not set a size or disabled prop. Neither exists. variant is the only visual enum, and elevated is its default.
+        checkedBy: manual
+  - kind: definitions
+    for: all
+    context: anatomy
+    items:
+      - id: cover
+        term: Cover
+        definition: Optional visual at the top of the card, passed as cover. It spans the full width and is not padded.
+      - id: header
+        term: Header
+        definition: Optional section above the body, passed as header.
+      - id: body
+        term: Body
+        definition: The main content, passed as children.
+      - id: footer
+        term: Footer
+        definition: Optional section below the body, passed as footer, with a top border.
+
+alternatives:
+  - to: link
+  - to: button
+
+refs:
+  - href: https://greenhouse-design-system.vercel.app/components/card
+    rel: demo
+    role: docsite
+
+sourceFiles:
+  - platform: react
+    file: components/Card/Card.tsx
+
+imports:
+  - platform: react
+    code: 'import { Card } from "@adeeeeta/greenhouse";'
+    package: "@adeeeeta/greenhouse"
+
+traits:
+  - traitType: variant
+    kind: enum
+    id: variant
+    description: Visual style of the card surface.
+    values:
+      - id: elevated
+        description: The default. Shadow plus a border.
+      - id: flat
+        description: A quiet surface for low-emphasis content.
+      - id: outlined
+        description: A bordered card without shadow.
