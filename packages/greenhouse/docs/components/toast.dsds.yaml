@@ -16,7 +16,6 @@ sections:
       - level: should
         statement: Use a toast to confirm an action the user just took, such as logging a watering.
         checkedBy: manual
-      # TODO(adi): confirm. The docsite shows error toasts with autoDismiss false; this rule sends fixable errors to Alert instead.
       - level: should-not
         statement: Do not use a toast for an error the user has to fix; use <dsds:alert> next to the problem.
         alternatives:
@@ -33,7 +32,6 @@ sections:
       - level: should
         statement: Keep the message to one short sentence that names what happened.
         checkedBy: manual
-      # TODO(adi): confirm. Toasts disappear after 4 seconds; the docsite already uses autoDismiss false for sync failures and frost alerts.
       - level: must
         statement: Set autoDismiss to false for any warning or error the user needs to read. Four seconds is not long enough for everyone.
         checkedBy: manual

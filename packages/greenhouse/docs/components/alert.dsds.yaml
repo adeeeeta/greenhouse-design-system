@@ -35,7 +35,6 @@ sections:
       - level: should
         statement: Place an error alert next to the form or content it describes, not only at the top of the page.
         checkedBy: manual
-      # TODO(adi): confirm. Inferred from the docsite ("non-critical alerts the user can choose to hide").
       - level: should-not
         statement: Do not make error alerts dismissible. They should disappear when the problem is fixed.
         checkedBy: manual
