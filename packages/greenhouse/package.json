@@ -15,7 +15,10 @@
     "./tokens.css": "./dist/tokens.css"
   },
   "scripts": {
-    "build": "vite build"
+    "build": "vite build",
+    "docs:validate": "dsds-validate docs/index.dsds.yaml docs/components/*.dsds.yaml",
+    "docs:lint": "dsds-lint docs/index.dsds.yaml docs/components/*.dsds.yaml",
+    "docs:format": "dsds-format docs"
   },
   "dependencies": {
     "@floating-ui/react": "^0.27.20"
@@ -25,6 +28,7 @@
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
+    "design-system-documentation-schema": "github:somerandomdude/design-system-documentation-schema#cd6d817e81d4e5f0cc1fb98ae7636379408014d7",
     "@vitejs/plugin-react": "^6.0.3",
     "rollup-preserve-directives": "^1.1.3",
     "vite": "^8.1.5",

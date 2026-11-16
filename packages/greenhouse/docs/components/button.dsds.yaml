@@ -1,0 +1,89 @@
+kind: component
+id: button
+name: Button
+description: Triggers an in-page action, such as saving, opening a dialog or submitting a form.
+metadata:
+  tags: [actions]
+  since: 1.0.0
+  status: {status: stable}
+  updated: {date: 2026-11-15}
+
+sections:
+  - kind: guidelines
+    for: all
+    framing: when-to-use
+    items:
+      - level: must-not
+        statement: Do not use Button for navigation to another URL; use Link.
+        alternatives:
+          - to: link
+        checkedBy: manual
+  - kind: guidelines
+    for: all
+    items:
+      - level: must
+        statement: Give an icon-only button an aria-label.
+        checkedBy: manual
+        tags: [accessibility]
+      - level: should
+        statement: Use one primary button per surface.
+        checkedBy: manual
+  - kind: guidelines
+    for: agent
+    title: Common misreadings
+    items:
+      - level: must
+        statement: Set the visual style with the kind prop. There is no variant prop.
+        checkedBy: manual
+      - level: must-not
+        statement: Do not use a danger kind, loading prop or iconEnd prop; none exist.
+        checkedBy: manual
+
+alternatives:
+  - to: link
+  - to: card
+
+sourceFiles:
+  - platform: react
+    file: components/Button/Button.tsx
+imports:
+  - platform: react
+    code: 'import { Button } from "@adeeeeta/greenhouse";'
+    package: "@adeeeeta/greenhouse"
+
+traits:
+  - traitType: variant
+    kind: enum
+    id: kind
+    description: Visual emphasis of the button.
+    values:
+      - id: primary
+        description: The main action on a surface.
+      - id: secondary
+        description: Lower-emphasis actions beside a primary button.
+      - id: ghost
+        description: Lowest emphasis, for toolbars and dense rows.
+  - traitType: variant
+    kind: enum
+    id: size
+    description: Overall scale of the button.
+    values:
+      - id: sm
+        description: Compact layouts.
+      - id: md
+        description: The default for most surfaces.
+      - id: lg
+        description: Prominent calls to action.
+  - traitType: variant
+    kind: boolean
+    id: iconOnly
+    description: Renders only the icon; requires an aria-label.
+  - traitType: state
+    kind: boolean
+    id: disabled
+    description: Dimmed and non-interactive; set with the disabled prop.
+
+refs:
+  - href: https://greenhouse-design-system.vercel.app/components/button
+    rel: demo
+    role: docsite

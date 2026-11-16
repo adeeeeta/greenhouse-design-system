@@ -1,0 +1,44 @@
+$schema: https://designsystemdocspec.org/v0.23.1/dsds.bundled.yaml
+schemaVersion: "0.23.1"
+
+name: Greenhouse
+
+entries:
+  - kind: system
+    id: greenhouse
+    name: Greenhouse
+    description: A React component library and token system for calm, plant-themed interfaces.
+    metadata:
+      version: 1.2.0
+      url: https://greenhouse-design-system.vercel.app
+      license: MIT
+      platforms: [react]
+      sourceRoot: ../src/
+      status: {status: stable}
+    sections:
+      - kind: steps
+        for: all
+        title: Setup
+        items:
+          - title: Import tokens.css and styles.css once at the app root.
+          - title: Load Plus Jakarta Sans, Fraunces and Fira Code and set --font-sans-face, --font-display-face and --font-mono-face.
+          - title: Wrap the app in ToastProvider inside a client component.
+            optional: true
+      - kind: guidelines
+        for: all
+        title: Spacing
+        items:
+          - level: must-not
+            statement: Do not add padding to content placed directly inside Card, Alert or Modal; they pad themselves.
+            checkedBy: manual
+          - level: should
+            statement: Space children inside a component with gap on a flex or grid wrapper, not margins.
+            checkedBy: manual
+
+refs:
+  - href: ./components/button.dsds.yaml
+    rel: file
+    role: Button component
+  - href: https://www.npmjs.com/package/@adeeeeta/greenhouse
+    rel: source
+    role: npm package
