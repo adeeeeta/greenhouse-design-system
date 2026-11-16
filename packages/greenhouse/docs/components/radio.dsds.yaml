@@ -1,0 +1,85 @@
+kind: component
+id: radio
+name: Radio
+description: One option in a group where the user can choose exactly one, with every option visible.
+ 
+metadata:
+  updated: {date: 2026-11-15}
+  tags: [form]
+  status: {status: stable}
+ 
+sections:
+  - kind: guidelines
+    for: all
+    framing: when-to-use
+    items:
+      - level: should
+        statement: Use Radio when the user must pick exactly one option from a short list, such as a growth stage.
+        checkedBy: manual
+      - level: should-not
+        statement: Do not use Radio for a long list of options; use <dsds:dropdown>.
+        alternatives:
+          - to: dropdown
+        checkedBy: manual
+      - level: should-not
+        statement: Do not use Radio when the user can pick more than one option; use <dsds:checkbox>.
+        alternatives:
+          - to: checkbox
+        checkedBy: manual
+  - kind: guidelines
+    for: all
+    items:
+      - level: must
+        statement: Give every Radio in a group the same name and a different value.
+        checkedBy: manual
+      - level: must
+        statement: Wrap the group in a fieldset with a legend that asks the question, such as "Growth stage".
+        checkedBy: manual
+        tags: [accessibility]
+      # TODO(adi): confirm. Inferred, not from the docsite.
+      - level: should
+        statement: Preselect the most common option unless choosing nothing is a valid answer.
+        checkedBy: manual
+  - kind: guidelines
+    for: agent
+    title: Common misreadings
+    items:
+      - level: must
+        statement: Give each Radio its own id. Without one, every Radio in the group gets the same id, because the id falls back to the shared name.
+        checkedBy: manual
+      - level: must-not
+        statement: Do not label the group with a plain paragraph above it. Screen readers only announce the group name from a legend.
+        checkedBy: manual
+      - level: must-not
+        statement: Do not wrap Radio in FormField. It already includes one.
+        alternatives:
+          - to: form-field
+        checkedBy: manual
+ 
+alternatives:
+  - to: dropdown
+  - to: checkbox
+ 
+refs:
+  - href: https://greenhouse-design-system.vercel.app/components/radio
+    rel: demo
+    role: docsite
+ 
+sourceFiles:
+  - platform: react
+    file: components/Radio/Radio.tsx
+ 
+imports:
+  - platform: react
+    code: 'import { Radio } from "@adeeeeta/greenhouse";'
+    package: "@adeeeeta/greenhouse"
+ 
+traits:
+  - traitType: state
+    kind: boolean
+    id: checked
+    description: The selected option in its group.
+  - traitType: state
+    kind: boolean
+    id: disabled
+    description: Dimmed and can't be chosen. Set it on individual options.
