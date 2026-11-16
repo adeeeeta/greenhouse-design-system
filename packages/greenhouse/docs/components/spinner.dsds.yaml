@@ -1,0 +1,73 @@
+kind: component
+id: spinner
+name: Spinner
+description: An animated indicator that something is loading and the wait time is unknown.
+
+metadata:
+  updated: {date: 2026-11-16}
+  tags: [feedback]
+  status: {status: stable}
+
+sections:
+  - kind: guidelines
+    for: all
+    framing: when-to-use
+    items:
+      - level: should
+        statement: Use Spinner while content or an action is loading and you can't tell how long it will take.
+        checkedBy: manual
+      - level: should-not
+        statement: Do not show a spinner for waits shorter than about one second. A flash of spinner feels slower than no spinner.
+        checkedBy: manual
+  - kind: guidelines
+    for: all
+    items:
+      - level: should
+        statement: Pass label to say what is loading, such as "Syncing plant data".
+        checkedBy: manual
+      - level: should
+        statement: Use sm inline or in compact places, such as inside a Button, and md (the default) elsewhere.
+        checkedBy: manual
+      - level: should-not
+        statement: Do not show several spinners for one loading task. Use one per area that loads separately.
+        checkedBy: manual
+  - kind: guidelines
+    for: agent
+    title: Common misreadings
+    items:
+      - level: must
+        statement: To show loading in a Button, pass Spinner with size sm as the Button's icon and set disabled on the Button. Button has no loading prop.
+        alternatives:
+          - to: button
+        checkedBy: manual
+      - level: must
+        statement: Expect Spinner to take the color of the surrounding text. It has no color prop.
+        checkedBy: manual
+      - level: must
+        statement: Expect screen readers to announce "Loading" when no label is passed.
+        checkedBy: manual
+
+refs:
+  - href: https://greenhouse-design-system.vercel.app/components/spinner
+    rel: demo
+    role: docsite
+
+sourceFiles:
+  - platform: react
+    file: components/Spinner/Spinner.tsx
+
+imports:
+  - platform: react
+    code: 'import { Spinner } from "@adeeeeta/greenhouse";'
+    package: "@adeeeeta/greenhouse"
+
+traits:
+  - traitType: variant
+    kind: enum
+    id: size
+    description: Overall scale.
+    values:
+      - id: sm
+        description: Inline or compact places, such as inside a Button.
+      - id: md
+        description: The default.
