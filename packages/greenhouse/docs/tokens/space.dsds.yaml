@@ -1,0 +1,226 @@
+schemaVersion: "0.23.1"
+name: Greenhouse spacing tokens
+entries:
+- kind: token
+  id: space-1
+  name: Space 1
+  description: 4px on the 4px spacing scale.
+  metadata:
+    updated:
+      date: '2026-11-16'
+    tags:
+    - space
+    status:
+      status: stable
+    group: space
+    aliases:
+    - --space-1
+  sections:
+  - kind: guidelines
+    for: all
+    items:
+    - level: should
+      statement: Use for hairline gaps, such as between a label and its required mark.
+      checkedBy: manual
+  - kind: guidelines
+    for: agent
+    title: Common misreadings
+    items:
+    - level: must-not
+      statement: Do not use --space-7, --space-9 or --space-11. They don't exist; the scale skips from 6 to 8, 8 to 10 and 10 to 12.
+      checkedBy: manual
+    - level: must-not
+      statement: Do not use raw pixel values for spacing. If a value isn't on the scale, use the nearest step.
+      checkedBy: manual
+  tokenType: dimension
+  source: ../../src/styles/tokens.css
+- kind: token
+  id: space-2
+  name: Space 2
+  description: 8px on the 4px spacing scale.
+  metadata:
+    updated:
+      date: '2026-11-16'
+    tags:
+    - space
+    status:
+      status: stable
+    group: space
+    aliases:
+    - --space-2
+  sections:
+  - kind: guidelines
+    for: all
+    items:
+    - level: should
+      statement: Use for tight groupings, such as an icon and its label.
+      checkedBy: manual
+  tokenType: dimension
+  source: ../../src/styles/tokens.css
+- kind: token
+  id: space-3
+  name: Space 3
+  description: 12px on the 4px spacing scale.
+  metadata:
+    updated:
+      date: '2026-11-16'
+    tags:
+    - space
+    status:
+      status: stable
+    group: space
+    aliases:
+    - --space-3
+  sections:
+  - kind: guidelines
+    for: all
+    items:
+    - level: should
+      statement: Use for space inside components, such as between fields or list rows.
+      checkedBy: manual
+  tokenType: dimension
+  source: ../../src/styles/tokens.css
+- kind: token
+  id: space-4
+  name: Space 4
+  description: 16px on the 4px spacing scale.
+  metadata:
+    updated:
+      date: '2026-11-16'
+    tags:
+    - space
+    status:
+      status: stable
+    group: space
+    aliases:
+    - --space-4
+  sections:
+  - kind: guidelines
+    for: all
+    items:
+    - level: should
+      statement: Use for component padding and the gap between related items.
+      checkedBy: manual
+  tokenType: dimension
+  source: ../../src/styles/tokens.css
+- kind: token
+  id: space-5
+  name: Space 5
+  description: 20px on the 4px spacing scale.
+  metadata:
+    updated:
+      date: '2026-11-16'
+    tags:
+    - space
+    status:
+      status: stable
+    group: space
+    aliases:
+    - --space-5
+  sections:
+  - kind: guidelines
+    for: all
+    items:
+    - level: should
+      statement: Use for an in-between step when 16px is too tight and 24px too loose.
+      checkedBy: manual
+  tokenType: dimension
+  source: ../../src/styles/tokens.css
+- kind: token
+  id: space-6
+  name: Space 6
+  description: 24px on the 4px spacing scale.
+  metadata:
+    updated:
+      date: '2026-11-16'
+    tags:
+    - space
+    status:
+      status: stable
+    group: space
+    aliases:
+    - --space-6
+  sections:
+  - kind: guidelines
+    for: all
+    items:
+    - level: should
+      statement: Use for page and layout padding; the space around Divider.
+      checkedBy: manual
+  tokenType: dimension
+  source: ../../src/styles/tokens.css
+- kind: token
+  id: space-8
+  name: Space 8
+  description: 32px on the 4px spacing scale.
+  metadata:
+    updated:
+      date: '2026-11-16'
+    tags:
+    - space
+    status:
+      status: stable
+    group: space
+    aliases:
+    - --space-8
+  sections:
+  - kind: guidelines
+    for: all
+    items:
+    - level: should
+      statement: Use for separation between distinct sections.
+      checkedBy: manual
+  tokenType: dimension
+  source: ../../src/styles/tokens.css
+- kind: token
+  id: space-10
+  name: Space 10
+  description: 40px on the 4px spacing scale.
+  metadata:
+    updated:
+      date: '2026-11-16'
+    tags:
+    - space
+    status:
+      status: stable
+    group: space
+    aliases:
+    - --space-10
+  sections:
+  - kind: guidelines
+    for: all
+    items:
+    - level: should
+      statement: Use for large layout spacing between major page regions.
+      checkedBy: manual
+    - level: must-not
+      statement: Do not use inside a component. This is a layout-scale step.
+      checkedBy: manual
+  tokenType: dimension
+  source: ../../src/styles/tokens.css
+- kind: token
+  id: space-12
+  name: Space 12
+  description: 48px on the 4px spacing scale.
+  metadata:
+    updated:
+      date: '2026-11-16'
+    tags:
+    - space
+    status:
+      status: stable
+    group: space
+    aliases:
+    - --space-12
+  sections:
+  - kind: guidelines
+    for: all
+    items:
+    - level: should
+      statement: Use for the largest layout spacing, such as around page heroes.
+      checkedBy: manual
+    - level: must-not
+      statement: Do not use inside a component. This is a layout-scale step.
+      checkedBy: manual
+  tokenType: dimension
+  source: ../../src/styles/tokens.css

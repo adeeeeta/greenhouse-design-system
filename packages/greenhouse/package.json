@@ -16,8 +16,8 @@
   },
   "scripts": {
     "build": "vite build",
-    "docs:validate": "dsds-validate docs/index.dsds.yaml docs/components/*.dsds.yaml",
-    "docs:lint": "dsds-lint docs/index.dsds.yaml docs/components/*.dsds.yaml",
+    "docs:validate": "dsds-validate docs/index.dsds.yaml docs/components/*.dsds.yaml docs/tokens/*.dsds.yaml docs/themes/*.dsds.yaml",
+    "docs:lint": "dsds-lint docs/index.dsds.yaml docs/components/*.dsds.yaml docs/tokens/*.dsds.yaml docs/themes/*.dsds.yaml",
     "docs:format": "dsds-format docs",
     "docs:todos": "! grep -rn 'TODO(adi)' docs"
   },

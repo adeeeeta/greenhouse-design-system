@@ -1,0 +1,447 @@
+schemaVersion: "0.23.1"
+name: Greenhouse color tokens
+entries:
+- kind: token
+  id: color-text
+  name: Text
+  description: The main text color, for body copy, headings and labels.
+  metadata:
+    updated:
+      date: '2026-11-16'
+    tags:
+    - color
+    status:
+      status: stable
+    group: color.text
+    aliases:
+    - --color-text
+  sections:
+  - kind: guidelines
+    for: all
+    items:
+    - level: should
+      statement: Use for all text the user needs to read, unless it is secondary.
+      checkedBy: manual
+  tokenType: color
+  source: ../../src/styles/tokens.css
+- kind: token
+  id: color-text-muted
+  name: Text muted
+  description: A softer text color for secondary text such as hints, captions and metadata.
+  metadata:
+    updated:
+      date: '2026-11-16'
+    tags:
+    - color
+    status:
+      status: stable
+    group: color.text
+    aliases:
+    - --color-text-muted
+  sections:
+  - kind: guidelines
+    for: all
+    items:
+    - level: should
+      statement: Use for supporting text that sits beside main text, such as form hints, captions and timestamps.
+      checkedBy: manual
+    - level: should-not
+      statement: Do not use for the main content of a page or for error messages.
+      checkedBy: manual
+  tokenType: color
+  source: ../../src/styles/tokens.css
+- kind: token
+  id: color-surface
+  name: Surface
+  description: The default background for the page and for components such as Card and Modal.
+  metadata:
+    updated:
+      date: '2026-11-16'
+    tags:
+    - color
+    status:
+      status: stable
+    group: color.surface
+    aliases:
+    - --color-surface
+  sections:
+  - kind: guidelines
+    for: all
+    items:
+    - level: should
+      statement: Use as the background for most surfaces.
+      checkedBy: manual
+  tokenType: color
+  source: ../../src/styles/tokens.css
+- kind: token
+  id: color-surface-muted
+  name: Surface muted
+  description: A slightly tinted background that sets an area apart from the default surface.
+  metadata:
+    updated:
+      date: '2026-11-16'
+    tags:
+    - color
+    status:
+      status: stable
+    group: color.surface
+    aliases:
+    - --color-surface-muted
+  sections:
+  - kind: guidelines
+    for: all
+    items:
+    - level: should
+      statement: Use for secondary areas such as card headers, hover states and wells inside a surface.
+      checkedBy: manual
+  tokenType: color
+  source: ../../src/styles/tokens.css
+- kind: token
+  id: color-border
+  name: Border
+  description: The subtle border color, for separators and container outlines.
+  metadata:
+    updated:
+      date: '2026-11-16'
+    tags:
+    - color
+    status:
+      status: stable
+    group: color.border
+    aliases:
+    - --color-border
+  sections:
+  - kind: guidelines
+    for: all
+    items:
+    - level: should
+      statement: Use for separators and the outlines of containers such as Card and Tooltip.
+      checkedBy: manual
+    - level: should-not
+      statement: Do not use for the boundary of an interactive control; use color-border-strong.
+      checkedBy: manual
+  tokenType: color
+  source: ../../src/styles/tokens.css
+- kind: token
+  id: color-border-strong
+  name: Border strong
+  description: The stronger border color, for the boundaries of interactive controls.
+  metadata:
+    updated:
+      date: '2026-11-16'
+    tags:
+    - color
+    status:
+      status: stable
+    group: color.border
+    aliases:
+    - --color-border-strong
+  sections:
+  - kind: guidelines
+    for: all
+    items:
+    - level: should
+      statement: Use for the edges of controls the user interacts with, such as checkboxes, radios and toggles, so they stand out from the surface.
+      checkedBy: manual
+  tokenType: color
+  source: ../../src/styles/tokens.css
+- kind: token
+  id: color-primary
+  name: Primary
+  description: Chlorophyll green, reserved for primary actions, links and interactive emphasis.
+  metadata:
+    updated:
+      date: '2026-11-16'
+    tags:
+    - color
+    status:
+      status: stable
+    group: color.primary
+    aliases:
+    - --color-primary
+  sections:
+  - kind: guidelines
+    for: all
+    items:
+    - level: should
+      statement: Use for primary actions, links and selected or active states.
+      checkedBy: manual
+    - level: must-not
+      statement: Do not use for decoration or for large areas of non-interactive content. Green signals that something can be acted on.
+      checkedBy: manual
+  tokenType: color
+  source: ../../src/styles/tokens.css
+- kind: token
+  id: color-primary-hover
+  name: Primary hover
+  description: The primary green for hover and pressed states.
+  metadata:
+    updated:
+      date: '2026-11-16'
+    tags:
+    - color
+    status:
+      status: stable
+    group: color.primary
+    aliases:
+    - --color-primary-hover
+  sections:
+  - kind: guidelines
+    for: all
+    items:
+    - level: must
+      statement: Use only for the hover or pressed state of something that uses color-primary.
+      checkedBy: manual
+  tokenType: color
+  source: ../../src/styles/tokens.css
+- kind: token
+  id: color-primary-subtle
+  name: Primary subtle
+  description: A pale green tint for soft emphasis behind content.
+  metadata:
+    updated:
+      date: '2026-11-16'
+    tags:
+    - color
+    status:
+      status: stable
+    group: color.primary
+    aliases:
+    - --color-primary-subtle
+  sections:
+  - kind: guidelines
+    for: all
+    items:
+    - level: should
+      statement: Use as a background for selected or highlighted items, with color-text or color-primary on top.
+      checkedBy: manual
+  tokenType: color
+  source: ../../src/styles/tokens.css
+- kind: token
+  id: color-error
+  name: Error
+  description: The error color, for error text, icons and borders.
+  metadata:
+    updated:
+      date: '2026-11-16'
+    tags:
+    - color
+    status:
+      status: stable
+    group: color.error
+    aliases:
+    - --color-error
+  sections:
+  - kind: guidelines
+    for: all
+    items:
+    - level: should
+      statement: Use for validation messages and the borders of fields with an error.
+      checkedBy: manual
+    - level: must-not
+      statement: Do not use for destructive actions that haven't failed, such as a Delete button.
+      checkedBy: manual
+  tokenType: color
+  source: ../../src/styles/tokens.css
+- kind: token
+  id: color-error-strong
+  name: Error strong
+  description: A darker error color.
+  metadata:
+    updated:
+      date: '2026-11-16'
+    tags:
+    - color
+    status:
+      status: stable
+    group: color.error
+    aliases:
+    - --color-error-strong
+  sections:
+  - kind: guidelines
+    for: all
+    items:
+    - level: should
+      statement: Use for error text or icons that sit on a tinted error background, where color-error has too little contrast.
+      checkedBy: manual
+  tokenType: color
+  source: ../../src/styles/tokens.css
+- kind: token
+  id: color-focus-ring
+  name: Focus ring
+  description: The outline shown around the element that has keyboard focus.
+  metadata:
+    updated:
+      date: '2026-11-16'
+    tags:
+    - color
+    status:
+      status: stable
+    group: color.focus
+    aliases:
+    - --color-focus-ring
+  sections:
+  - kind: guidelines
+    for: all
+    items:
+    - level: must
+      statement: Use only for focus indicators.
+      checkedBy: manual
+    - level: must
+      statement: Show a focus ring on every custom interactive element, using this token.
+      checkedBy: manual
+  tokenType: color
+  source: ../../src/styles/tokens.css
+- kind: token
+  id: color-overlay
+  name: Overlay
+  description: The translucent layer that dims the page behind a modal.
+  metadata:
+    updated:
+      date: '2026-11-16'
+    tags:
+    - color
+    status:
+      status: stable
+    group: color.overlay
+    aliases:
+    - --color-overlay
+  sections:
+  - kind: guidelines
+    for: all
+    items:
+    - level: must
+      statement: Use only for backdrops behind blocking overlays such as Modal.
+      checkedBy: manual
+  tokenType: color
+  source: ../../src/styles/tokens.css
+- kind: token
+  id: color-selection
+  name: Selection
+  description: The fill of a selected checkbox, radio or other selected control.
+  metadata:
+    updated:
+      date: '2026-11-16'
+    tags:
+    - color
+    status:
+      status: stable
+    group: color.selection
+    aliases:
+    - --color-selection
+  sections:
+  - kind: guidelines
+    for: all
+    items:
+    - level: should
+      statement: Use for the fill of custom selected controls so they match Checkbox and Radio.
+      checkedBy: manual
+  tokenType: color
+  source: ../../src/styles/tokens.css
+  combos:
+  - subject: '{color-selection}'
+    level: must
+    items:
+    - '{color-selection-contrast}'
+    note: The check mark or dot on a selection fill must use color-selection-contrast; it changes between themes to keep contrast.
+- kind: token
+  id: color-selection-contrast
+  name: Selection contrast
+  description: The color of the check mark or dot drawn on top of color-selection.
+  metadata:
+    updated:
+      date: '2026-11-16'
+    tags:
+    - color
+    status:
+      status: stable
+    group: color.selection
+    aliases:
+    - --color-selection-contrast
+  sections:
+  - kind: guidelines
+    for: all
+    items:
+    - level: must
+      statement: Use only on top of color-selection.
+      checkedBy: manual
+  tokenType: color
+  source: ../../src/styles/tokens.css
+- kind: token
+  id: color-accent-moss
+  name: Accent moss
+  description: A supporting moss tone for decorative touches such as illustrations and category markers.
+  metadata:
+    updated:
+      date: '2026-11-16'
+    tags:
+    - color
+    status:
+      status: stable
+    group: color.accent
+    aliases:
+    - --color-accent-moss
+  sections:
+  - kind: guidelines
+    for: all
+    items:
+    - level: should
+      statement: Use sparingly, for decoration only.
+      checkedBy: manual
+    - level: must-not
+      statement: Do not use for interactive elements, text or status.
+      checkedBy: manual
+  tokenType: color
+  source: ../../src/styles/tokens.css
+- kind: token
+  id: color-accent-soil
+  name: Accent soil
+  description: A supporting soil tone for decorative touches such as illustrations and category markers.
+  metadata:
+    updated:
+      date: '2026-11-16'
+    tags:
+    - color
+    status:
+      status: stable
+    group: color.accent
+    aliases:
+    - --color-accent-soil
+  sections:
+  - kind: guidelines
+    for: all
+    items:
+    - level: should
+      statement: Use sparingly, for decoration only.
+      checkedBy: manual
+    - level: must-not
+      statement: Do not use for interactive elements, text or status.
+      checkedBy: manual
+  tokenType: color
+  source: ../../src/styles/tokens.css
+- kind: token
+  id: color-accent-leaf
+  name: Accent leaf
+  description: A supporting leaf tone for decorative touches such as illustrations and category markers.
+  metadata:
+    updated:
+      date: '2026-11-16'
+    tags:
+    - color
+    status:
+      status: stable
+    group: color.accent
+    aliases:
+    - --color-accent-leaf
+  sections:
+  - kind: guidelines
+    for: all
+    items:
+    - level: should
+      statement: Use sparingly, for decoration only.
+      checkedBy: manual
+    - level: must-not
+      statement: Do not use for interactive elements, text or status.
+      checkedBy: manual
+  tokenType: color
+  source: ../../src/styles/tokens.css

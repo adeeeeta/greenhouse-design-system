@@ -1,0 +1,672 @@
+schemaVersion: "0.23.1"
+name: Greenhouse typography tokens
+entries:
+- kind: token
+  id: type-display-size
+  name: Display size
+  description: Font size for the display step. The largest heading, set in Fraunces for expressive moments.
+  metadata:
+    updated:
+      date: '2026-11-16'
+    tags:
+    - type
+    status:
+      status: stable
+    group: type
+    aliases:
+    - --type-display-size
+  sections:
+  - kind: guidelines
+    for: all
+    items:
+    - level: should
+      statement: Prefer the Text component. Use this token only in your own CSS.
+      checkedBy: manual
+  tokenType: dimension
+  source: ../../src/styles/tokens.css
+  combos:
+  - subject: '{type-display-size}'
+    level: must
+    items:
+    - '{type-display-line}'
+    note: Each size is tuned to its own line height. Mixing steps breaks the vertical rhythm.
+- kind: token
+  id: type-display-line
+  name: Display line height
+  description: Unitless line height for the display step.
+  metadata:
+    updated:
+      date: '2026-11-16'
+    tags:
+    - type
+    status:
+      status: stable
+    group: type
+    aliases:
+    - --type-display-line
+  tokenType: number
+  source: ../../src/styles/tokens.css
+- kind: token
+  id: type-h1-size
+  name: Heading 1 size
+  description: Font size for the h1 step. Page titles.
+  metadata:
+    updated:
+      date: '2026-11-16'
+    tags:
+    - type
+    status:
+      status: stable
+    group: type
+    aliases:
+    - --type-h1-size
+  sections:
+  - kind: guidelines
+    for: all
+    items:
+    - level: should
+      statement: Prefer the Text component. Use this token only in your own CSS.
+      checkedBy: manual
+  tokenType: dimension
+  source: ../../src/styles/tokens.css
+  combos:
+  - subject: '{type-h1-size}'
+    level: must
+    items:
+    - '{type-h1-line}'
+    note: Each size is tuned to its own line height. Mixing steps breaks the vertical rhythm.
+- kind: token
+  id: type-h1-line
+  name: Heading 1 line height
+  description: Unitless line height for the h1 step.
+  metadata:
+    updated:
+      date: '2026-11-16'
+    tags:
+    - type
+    status:
+      status: stable
+    group: type
+    aliases:
+    - --type-h1-line
+  tokenType: number
+  source: ../../src/styles/tokens.css
+- kind: token
+  id: type-h2-size
+  name: Heading 2 size
+  description: Font size for the h2 step. Section titles.
+  metadata:
+    updated:
+      date: '2026-11-16'
+    tags:
+    - type
+    status:
+      status: stable
+    group: type
+    aliases:
+    - --type-h2-size
+  sections:
+  - kind: guidelines
+    for: all
+    items:
+    - level: should
+      statement: Prefer the Text component. Use this token only in your own CSS.
+      checkedBy: manual
+  tokenType: dimension
+  source: ../../src/styles/tokens.css
+  combos:
+  - subject: '{type-h2-size}'
+    level: must
+    items:
+    - '{type-h2-line}'
+    note: Each size is tuned to its own line height. Mixing steps breaks the vertical rhythm.
+- kind: token
+  id: type-h2-line
+  name: Heading 2 line height
+  description: Unitless line height for the h2 step.
+  metadata:
+    updated:
+      date: '2026-11-16'
+    tags:
+    - type
+    status:
+      status: stable
+    group: type
+    aliases:
+    - --type-h2-line
+  tokenType: number
+  source: ../../src/styles/tokens.css
+- kind: token
+  id: type-h3-size
+  name: Heading 3 size
+  description: Font size for the h3 step. Subsection titles.
+  metadata:
+    updated:
+      date: '2026-11-16'
+    tags:
+    - type
+    status:
+      status: stable
+    group: type
+    aliases:
+    - --type-h3-size
+  sections:
+  - kind: guidelines
+    for: all
+    items:
+    - level: should
+      statement: Prefer the Text component. Use this token only in your own CSS.
+      checkedBy: manual
+  tokenType: dimension
+  source: ../../src/styles/tokens.css
+  combos:
+  - subject: '{type-h3-size}'
+    level: must
+    items:
+    - '{type-h3-line}'
+    note: Each size is tuned to its own line height. Mixing steps breaks the vertical rhythm.
+- kind: token
+  id: type-h3-line
+  name: Heading 3 line height
+  description: Unitless line height for the h3 step.
+  metadata:
+    updated:
+      date: '2026-11-16'
+    tags:
+    - type
+    status:
+      status: stable
+    group: type
+    aliases:
+    - --type-h3-line
+  tokenType: number
+  source: ../../src/styles/tokens.css
+- kind: token
+  id: type-h4-size
+  name: Heading 4 size
+  description: Font size for the h4 step. Card and group titles.
+  metadata:
+    updated:
+      date: '2026-11-16'
+    tags:
+    - type
+    status:
+      status: stable
+    group: type
+    aliases:
+    - --type-h4-size
+  sections:
+  - kind: guidelines
+    for: all
+    items:
+    - level: should
+      statement: Prefer the Text component. Use this token only in your own CSS.
+      checkedBy: manual
+  tokenType: dimension
+  source: ../../src/styles/tokens.css
+  combos:
+  - subject: '{type-h4-size}'
+    level: must
+    items:
+    - '{type-h4-line}'
+    note: Each size is tuned to its own line height. Mixing steps breaks the vertical rhythm.
+- kind: token
+  id: type-h4-line
+  name: Heading 4 line height
+  description: Unitless line height for the h4 step.
+  metadata:
+    updated:
+      date: '2026-11-16'
+    tags:
+    - type
+    status:
+      status: stable
+    group: type
+    aliases:
+    - --type-h4-line
+  tokenType: number
+  source: ../../src/styles/tokens.css
+- kind: token
+  id: type-body-size
+  name: Body size
+  description: Font size for the body step. Running text.
+  metadata:
+    updated:
+      date: '2026-11-16'
+    tags:
+    - type
+    status:
+      status: stable
+    group: type
+    aliases:
+    - --type-body-size
+  sections:
+  - kind: guidelines
+    for: all
+    items:
+    - level: should
+      statement: Prefer the Text component. Use this token only in your own CSS.
+      checkedBy: manual
+  tokenType: dimension
+  source: ../../src/styles/tokens.css
+  combos:
+  - subject: '{type-body-size}'
+    level: must
+    items:
+    - '{type-body-line}'
+    note: Each size is tuned to its own line height. Mixing steps breaks the vertical rhythm.
+- kind: token
+  id: type-body-line
+  name: Body line height
+  description: Unitless line height for the body step.
+  metadata:
+    updated:
+      date: '2026-11-16'
+    tags:
+    - type
+    status:
+      status: stable
+    group: type
+    aliases:
+    - --type-body-line
+  tokenType: number
+  source: ../../src/styles/tokens.css
+- kind: token
+  id: type-bodySm-size
+  name: Body small size
+  description: Font size for the bodySm step. Smaller supporting text.
+  metadata:
+    updated:
+      date: '2026-11-16'
+    tags:
+    - type
+    status:
+      status: stable
+    group: type
+    aliases:
+    - --type-bodySm-size
+  sections:
+  - kind: guidelines
+    for: all
+    items:
+    - level: should
+      statement: Prefer the Text component. Use this token only in your own CSS.
+      checkedBy: manual
+  tokenType: dimension
+  source: ../../src/styles/tokens.css
+  combos:
+  - subject: '{type-bodySm-size}'
+    level: must
+    items:
+    - '{type-bodySm-line}'
+    note: Each size is tuned to its own line height. Mixing steps breaks the vertical rhythm.
+- kind: token
+  id: type-bodySm-line
+  name: Body small line height
+  description: Unitless line height for the bodySm step.
+  metadata:
+    updated:
+      date: '2026-11-16'
+    tags:
+    - type
+    status:
+      status: stable
+    group: type
+    aliases:
+    - --type-bodySm-line
+  tokenType: number
+  source: ../../src/styles/tokens.css
+- kind: token
+  id: type-label-size
+  name: Label size
+  description: Font size for the label step. Form labels and UI text.
+  metadata:
+    updated:
+      date: '2026-11-16'
+    tags:
+    - type
+    status:
+      status: stable
+    group: type
+    aliases:
+    - --type-label-size
+  sections:
+  - kind: guidelines
+    for: all
+    items:
+    - level: should
+      statement: Prefer the Text component. Use this token only in your own CSS.
+      checkedBy: manual
+  tokenType: dimension
+  source: ../../src/styles/tokens.css
+  combos:
+  - subject: '{type-label-size}'
+    level: must
+    items:
+    - '{type-label-line}'
+    note: Each size is tuned to its own line height. Mixing steps breaks the vertical rhythm.
+- kind: token
+  id: type-label-line
+  name: Label line height
+  description: Unitless line height for the label step.
+  metadata:
+    updated:
+      date: '2026-11-16'
+    tags:
+    - type
+    status:
+      status: stable
+    group: type
+    aliases:
+    - --type-label-line
+  tokenType: number
+  source: ../../src/styles/tokens.css
+- kind: token
+  id: type-caption-size
+  name: Caption size
+  description: Font size for the caption step. Metadata and footnotes.
+  metadata:
+    updated:
+      date: '2026-11-16'
+    tags:
+    - type
+    status:
+      status: stable
+    group: type
+    aliases:
+    - --type-caption-size
+  sections:
+  - kind: guidelines
+    for: all
+    items:
+    - level: should
+      statement: Prefer the Text component. Use this token only in your own CSS.
+      checkedBy: manual
+  tokenType: dimension
+  source: ../../src/styles/tokens.css
+  combos:
+  - subject: '{type-caption-size}'
+    level: must
+    items:
+    - '{type-caption-line}'
+    note: Each size is tuned to its own line height. Mixing steps breaks the vertical rhythm.
+- kind: token
+  id: type-caption-line
+  name: Caption line height
+  description: Unitless line height for the caption step.
+  metadata:
+    updated:
+      date: '2026-11-16'
+    tags:
+    - type
+    status:
+      status: stable
+    group: type
+    aliases:
+    - --type-caption-line
+  tokenType: number
+  source: ../../src/styles/tokens.css
+- kind: token
+  id: font-sans
+  name: Sans
+  description: The main typeface, Plus Jakarta Sans, with system fallbacks. Used for body text, UI and headings h1 to h4.
+  metadata:
+    updated:
+      date: '2026-11-16'
+    tags:
+    - font
+    status:
+      status: stable
+    group: font.family
+    aliases:
+    - --font-sans
+  sections:
+  - kind: guidelines
+    for: all
+    items:
+    - level: should
+      statement: Use for all text except code and expressive display headings.
+      checkedBy: manual
+  tokenType: fontFamily
+  source: ../../src/styles/tokens.css
+- kind: token
+  id: font-display
+  name: Display
+  description: The expressive serif, Fraunces, with serif fallbacks.
+  metadata:
+    updated:
+      date: '2026-11-16'
+    tags:
+    - font
+    status:
+      status: stable
+    group: font.family
+    aliases:
+    - --font-display
+  sections:
+  - kind: guidelines
+    for: all
+    items:
+    - level: should
+      statement: Use only for expressive display headings such as page heroes.
+      checkedBy: manual
+    - level: must-not
+      statement: Do not use on utility screens such as settings, forms or tables.
+      checkedBy: manual
+  tokenType: fontFamily
+  source: ../../src/styles/tokens.css
+- kind: token
+  id: font-mono
+  name: Mono
+  description: The code typeface, Fira Code, with monospace fallbacks.
+  metadata:
+    updated:
+      date: '2026-11-16'
+    tags:
+    - font
+    status:
+      status: stable
+    group: font.family
+    aliases:
+    - --font-mono
+  sections:
+  - kind: guidelines
+    for: all
+    items:
+    - level: should
+      statement: Use only for code and technical values.
+      checkedBy: manual
+  tokenType: fontFamily
+  source: ../../src/styles/tokens.css
+- kind: token
+  id: font-sans-face
+  name: Plus Jakarta Sans face
+  description: An input you set when loading Plus Jakarta Sans. Greenhouse does not load fonts itself.
+  metadata:
+    updated:
+      date: '2026-11-16'
+    tags:
+    - font
+    status:
+      status: stable
+    group: font.face
+    aliases:
+    - --font-sans-face
+  sections:
+  - kind: guidelines
+    for: all
+    items:
+    - level: must
+      statement: Set this variable when you load the font, for example through next/font with variable set to this name.
+      checkedBy: manual
+  - kind: guidelines
+    for: agent
+    title: Common misreadings
+    items:
+    - level: must-not
+      statement: Do not use this token in component CSS. Use the matching font-sans, font-display or font-mono token, which include fallbacks.
+      checkedBy: manual
+  tokenType: fontFamily
+  source: ../../src/styles/tokens.css
+- kind: token
+  id: font-display-face
+  name: Fraunces face
+  description: An input you set when loading Fraunces. Greenhouse does not load fonts itself.
+  metadata:
+    updated:
+      date: '2026-11-16'
+    tags:
+    - font
+    status:
+      status: stable
+    group: font.face
+    aliases:
+    - --font-display-face
+  sections:
+  - kind: guidelines
+    for: all
+    items:
+    - level: must
+      statement: Set this variable when you load the font, for example through next/font with variable set to this name.
+      checkedBy: manual
+  - kind: guidelines
+    for: agent
+    title: Common misreadings
+    items:
+    - level: must-not
+      statement: Do not use this token in component CSS. Use the matching font-sans, font-display or font-mono token, which include fallbacks.
+      checkedBy: manual
+  tokenType: fontFamily
+  source: ../../src/styles/tokens.css
+- kind: token
+  id: font-mono-face
+  name: Fira Code face
+  description: An input you set when loading Fira Code. Greenhouse does not load fonts itself.
+  metadata:
+    updated:
+      date: '2026-11-16'
+    tags:
+    - font
+    status:
+      status: stable
+    group: font.face
+    aliases:
+    - --font-mono-face
+  sections:
+  - kind: guidelines
+    for: all
+    items:
+    - level: must
+      statement: Set this variable when you load the font, for example through next/font with variable set to this name.
+      checkedBy: manual
+  - kind: guidelines
+    for: agent
+    title: Common misreadings
+    items:
+    - level: must-not
+      statement: Do not use this token in component CSS. Use the matching font-sans, font-display or font-mono token, which include fallbacks.
+      checkedBy: manual
+  tokenType: fontFamily
+  source: ../../src/styles/tokens.css
+- kind: token
+  id: font-weight-regular
+  name: Weight regular
+  description: Font weight 400.
+  metadata:
+    updated:
+      date: '2026-11-16'
+    tags:
+    - font
+    status:
+      status: stable
+    group: font.weight
+    aliases:
+    - --font-weight-regular
+  sections:
+  - kind: guidelines
+    for: all
+    items:
+    - level: should
+      statement: Use for body text.
+      checkedBy: manual
+  - kind: guidelines
+    for: agent
+    title: Common misreadings
+    items:
+    - level: must-not
+      statement: Do not use font weights other than these four tokens. The set is limited on purpose.
+      checkedBy: manual
+    - level: must-not
+      statement: Do not use the legacy --text-1 to --text-4 sizes. Use the --type-* tokens.
+      checkedBy: manual
+  tokenType: fontWeight
+  source: ../../src/styles/tokens.css
+- kind: token
+  id: font-weight-medium
+  name: Weight medium
+  description: Font weight 500.
+  metadata:
+    updated:
+      date: '2026-11-16'
+    tags:
+    - font
+    status:
+      status: stable
+    group: font.weight
+    aliases:
+    - --font-weight-medium
+  sections:
+  - kind: guidelines
+    for: all
+    items:
+    - level: should
+      statement: Use for labels and emphasis within body text.
+      checkedBy: manual
+  tokenType: fontWeight
+  source: ../../src/styles/tokens.css
+- kind: token
+  id: font-weight-semibold
+  name: Weight semibold
+  description: Font weight 600.
+  metadata:
+    updated:
+      date: '2026-11-16'
+    tags:
+    - font
+    status:
+      status: stable
+    group: font.weight
+    aliases:
+    - --font-weight-semibold
+  sections:
+  - kind: guidelines
+    for: all
+    items:
+    - level: should
+      statement: Use for headings and strong labels.
+      checkedBy: manual
+  tokenType: fontWeight
+  source: ../../src/styles/tokens.css
+- kind: token
+  id: font-weight-bold
+  name: Weight bold
+  description: Font weight 700.
+  metadata:
+    updated:
+      date: '2026-11-16'
+    tags:
+    - font
+    status:
+      status: stable
+    group: font.weight
+    aliases:
+    - --font-weight-bold
+  sections:
+  - kind: guidelines
+    for: all
+    items:
+    - level: should-not
+      statement: Do not use in UI text. Semibold is the strongest weight components use.
+      checkedBy: manual
+  tokenType: fontWeight
+  source: ../../src/styles/tokens.css

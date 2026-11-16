@@ -1,0 +1,155 @@
+schemaVersion: "0.23.1"
+name: Greenhouse shape, elevation and control tokens
+entries:
+- kind: token
+  id: radius-sm
+  name: Radius small
+  description: 4px corner radius for small elements.
+  metadata:
+    updated:
+      date: '2026-11-16'
+    tags:
+    - radius
+    status:
+      status: stable
+    group: radius
+    aliases:
+    - --radius-sm
+  sections:
+  - kind: guidelines
+    for: all
+    items:
+    - level: should
+      statement: Use for small elements such as buttons, inputs, badges and checkboxes.
+      checkedBy: manual
+  tokenType: dimension
+  source: ../../src/styles/tokens.css
+- kind: token
+  id: radius-md
+  name: Radius medium
+  description: 8px corner radius for containers.
+  metadata:
+    updated:
+      date: '2026-11-16'
+    tags:
+    - radius
+    status:
+      status: stable
+    group: radius
+    aliases:
+    - --radius-md
+  sections:
+  - kind: guidelines
+    for: all
+    items:
+    - level: should
+      statement: Use for containers such as cards, modals, menus, toasts and tooltips.
+      checkedBy: manual
+  tokenType: dimension
+  source: ../../src/styles/tokens.css
+- kind: token
+  id: shadow-1
+  name: Shadow 1
+  description: The single elevation shadow, used for raised surfaces.
+  metadata:
+    updated:
+      date: '2026-11-16'
+    tags:
+    - shadow
+    status:
+      status: stable
+    group: shadow
+    aliases:
+    - --shadow-1
+  sections:
+  - kind: guidelines
+    for: all
+    items:
+    - level: should
+      statement: Use for anything raised above the page, such as cards, menus, tooltips and modals.
+      checkedBy: manual
+  - kind: guidelines
+    for: agent
+    title: Common misreadings
+    items:
+    - level: must-not
+      statement: Do not invent other shadow values or names such as --shadow-2. Greenhouse has one elevation level in code.
+      checkedBy: manual
+  tokenType: shadow
+  source: ../../src/styles/tokens.css
+- kind: token
+  id: control-height
+  name: Control height
+  description: 44px, the shared height of form controls and the minimum touch target.
+  metadata:
+    updated:
+      date: '2026-11-16'
+    tags:
+    - control
+    status:
+      status: stable
+    group: control
+    aliases:
+    - --control-height
+  sections:
+  - kind: guidelines
+    for: all
+    items:
+    - level: must
+      statement: Make every custom interactive control at least this tall, so it is easy to tap.
+      checkedBy: manual
+  tokenType: dimension
+  source: ../../src/styles/tokens.css
+- kind: token
+  id: control-padding-x
+  name: Control padding x
+  description: The horizontal padding inside form controls (space-3).
+  metadata:
+    updated:
+      date: '2026-11-16'
+    tags:
+    - control
+    status:
+      status: stable
+    group: control
+    aliases:
+    - --control-padding-x
+  sections:
+  - kind: guidelines
+    for: all
+    items:
+    - level: should
+      statement: Use in custom inputs so their text lines up with TextInput and Dropdown.
+      checkedBy: manual
+  tokenType: dimension
+  source: ../../src/styles/tokens.css
+- kind: token
+  id: control-radius
+  name: Control radius
+  description: The corner radius of form controls (radius-sm).
+  metadata:
+    updated:
+      date: '2026-11-16'
+    tags:
+    - control
+    status:
+      status: stable
+    group: control
+    aliases:
+    - --control-radius
+  sections:
+  - kind: guidelines
+    for: all
+    items:
+    - level: should
+      statement: Use for the corners of custom inputs so they match TextInput and Dropdown.
+      checkedBy: manual
+  - kind: guidelines
+    for: agent
+    title: Common misreadings
+    items:
+    - level: must-not
+      statement: Do not use --control-font-size. It is legacy; use --type-body-size.
+      checkedBy: manual
+  tokenType: dimension
+  source: ../../src/styles/tokens.css
