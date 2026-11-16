@@ -1,0 +1,23 @@
+kind: theme
+id: light
+name: Light
+description: The default Greenhouse theme, with a white surface and chlorophyll green for actions.
+
+metadata:
+  updated: {date: 2026-11-16}
+  tags: [theme]
+  status: {status: stable}
+
+sections:
+  - kind: guidelines
+    for: all
+    items:
+      - level: should
+        statement: Expect light to apply by default. You don't need to set any attribute.
+        checkedBy: manual
+      - level: should
+        statement: Set data-theme="light" on an element inside a dark page to keep that area light, such as a preview of printed material.
+        checkedBy: manual
+
+colorScheme: light
+source: ../../src/styles/tokens.css

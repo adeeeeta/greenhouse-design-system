@@ -1,0 +1,39 @@
+kind: theme
+id: dark
+name: Dark
+description: A dark theme for low-light use. Every semantic token is remapped to keep the same roles and contrast.
+
+metadata:
+  updated: {date: 2026-11-16}
+  tags: [theme]
+  status: {status: stable}
+
+sections:
+  - kind: guidelines
+    for: all
+    items:
+      - level: must
+        statement: Turn on dark mode by setting data-theme="dark" on html, or on any element to make only that area dark. No JavaScript is needed.
+        checkedBy: manual
+      - level: must-not
+        statement: Do not hardcode light or dark colors, or add per-component dark overrides. Use semantic tokens and they switch automatically.
+        checkedBy: manual
+      - level: should
+        statement: Follow the user's system setting (prefers-color-scheme) unless they have chosen a theme in your app. Greenhouse does not do this automatically; your app sets the attribute.
+        checkedBy: manual
+  - kind: guidelines
+    for: agent
+    title: Common misreadings
+    items:
+      - level: must-not
+        statement: Do not use a dark class, Tailwind-style dark variants or a ThemeProvider. The only switch is the data-theme attribute.
+        checkedBy: manual
+      - level: must
+        statement: Also set color-scheme to dark on the same element. Greenhouse doesn't set it, so without it native scrollbars and form controls stay light.
+        checkedBy: manual
+
+extends:
+  - to: light
+
+colorScheme: dark
+source: ../../src/styles/tokens.css

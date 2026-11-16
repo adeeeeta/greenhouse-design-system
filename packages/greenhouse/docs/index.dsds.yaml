@@ -35,6 +35,20 @@ entries:
             statement: Space children inside a component with gap on a flex or grid wrapper, not margins.
             checkedBy: manual
  
+      - kind: guidelines
+        for: agent
+        title: Known gaps
+        items:
+          - level: must-not
+            statement: Do not use scale tokens such as --green-600 or --amber-600 for success, warning or info colors. No semantic tokens exist for them yet; use the Badge, Alert or Tag variants instead.
+            checkedBy: manual
+          - level: must-not
+            statement: Do not invent elevation tokens. --shadow-1 is the only shadow in code, although the Figma file defines more levels.
+            checkedBy: manual
+          - level: must-not
+            statement: Do not use legacy tokens (--text-1 to --text-4, --control-font-size) or component tokens (--button-*, --badge-* and similar) in your own CSS.
+            checkedBy: manual
+
 refs:
   - href: ./components/button.dsds.yaml
     rel: file
@@ -96,6 +110,24 @@ refs:
   - href: ./components/avatar.dsds.yaml
     rel: file
     role: Avatar component
+  - href: ./tokens/color.dsds.yaml
+    rel: file
+    role: Color tokens
+  - href: ./tokens/space.dsds.yaml
+    rel: file
+    role: Spacing tokens
+  - href: ./tokens/type.dsds.yaml
+    rel: file
+    role: Typography tokens
+  - href: ./tokens/shape.dsds.yaml
+    rel: file
+    role: Shape, elevation and control tokens
+  - href: ./themes/light.dsds.yaml
+    rel: file
+    role: Light theme
+  - href: ./themes/dark.dsds.yaml
+    rel: file
+    role: Dark theme
   - href: https://www.npmjs.com/package/@adeeeeta/greenhouse
     rel: source
     role: npm package
