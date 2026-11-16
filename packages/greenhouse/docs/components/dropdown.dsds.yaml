@@ -1,0 +1,79 @@
+kind: component
+id: dropdown
+name: Dropdown
+description: A select menu for choosing one option from a list, with an optional description under each option.
+
+metadata:
+  updated: {date: 2026-11-15}
+  tags: [form]
+  status: {status: stable}
+
+sections:
+  - kind: guidelines
+    for: all
+    framing: when-to-use
+    items:
+      - level: should
+        statement: Use Dropdown to choose one option from a longer list, such as a growing zone.
+        checkedBy: manual
+      # TODO(adi): confirm the cut-off. Inferred, not from the docsite.
+      - level: should-not
+        statement: Do not use Dropdown for five or fewer options that fit on screen; use <dsds:radio> so every choice stays visible.
+        alternatives:
+          - to: radio
+        checkedBy: manual
+  - kind: guidelines
+    for: all
+    items:
+      - level: must
+        statement: Give every Dropdown a label.
+        checkedBy: manual
+        tags: [accessibility]
+      - level: should
+        statement: Add an option description only when the label alone is not enough to choose, such as the temperature range of a zone.
+        checkedBy: manual
+  - kind: guidelines
+    for: agent
+    title: Common misreadings
+    items:
+      - level: must
+        statement: Control the selection yourself. Pass value and update it in onChange, which receives the option's value string, not an event.
+        checkedBy: manual
+      - level: must
+        statement: Read the selected value from your own state. Dropdown has no name prop and isn't included when a form is submitted.
+        checkedBy: manual
+      - level: must
+        statement: Give each Dropdown on a page a different label. The label is used to build the element's id.
+        checkedBy: manual
+      - level: must
+        statement: Type the options array as DropdownOption[], which is exported from the package.
+        checkedBy: manual
+      - level: must-not
+        statement: Do not wrap Dropdown in FormField. It already includes one.
+        alternatives:
+          - to: form-field
+        checkedBy: manual
+
+alternatives:
+  - to: radio
+  - to: text-input
+
+refs:
+  - href: https://greenhouse-design-system.vercel.app/components/dropdown
+    rel: demo
+    role: docsite
+
+sourceFiles:
+  - platform: react
+    file: components/Dropdown/Dropdown.tsx
+
+imports:
+  - platform: react
+    code: 'import { Dropdown, type DropdownOption } from "@adeeeeta/greenhouse";'
+    package: "@adeeeeta/greenhouse"
+
+traits:
+  - traitType: state
+    kind: boolean
+    id: disabled
+    description: Dimmed and can't be opened.
