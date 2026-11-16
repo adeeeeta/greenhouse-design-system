@@ -1,0 +1,86 @@
+kind: component
+id: text-input
+name: TextInput
+description: A single-line text field with a built-in label, hint and error message.
+
+metadata:
+  updated: {date: 2026-11-15}
+  tags: [form]
+  status: {status: stable}
+
+sections:
+  - kind: guidelines
+    for: all
+    framing: when-to-use
+    items:
+      - level: should
+        statement: Use TextInput for short free-text answers, such as a plant name or an email address.
+        checkedBy: manual
+      - level: should-not
+        statement: Do not use TextInput when the answer comes from a fixed list; use <dsds:dropdown> or <dsds:radio>.
+        alternatives:
+          - to: dropdown
+          - to: radio
+        checkedBy: manual
+  - kind: guidelines
+    for: all
+    items:
+      - level: must
+        statement: Give every TextInput a label.
+        checkedBy: manual
+        tags: [accessibility]
+      - level: should
+        statement: Use placeholder only for an example value. It disappears when the user types, so it can't replace the label or the hint.
+        checkedBy: manual
+      - level: should
+        statement: Set type to match the content, such as email, number or search, so phones show the right keyboard.
+        checkedBy: manual
+      # TODO(adi): confirm. Inferred, not from the docsite.
+      - level: should
+        statement: Write error messages that say how to fix the problem, such as "Enter a watering interval in days".
+        checkedBy: manual
+  - kind: guidelines
+    for: agent
+    title: Common misreadings
+    items:
+      - level: must-not
+        statement: Do not wrap TextInput in FormField. It already includes one.
+        alternatives:
+          - to: form-field
+        checkedBy: manual
+      - level: must
+        statement: Expect only one message below the field. When both error and hint are set, error replaces hint.
+        checkedBy: manual
+      - level: must
+        statement: Validate required fields yourself. The required prop adds the asterisk but does not turn on browser validation.
+        checkedBy: manual
+      - level: must
+        statement: Pass native input props such as name, value, onChange, type and autoComplete straight to TextInput. They reach the input element.
+        checkedBy: manual
+
+alternatives:
+  - to: dropdown
+
+refs:
+  - href: https://greenhouse-design-system.vercel.app/components/text-input
+    rel: demo
+    role: docsite
+
+sourceFiles:
+  - platform: react
+    file: components/TextInput/TextInput.tsx
+
+imports:
+  - platform: react
+    code: 'import { TextInput } from "@adeeeeta/greenhouse";'
+    package: "@adeeeeta/greenhouse"
+
+traits:
+  - traitType: variant
+    kind: boolean
+    id: required
+    description: Shows an asterisk after the label.
+  - traitType: state
+    kind: boolean
+    id: disabled
+    description: Dimmed, can't be focused, and can't be edited.
