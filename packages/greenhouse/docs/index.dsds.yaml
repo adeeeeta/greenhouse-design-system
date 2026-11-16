@@ -84,6 +84,18 @@ refs:
   - href: ./components/tooltip.dsds.yaml
     rel: file
     role: Tooltip component
+  - href: ./components/text.dsds.yaml
+    rel: file
+    role: Text component
+  - href: ./components/spinner.dsds.yaml
+    rel: file
+    role: Spinner component
+  - href: ./components/divider.dsds.yaml
+    rel: file
+    role: Divider component
+  - href: ./components/avatar.dsds.yaml
+    rel: file
+    role: Avatar component
   - href: https://www.npmjs.com/package/@adeeeeta/greenhouse
     rel: source
     role: npm package

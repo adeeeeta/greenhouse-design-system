@@ -1,0 +1,78 @@
+kind: component
+id: avatar
+name: Avatar
+description: A small image or initials that identifies a person or a thing, such as a plant or a team.
+
+metadata:
+  updated: {date: 2026-11-16}
+  tags: [data-display]
+  status: {status: stable}
+
+sections:
+  - kind: guidelines
+    for: all
+    items:
+      - level: should
+        statement: Use the circle shape for people and the square shape for things such as plants, teams or organisations.
+        checkedBy: manual
+      - level: must
+        statement: Pass alt with the full name, such as "Aditya Patel", even when the avatar shows initials.
+        checkedBy: manual
+        tags: [accessibility]
+      - level: should
+        statement: Pass initials as well as src, so the avatar still identifies the person if the image fails to load.
+        checkedBy: manual
+      - level: should
+        statement: Use the same size for every avatar in one list.
+        checkedBy: manual
+  - kind: guidelines
+    for: agent
+    title: Common misreadings
+    items:
+      - level: must
+        statement: Expect the fallback order image, then initials, then a generic person icon. It switches automatically when the image fails to load.
+        checkedBy: manual
+      - level: must
+        statement: Expect initials to be cut to two letters and capitalised.
+        checkedBy: manual
+      - level: must-not
+        statement: Do not make Avatar clickable. It has no onClick; wrap it in a Link or Button that has its own accessible name.
+        alternatives:
+          - to: link
+        checkedBy: manual
+
+refs:
+  - href: https://greenhouse-design-system.vercel.app/components/avatar
+    rel: demo
+    role: docsite
+
+sourceFiles:
+  - platform: react
+    file: components/Avatar/Avatar.tsx
+
+imports:
+  - platform: react
+    code: 'import { Avatar } from "@adeeeeta/greenhouse";'
+    package: "@adeeeeta/greenhouse"
+
+traits:
+  - traitType: variant
+    kind: enum
+    id: size
+    description: Overall scale.
+    values:
+      - id: sm
+        description: Compact lists.
+      - id: md
+        description: The default.
+      - id: lg
+        description: Profile headers.
+  - traitType: variant
+    kind: enum
+    id: shape
+    description: Outline of the avatar.
+    values:
+      - id: circle
+        description: The default. People.
+      - id: square
+        description: Things such as plants, teams or organisations.
