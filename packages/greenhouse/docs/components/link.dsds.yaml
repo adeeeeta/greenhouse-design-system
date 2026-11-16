@@ -1,0 +1,97 @@
+kind: component
+id: link
+name: Link
+description: Navigates to a URL inline, with an underlined default style and a quieter subtle style.
+
+metadata:
+  updated: {date: 2026-11-15}
+  tags: [navigation]
+  since: 1.2.0
+  status: {status: stable}
+
+sections:
+  - kind: guidelines
+    for: all
+    framing: when-to-use
+    items:
+      - level: should
+        statement: Use Link to navigate to another URL.
+        checkedBy: manual
+      - level: should-not
+        statement: Do not use Link to group a destination with supporting content; use <dsds:card> with href.
+        alternatives:
+          - to: card
+        checkedBy: manual
+      - level: must-not
+        statement: Do not use Link to trigger an in-page action; use <dsds:button>.
+        alternatives:
+          - to: button
+        checkedBy: manual
+  - kind: guidelines
+    for: all
+    items:
+      - level: must
+        statement: Give every link visible text. The external icon is aria-hidden and does not name the link.
+        checkedBy: manual
+        tags: [accessibility]
+      - level: must
+        statement: Pass href. external does not set the destination.
+        checkedBy: manual
+      - level: should
+        statement: Use the default variant for links inside body text. The underline identifies it as a link, and color alone isn’t enough (WCAG 1.4.1).
+        checkedBy: manual
+        tags: [accessibility]
+      - level: should
+        statement: Use the subtle variant in link lists where the layout already signals links, such as navigation, footers and card metadata.
+        checkedBy: manual
+      - level: should
+        statement: Use external only for links to other sites. Opening internal pages in a new tab breaks the back button.
+        checkedBy: manual
+      - level: should-not
+        statement: Do not use the subtle variant for links inside a paragraph.
+        checkedBy: manual
+  - kind: guidelines
+    for: agent
+    title: Common misreadings
+    items:
+      - level: must
+        statement: Set emphasis with the variant prop. Its values are default and subtle. There is no size prop.
+        checkedBy: manual
+      - level: must-not
+        statement: Do not assume external wins over other anchor props. target and rel are applied before the remaining props, so a passed target or rel replaces them. The icon still renders whenever external is true.
+        checkedBy: manual
+  - kind: definitions
+    for: all
+    context: anatomy
+    items:
+      - id: external-icon
+        term: External icon
+        definition: An ArrowSquareOut glyph shown after the text when external is true. It is aria-hidden.
+
+alternatives:
+  - to: button
+  - to: card
+
+sourceFiles:
+  - platform: react
+    file: components/Link/Link.tsx
+
+imports:
+  - platform: react
+    code: 'import { Link } from "@adeeeeta/greenhouse";'
+    package: "@adeeeeta/greenhouse"
+
+traits:
+  - traitType: variant
+    kind: enum
+    id: variant
+    description: Visual emphasis of the link.
+    values:
+      - id: default
+        description: Underlined link text. This is the default.
+      - id: subtle
+        description: Quieter color and no underline until hover.
+  - traitType: variant
+    kind: boolean
+    id: external
+    description: Opens the link in a new tab, sets rel="noopener noreferrer", and appends an external icon.
