@@ -4,7 +4,7 @@ name: Card
 description: Groups related content and actions into one container, with flat, elevated, and outlined styles.
 
 metadata:
-  updated: {date: 2026-11-15}
+  updated: {date: 2026-11-16}
   tags: [layout]
   status: {status: stable}
 
@@ -30,9 +30,6 @@ sections:
     for: all
     items:
       - level: must
-        statement: Do not add padding to content in the header, body, or footer. Those regions already include padding.
-        checkedBy: manual
-      - level: must
         statement: Include text in an interactive card so the anchor or button has an accessible name.
         checkedBy: manual
         tags: [accessibility]
@@ -49,6 +46,9 @@ sections:
         statement: Add href or onClick to make the whole card clickable. Interactive cards lift on hover.
         checkedBy: manual
       - level: must-not
+        statement: Do not add padding to content in the header, body, or footer. Those regions already include padding.
+        checkedBy: manual
+      - level: must-not
         statement: Do not put links, buttons, or other interactive controls inside a card that sets href or onClick. It’s invalid HTML, and keyboard and screen-reader users can’t reliably reach the inner control.
         checkedBy: manual
         tags: [accessibility]
@@ -60,19 +60,19 @@ sections:
     title: Common misreadings
     items:
       - level: must
-        statement: Choose the root element from the props. href renders an anchor, onClick without href renders a button, and neither renders a div.
+        statement: Expect Card's element to follow its props. With href it renders a link, with onClick a button, and with neither a plain div. Use href for navigation and onClick for an in-page action.
         checkedBy: manual
-      - level: must
-        statement: If both href and onClick are passed, render the anchor and drop onClick. href wins.
-        checkedBy: manual
-      - level: must
-        statement: When target is "_blank" and rel is omitted, set rel to "noopener noreferrer". A passed rel replaces that default.
+      - level: should
+        statement: Pass target="_blank" only for links to other sites. Card adds rel="noopener noreferrer" automatically unless you pass your own rel.
         checkedBy: manual
       - level: must-not
-        statement: Do not expect an href card to render <dsds:link>. The anchor is plain, with inherited color and no underline.
+        statement: Do not pass both href and onClick. When href is set, onClick is ignored.
         checkedBy: manual
       - level: must-not
-        statement: Do not set a size or disabled prop. Neither exists. variant is the only visual enum, and elevated is its default.
+        statement: Do not expect an href card to look like <dsds:link>. The card isn't underlined and keeps its own text color.
+        checkedBy: manual
+      - level: must-not
+        statement: Do not set a size or disabled prop. Neither exists. variant is the only visual option, and elevated is its default.
         checkedBy: manual
   - kind: definitions
     for: all
