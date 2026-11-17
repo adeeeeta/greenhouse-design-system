@@ -1,0 +1,1260 @@
+# Greenhouse — full agent reference
+
+Generated from the Greenhouse DSDS files (designsystemdocspec.org). Prop types live in the package's .d.ts files; token values live in tokens.css.
+
+## Greenhouse
+
+Kind: system
+
+A React component library and token system for calm, plant-themed interfaces.
+
+Spacing:
+- **Should:** Space children inside a component with gap on a flex or grid wrapper, not margins.
+- **Must not:** Do not add padding to content placed directly inside Card, Alert or Modal; they pad themselves.
+
+Known gaps:
+- **Must not:** Do not use scale tokens such as --green-600 or --amber-600 for success, warning or info colors. No semantic tokens exist for them yet; use the Badge, Alert or Tag variants instead.
+- **Must not:** Do not invent elevation tokens. --shadow-1 is the only shadow in code, although the Figma file defines more levels.
+- **Must not:** Do not use legacy tokens (--text-1 to --text-4, --control-font-size) or component tokens (--button-*, --badge-* and similar) in your own CSS.
+
+Setup:
+1. Import tokens.css and styles.css once at the app root.
+2. Load Plus Jakarta Sans, Fraunces and Fira Code and set --font-sans-face, --font-display-face and --font-mono-face.
+3. Wrap the app in ToastProvider inside a client component.
+
+# Components
+
+## Button
+
+Kind: component
+
+Triggers an in-page action, such as saving, opening a dialog or submitting a form.
+
+Import: `import { Button } from "@adeeeeta/greenhouse";`
+
+When to use:
+- **Must not:** Do not use Button for navigation to another URL; use Link.
+
+Rules:
+- **Must:** Give an icon-only button an aria-label.
+- **Should:** Use one primary button per surface.
+
+Common misreadings:
+- **Must:** Set the visual style with the kind prop. There is no variant prop.
+- **Must not:** Do not use a danger kind, loading prop or iconEnd prop; none exist.
+
+Prop `kind` (variant): Visual emphasis of the button.
+  - `primary`: The main action on a surface.
+  - `secondary`: Lower-emphasis actions beside a primary button.
+  - `ghost`: Lowest emphasis, for toolbars and dense rows.
+Prop `size` (variant): Overall scale of the button.
+  - `sm`: Compact layouts.
+  - `md`: The default for most surfaces.
+  - `lg`: Prominent calls to action.
+Prop `iconOnly` (variant): Renders only the icon; requires an aria-label.
+Prop `disabled` (state): Dimmed and non-interactive; set with the disabled prop.
+
+Alternatives: Link, Card
+
+## Card
+
+Kind: component
+
+Groups related content and actions into one container, with flat, elevated, and outlined styles.
+
+Import: `import { Card } from "@adeeeeta/greenhouse";`
+
+When to use:
+- **Should:** Use Card to group related content and actions into a single container.
+- **Should not:** Do not use Card for a text navigation on its own; use Link.
+- **Should not:** Do not use Card for a single action with no grouped content; use Button.
+
+Rules:
+- **Must:** Include text in an interactive card so the anchor or button has an accessible name.
+- **Should:** Use flat for low-emphasis content, elevated as the default, and outlined for a bordered style without shadow.
+- **Should:** Pass header and footer to add structured sections above and below the body.
+- **Should:** Use cover for an image or visual at the top. The cover spans the full width of the card.
+- **Should:** Add href or onClick to make the whole card clickable. Interactive cards lift on hover.
+- **Must not:** Do not add padding to content in the header, body, or footer. Those regions already include padding.
+- **Must not:** Do not put links, buttons, or other interactive controls inside a card that sets href or onClick. It’s invalid HTML, and keyboard and screen-reader users can’t reliably reach the inner control.
+- **Must not:** Do not put an onClick card inside a form. It renders a button with no type, so activating it submits the form.
+
+Common misreadings:
+- **Must:** Expect Card's element to follow its props. With href it renders a link, with onClick a button, and with neither a plain div. Use href for navigation and onClick for an in-page action.
+- **Should:** Pass target="_blank" only for links to other sites. Card adds rel="noopener noreferrer" automatically unless you pass your own rel.
+- **Must not:** Do not pass both href and onClick. When href is set, onClick is ignored.
+- **Must not:** Do not expect an href card to look like Link. The card isn't underlined and keeps its own text color.
+- **Must not:** Do not set a size or disabled prop. Neither exists. variant is the only visual option, and elevated is its default.
+
+Parts:
+- Cover: Optional visual at the top of the card, passed as cover. It spans the full width and is not padded.
+- Header: Optional section above the body, passed as header.
+- Body: The main content, passed as children.
+- Footer: Optional section below the body, passed as footer, with a top border.
+
+Prop `variant` (variant): Visual style of the card surface.
+  - `elevated`: The default. Shadow plus a border.
+  - `flat`: A quiet surface for low-emphasis content.
+  - `outlined`: A bordered card without shadow.
+
+Alternatives: Link, Button
+
+## Link
+
+Kind: component
+
+Navigates to a URL inline, with an underlined default style and a quieter subtle style.
+
+Import: `import { Link } from "@adeeeeta/greenhouse";`
+
+When to use:
+- **Should:** Use Link to navigate to another URL.
+- **Should not:** Do not use Link to group a destination with supporting content; use Card with href.
+- **Must not:** Do not use Link to trigger an in-page action; use Button.
+
+Rules:
+- **Must:** Give every link visible text. The external icon is aria-hidden and does not name the link.
+- **Must:** Pass href. external does not set the destination.
+- **Should:** Use the default variant for links inside body text. The underline identifies it as a link, and color alone isn’t enough (WCAG 1.4.1).
+- **Should:** Use the subtle variant in link lists where the layout already signals links, such as navigation, footers and card metadata.
+- **Should:** Use external only for links to other sites. Opening internal pages in a new tab breaks the back button.
+- **Should not:** Do not use the subtle variant for links inside a paragraph.
+
+Common misreadings:
+- **Must:** Set emphasis with the variant prop. Its values are default and subtle. There is no size prop.
+- **Must not:** Do not assume external wins over other anchor props. target and rel are applied before the remaining props, so a passed target or rel replaces them. The icon still renders whenever external is true.
+
+Parts:
+- External icon: An ArrowSquareOut glyph shown after the text when external is true. It is aria-hidden.
+
+Prop `variant` (variant): Visual emphasis of the link.
+  - `default`: Underlined link text. This is the default.
+  - `subtle`: Quieter color and no underline until hover.
+Prop `external` (variant): Opens the link in a new tab, sets rel="noopener noreferrer", and appends an external icon.
+
+Alternatives: Button, Card
+
+## Alert
+
+Kind: component
+
+Shows a persistent message about the page or a form, in success, warning, error or info styles.
+
+Import: `import { Alert } from "@adeeeeta/greenhouse";`
+
+When to use:
+- **Should:** Use Alert for a message that stays on the page until the problem is fixed or the user dismisses it.
+- **Should not:** Do not use Alert to confirm an action that just finished; use Toast.
+- **Should not:** Do not use Alert when the user must make a decision before continuing; use Modal.
+
+Rules:
+- **Must:** Set variant to match the message. Use error for something that failed, warning for something that needs attention soon, success for a completed outcome and info for neutral context.
+- **Should:** Place an error alert next to the form or content it describes, not only at the top of the page.
+- **Should not:** Do not make error alerts dismissible. They should disappear when the problem is fixed.
+- **Must not:** Do not add padding to content inside an Alert. It already pads itself.
+- **Must not:** Do not pass paragraphs, lists or other block content as children. The body renders inside a span, so keep it to a sentence or two of text.
+
+Common misreadings:
+- **Must:** Always pass variant. It is required and has no default.
+- **Must:** Remove the alert yourself when onDismiss fires. The component shows the close button but does not hide itself.
+
+Parts:
+- Icon: Set automatically by variant. It can't be changed.
+- Title: Optional short heading above the body, passed as title.
+- Body: The message, passed as children.
+- Dismiss button: Shown only when onDismiss is passed.
+
+Prop `variant` (variant): Sets the color and icon. Required.
+  - `success`: A completed outcome.
+  - `warning`: Something that needs attention soon.
+  - `error`: Something failed and needs fixing.
+  - `info`: Neutral context or a heads-up.
+
+Alternatives: Toast, Modal
+
+## Toast
+
+Kind: component
+
+A brief notification that confirms an action or flags something time-sensitive, shown in the corner of the screen.
+
+Import: `import { ToastProvider, useToast } from "@adeeeeta/greenhouse";`
+
+When to use:
+- **Should:** Use a toast to confirm an action the user just took, such as logging a watering.
+- **Should not:** Do not use a toast for an error the user has to fix; use Alert next to the problem.
+- **Should not:** Do not use a toast when the user must decide something; use Modal.
+
+Rules:
+- **Must:** Set autoDismiss to false for any warning or error the user needs to read. Four seconds is not long enough for everyone.
+- **Should:** Keep the message to one short sentence that names what happened.
+
+Common misreadings:
+- **Must:** Show a toast by calling showToast from useToast. Do not render the Toast component directly.
+- **Must:** Wrap the app in ToastProvider once. useToast throws an error outside it.
+- **Must:** Call useToast only in a client component, because it is a React hook.
+
+Setup:
+1. Create a client component that wraps children in ToastProvider, and use it in the root layout.
+2. In a client component, get showToast from useToast().
+3. Call showToast with a message and a variant.
+
+Prop `variant` (variant): Sets the color and icon. Passed to showToast, and required.
+  - `success`: An action completed.
+  - `error`: An action failed.
+  - `warning`: Something time-sensitive, such as a frost alert.
+  - `info`: Neutral information.
+Prop `autoDismiss` (variant): Passed to showToast. When true (the default), the toast disappears after 4 seconds. When false, it stays until the user closes it.
+
+Alternatives: Alert, Modal
+
+## Modal
+
+Kind: component
+
+A dialog that opens over the page for a decision or a short focused task, and blocks the page until it closes.
+
+Import: `import { Modal } from "@adeeeeta/greenhouse";`
+
+When to use:
+- **Should:** Use Modal for a short form or a decision the user must make before continuing.
+- **Should not:** Do not use Modal for information that doesn't need a response; use Alert.
+- **Should not:** Do not use Modal to confirm an action that already happened; use Toast.
+
+Rules:
+- **Must:** Give every modal a title that names the task, such as "Add a new plant".
+- **Should:** Label primaryAction with the specific action, such as "Add plant", not "OK".
+- **Should:** Use sm for confirmations, md (the default) for most content and lg for longer forms.
+- **Should:** For a destructive confirmation, name the consequence in the primary action label, such as "Delete plant".
+- **Should not:** Do not open a modal from inside another modal.
+- **Must not:** Do not add padding to content inside a Modal. The header, body and footer pad themselves.
+
+Common misreadings:
+- **Must:** Keep the open state yourself. Pass isOpen, and set it to false inside onClose. The modal does not close itself.
+- **Must:** Pass only label and onClick in primaryAction and secondaryAction. Their style, disabled state and loading state can't be set. For custom footer buttons, leave both out and put your own Buttons in children.
+- **Must not:** Do not add your own Escape handling, focus trap or scroll lock. Modal already does all three, and returns focus to the trigger when it closes.
+
+Parts:
+- Header: Shows title and a close button.
+- Body: The content, passed as children.
+- Footer: Shown when primaryAction or secondaryAction is passed. The secondary action is on the left, the primary action on the right.
+- Backdrop: The dimmed layer behind the dialog. Clicking it closes the modal unless closeOnBackdropClick is false.
+
+Prop `size` (variant): Width of the dialog.
+  - `sm`: Simple confirmations and short messages.
+  - `md`: The default, for most content.
+  - `lg`: Longer forms or detailed content.
+Prop `closeOnBackdropClick` (variant): When true (the default), clicking the backdrop closes the modal. Set it to false when closing by accident would lose the user's work.
+Prop `isOpen` (state): Whether the modal is shown. Controlled by the caller.
+
+Alternatives: Alert, Toast
+
+## TextInput
+
+Kind: component
+
+A single-line text field with a built-in label, hint and error message.
+
+Import: `import { TextInput } from "@adeeeeta/greenhouse";`
+
+When to use:
+- **Should:** Use TextInput for short free-text answers, such as a plant name or an email address.
+- **Should not:** Do not use TextInput when the answer comes from a fixed list; use Dropdown or Radio.
+
+Rules:
+- **Must:** Give every TextInput a label.
+- **Should:** Use placeholder only for an example value. It disappears when the user types, so it can't replace the label or the hint.
+- **Should:** Set type to match the content, such as email, number or search, so phones show the right keyboard.
+- **Should:** Write error messages that say how to fix the problem, such as "Enter a watering interval in days".
+
+Common misreadings:
+- **Must:** Expect only one message below the field. When both error and hint are set, error replaces hint.
+- **Must:** Validate required fields yourself. The required prop adds the asterisk but does not turn on browser validation.
+- **Must:** Pass native input props such as name, value, onChange, type and autoComplete straight to TextInput. They reach the input element.
+- **Must not:** Do not wrap TextInput in FormField. It already includes one.
+
+Prop `required` (variant): Shows an asterisk after the label.
+Prop `disabled` (state): Dimmed, can't be focused, and can't be edited.
+
+Alternatives: Dropdown
+
+## Dropdown
+
+Kind: component
+
+A select menu for choosing one option from a list, with an optional description under each option.
+
+Import: `import { Dropdown, type DropdownOption } from "@adeeeeta/greenhouse";`
+
+When to use:
+- **Should:** Use Dropdown to choose one option from a longer list, such as a growing zone.
+- **Should not:** Do not use Dropdown for five or fewer options that fit on screen; use Radio so every choice stays visible.
+
+Rules:
+- **Must:** Give every Dropdown a label.
+- **Should:** Add an option description only when the label alone is not enough to choose, such as the temperature range of a zone.
+
+Common misreadings:
+- **Must:** Control the selection yourself. Pass value and update it in onChange, which receives the option's value string, not an event.
+- **Must:** Read the selected value from your own state. Dropdown has no name prop and isn't included when a form is submitted.
+- **Must:** Give each Dropdown on a page a different label. The label is used to build the element's id.
+- **Must:** Type the options array as DropdownOption[], which is exported from the package.
+- **Must not:** Do not wrap Dropdown in FormField. It already includes one.
+
+Prop `disabled` (state): Dimmed and can't be opened.
+
+Alternatives: Radio, TextInput
+
+## Checkbox
+
+Kind: component
+
+A box the user ticks to turn one choice on or off, usually submitted with a form.
+
+Import: `import { Checkbox } from "@adeeeeta/greenhouse";`
+
+When to use:
+- **Should:** Use Checkbox for choices that are saved when a form is submitted, or when the user can pick several options from a list.
+- **Should not:** Do not use Checkbox for a setting that takes effect immediately; use Toggle.
+- **Should not:** Do not use Checkbox when only one option in a group can be chosen; use Radio.
+
+Rules:
+- **Must:** Give every Checkbox a label.
+- **Must:** Wrap a group of related checkboxes in a fieldset with a legend that names the group.
+- **Should:** Write labels as positive statements, such as "Send frost alerts", not "Don't send frost alerts".
+
+Common misreadings:
+- **Must:** Give each Checkbox in a group its own id. Without one, every checkbox that shares a name gets the same id.
+- **Must:** Expect hint to appear beside the label and error to appear below the checkbox.
+- **Must not:** Do not wrap Checkbox in FormField. It already includes one.
+
+Prop `checked` (state): Ticked. Use checked with onChange, or defaultChecked to set only the starting state.
+Prop `disabled` (state): Dimmed and can't be changed.
+Prop `required` (variant): Shows an asterisk after the label.
+
+Alternatives: Toggle, Radio
+
+## Radio
+
+Kind: component
+
+One option in a group where the user can choose exactly one, with every option visible.
+
+Import: `import { Radio } from "@adeeeeta/greenhouse";`
+
+When to use:
+- **Should:** Use Radio when the user must pick exactly one option from a short list, such as a growth stage.
+- **Should not:** Do not use Radio for a long list of options; use Dropdown.
+- **Should not:** Do not use Radio when the user can pick more than one option; use Checkbox.
+
+Rules:
+- **Must:** Give every Radio in a group the same name and a different value.
+- **Must:** Wrap the group in a fieldset with a legend that asks the question, such as "Growth stage".
+- **Should:** Preselect the most common option unless choosing nothing is a valid answer.
+
+Common misreadings:
+- **Must:** Give each Radio its own id. Without one, every Radio in the group gets the same id, because the id falls back to the shared name.
+- **Must not:** Do not label the group with a plain paragraph above it. Screen readers only announce the group name from a legend.
+- **Must not:** Do not wrap Radio in FormField. It already includes one.
+
+Prop `checked` (state): The selected option in its group.
+Prop `disabled` (state): Dimmed and can't be chosen. Set it on individual options.
+
+Alternatives: Dropdown, Checkbox
+
+## Toggle
+
+Kind: component
+
+An on/off switch for a setting that takes effect as soon as it changes.
+
+Import: `import { Toggle } from "@adeeeeta/greenhouse";`
+
+When to use:
+- **Should:** Use Toggle for settings that apply immediately, such as turning on automatic watering.
+- **Should not:** Do not use Toggle for a choice that is saved when a form is submitted; use Checkbox.
+
+Rules:
+- **Must:** Always pass ariaLabel with the name of the setting. Toggle has no visible label of its own.
+- **Should:** Show the setting's name as text beside the toggle, using the same words as ariaLabel.
+- **Should not:** Do not use showLabel by default. Add it only when the setting's name doesn't make on and off obvious.
+
+Common misreadings:
+- **Must:** Pass ariaLabel in camelCase. Toggle does not accept aria-label or label.
+- **Must:** Expect onChange to receive true or false, not an event.
+- **Must:** Read the value from your own state. Toggle has no name prop and isn't included when a form is submitted.
+- **Must not:** Do not pass both checked and defaultChecked. Use checked with onChange when the parent owns the value, or defaultChecked alone when the toggle manages itself.
+
+Prop `checked` (state): On. Use checked with onChange, or defaultChecked to set only the starting state.
+Prop `disabled` (state): Shown at reduced opacity and can't be changed.
+Prop `showLabel` (variant): Shows On or Off text beside the track.
+
+Alternatives: Checkbox
+
+## FormField
+
+Kind: component
+
+Adds a label, hint and error message around a custom input that Greenhouse doesn't provide.
+
+Import: `import { FormField } from "@adeeeeta/greenhouse";`
+
+When to use:
+- **Should:** Use FormField only around a custom input, such as a date picker or a slider, so it matches the other fields.
+- **Must not:** Do not wrap TextInput, Dropdown, Checkbox or Radio in FormField. They already include one.
+
+Rules:
+- **Must:** Give FormField a label, or give the input its own aria-label when hideLabel is set.
+- **Should:** Use the stacked layout (the default) unless the field sits in a row of short inline settings.
+
+Common misreadings:
+- **Must:** Pass FormField the same id as the input inside it. The label points at the input by that id.
+- **Must:** Connect the message yourself. When hint or error is set, give the input aria-describedby set to the id followed by "-help", and set aria-invalid when there's an error.
+- **Must:** Expect hideLabel to remove the label completely, not just hide it visually.
+
+Prop `layout` (variant): Where the label sits relative to the input.
+  - `stacked`: The default. Label above the input.
+  - `inline`: Label beside the input.
+Prop `hideLabel` (variant): Removes the label from the page.
+Prop `required` (variant): Shows an asterisk after the label.
+Prop `disabled` (state): Marks the field as disabled for styling. Disable the input itself too.
+
+Alternatives: TextInput
+
+## Badge
+
+Kind: component
+
+A small read-only label that shows the status of something, such as a plant's health.
+
+Import: `import { Badge } from "@adeeeeta/greenhouse";`
+
+When to use:
+- **Should:** Use Badge to show a status at a glance, such as Healthy, Needs water or Dormant.
+- **Should not:** Do not use Badge for a label the user can remove or filter by; use Tag.
+- **Should not:** Do not use Badge for a message that needs explaining; use Alert.
+
+Rules:
+- **Must:** Say the status in words in label. Color alone must not carry the meaning.
+- **Should:** Match variant to meaning. Use success for good, warning for needs attention, error for a problem, info for neutral facts and neutral for everything else.
+- **Should:** Keep label to one or two words.
+- **Should:** Use sm in compact places such as table cells, and md (the default) elsewhere.
+
+Common misreadings:
+- **Must:** Pass the text as the label prop, not as children. Badge ignores children.
+- **Must not:** Do not add onClick or onDismiss. Badge is not interactive.
+
+Prop `variant` (variant): Color, matched to the meaning of the status.
+  - `neutral`: The default. No particular meaning.
+  - `success`: Good, such as Healthy.
+  - `warning`: Needs attention soon, such as Needs water.
+  - `error`: A problem, such as Pest detected.
+  - `info`: A neutral fact, such as Dormant.
+Prop `size` (variant): Overall scale.
+  - `sm`: Compact places such as table cells.
+  - `md`: The default.
+
+Alternatives: Tag
+
+## Tag
+
+Kind: component
+
+A small label for a category, attribute or applied filter, which the user can optionally remove.
+
+Import: `import { Tag } from "@adeeeeta/greenhouse";`
+
+When to use:
+- **Should:** Use Tag for plant attributes, care labels and applied filters, especially ones the user can add and remove.
+- **Should not:** Do not use Tag to show a status; use Badge.
+
+Rules:
+- **Should:** Use the neutral variant for most tags. Use a colored variant only when the color means something, such as a frost-sensitive label in warning.
+- **Should:** Add an icon only when it helps tell tag types apart at a glance.
+- **Should:** Use sm inside compact places such as input fields, and md (the default) elsewhere.
+
+Common misreadings:
+- **Must:** Remove the tag from your list when onDismiss fires. Tag shows the remove button but does not hide itself.
+- **Must:** Pass the text as the label prop, not as children.
+- **Must not:** Do not make a Tag clickable to select it. Tag has no onClick or selected state; only its remove button is interactive.
+- **Must not:** Do not pass className. Tag does not accept it.
+
+Parts:
+- Icon: Optional leading visual, passed as icon. Hidden from screen readers.
+- Label: The text, passed as label.
+- Remove button: Shown only when onDismiss is passed. Screen readers announce it as "Remove" followed by the label.
+
+Prop `variant` (variant): Color, with the same meanings as Badge.
+  - `neutral`: The default.
+  - `success`: A positive attribute.
+  - `warning`: An attribute that needs care, such as frost-sensitive.
+  - `error`: A problem attribute.
+  - `info`: A neutral fact.
+Prop `size` (variant): Overall scale.
+  - `sm`: Compact places such as input fields.
+  - `md`: The default.
+
+Alternatives: Badge
+
+## Tabs
+
+Kind: component
+
+Switches between related views of the same content in place, such as a plant's overview, care schedule and history.
+
+Import: `import { Tabs } from "@adeeeeta/greenhouse";`
+
+When to use:
+- **Should:** Use Tabs to switch between peer views of one subject without leaving the page.
+- **Should not:** Do not use Tabs when each view needs its own URL or should work with the back button; use Link to separate pages.
+- **Should not:** Do not use Tabs for steps the user must complete in order.
+
+Rules:
+- **Should:** Use underline (the default) for the main views of a page or area, and pill for secondary navigation or filtering within a section.
+- **Should:** Keep tab labels to one or two words, and use no more than five tabs.
+
+Common misreadings:
+- **Must:** Pass tabs as an array of objects with id, label and content. Do not write Tab children.
+- **Must:** Set the starting tab with defaultTab. Tabs is uncontrolled; there is no activeTab or onTabChange, so a URL or parent state can't change the open tab.
+- **Must:** Use tab ids that are unique on the whole page, not just within one Tabs. The ids become element ids.
+- **Must:** Expect every tab's content to be rendered at once and hidden. Keep heavy content, such as large images or data fetches, out of tabs that may never be opened.
+
+Prop `variant` (variant): Visual style of the tab list.
+  - `underline`: The default. The main views of a page or area.
+  - `pill`: Secondary navigation or filtering within a section.
+
+Alternatives: Link
+
+## Tooltip
+
+Kind: component
+
+A short text hint that appears when the user hovers over or focuses an element.
+
+Import: `import { Tooltip } from "@adeeeeta/greenhouse";`
+
+When to use:
+- **Should:** Use Tooltip to name an icon-only button or add a brief hint to a control.
+- **Should not:** Do not use Tooltip for content with links or buttons; use Modal.
+
+Rules:
+- **Must:** On an icon-only button, still set aria-label, using the same words as the tooltip.
+- **Should:** Keep the content to a few words, such as "Water now".
+- **Must not:** Do not put information the user needs only in a tooltip. It never appears on touch screens.
+
+Common misreadings:
+- **Must:** Wrap exactly one element that can receive focus, such as a Button or Link. Tooltip opens on hover and on keyboard focus.
+- **Must:** Pass content as a plain string. Tooltip does not accept elements.
+- **Must not:** Do not wrap a disabled button. Disabled buttons don't receive hover or focus, so the tooltip never opens.
+- **Must not:** Do not add your own collision handling. Tooltip already flips and shifts to stay on screen, and renders in a portal so containers can't clip it.
+
+Prop `position` (variant): Which side of the trigger the tooltip prefers. It moves to another side when there isn't room.
+  - `above`: The default.
+  - `below`: Below the trigger.
+  - `left`: Left of the trigger.
+  - `right`: Right of the trigger.
+
+Alternatives: Modal
+
+## Text
+
+Kind: component
+
+Sets all typography, from display headings to captions, separating the HTML element from how it looks.
+
+Import: `import { Text } from "@adeeeeta/greenhouse";`
+
+When to use:
+- **Must:** Set all text with Text, or with --type-* tokens in your own CSS. Do not use ad-hoc font sizes.
+
+Rules:
+- **Must:** Choose the element with as and the look with variant, separately. A card title can be an h3 element styled as h4.
+- **Should:** Use one h1 per page, naming the page.
+- **Should:** Use the display variant, which is set in Fraunces, only for expressive moments such as page heroes. Do not use it on utility screens such as settings, forms or tables.
+- **Must not:** Do not skip heading levels in the page outline, such as an h2 followed by an h4. Use variant to change the size instead.
+
+Common misreadings:
+- **Must:** Set as when the text isn't a paragraph. Text renders a p element by default, and a p inside a button, label or another p is invalid HTML.
+- **Must:** Expect only the display variant to use Fraunces. h1 to h4 use Plus Jakarta Sans. There is no gh-heading-display class in the package.
+- **Must:** Use the exact variant names, which are camelCase, such as bodySm and labelStrong. Names like body-sm or small don't exist.
+
+Prop `variant` (variant): Visual style. It doesn't change the element; use as for that.
+  - `display`: Largest size, set in Fraunces. Expressive moments only.
+  - `h1`: Page title size.
+  - `h2`: Section title size.
+  - `h3`: Subsection title size.
+  - `h4`: Card and group title size.
+  - `body`: The default. Running text.
+  - `bodyMedium`: Running text with medium weight, for emphasis.
+  - `bodySm`: Smaller supporting text.
+  - `bodySmMedium`: Smaller supporting text with medium weight.
+  - `label`: Form labels and UI text.
+  - `labelStrong`: Emphasised labels.
+  - `caption`: The smallest text, for metadata and footnotes.
+
+## Spinner
+
+Kind: component
+
+An animated indicator that something is loading and the wait time is unknown.
+
+Import: `import { Spinner } from "@adeeeeta/greenhouse";`
+
+When to use:
+- **Should:** Use Spinner while content or an action is loading and you can't tell how long it will take.
+- **Should not:** Do not show a spinner for waits shorter than about one second. A flash of spinner feels slower than no spinner.
+
+Rules:
+- **Should:** Pass label to say what is loading, such as "Syncing plant data".
+- **Should:** Use sm inline or in compact places, such as inside a Button, and md (the default) elsewhere.
+- **Should not:** Do not show several spinners for one loading task. Use one per area that loads separately.
+
+Common misreadings:
+- **Must:** To show loading in a Button, pass Spinner with size sm as the Button's icon and set disabled on the Button. Button has no loading prop.
+- **Must:** Expect Spinner to take the color of the surrounding text. It has no color prop.
+- **Must:** Expect screen readers to announce "Loading" when no label is passed.
+
+Prop `size` (variant): Overall scale.
+  - `sm`: Inline or compact places, such as inside a Button.
+  - `md`: The default.
+
+## Divider
+
+Kind: component
+
+A horizontal line that separates groups of content, with an optional centered label.
+
+Import: `import { Divider } from "@adeeeeta/greenhouse";`
+
+When to use:
+- **Should:** Use Divider to separate groups when spacing alone doesn't make the break clear.
+- **Should not:** Do not add a divider between every item. Try spacing with --space-* tokens first.
+
+Rules:
+- **Should:** Use subtle inside a component such as a Card, default between sections of a page, and strong only for a major break.
+- **Should:** Add label to name the next group, such as a form section or "or" between two options.
+
+Common misreadings:
+- **Must:** Expect Divider to be horizontal only. There is no vertical option.
+- **Must not:** Do not add margin or padding around Divider. It already has --space-6 above and below.
+
+Prop `weight` (variant): How prominent the line is.
+  - `subtle`: The border color at half opacity.
+  - `default`: The default. The border color at 1px.
+  - `strong`: The strong border color at 2px.
+
+## Avatar
+
+Kind: component
+
+A small image or initials that identifies a person or a thing, such as a plant or a team.
+
+Import: `import { Avatar } from "@adeeeeta/greenhouse";`
+
+When to use:
+- **Should:** Use Avatar to identify a person or a plant in lists, comments and profiles, where a picture helps people scan.
+- **Should not:** Do not use Avatar for decoration, or for an image that doesn't identify someone or something.
+
+Rules:
+- **Must:** Pass alt with the full name, such as "Aditya Patel", even when the avatar shows initials.
+- **Should:** Use the circle shape for people and the square shape for things such as plants, teams or organisations.
+- **Should:** Pass initials as well as src, so the avatar still identifies the person if the image fails to load.
+- **Should:** Use the same size for every avatar in one list.
+
+Common misreadings:
+- **Must:** Expect the fallback order image, then initials, then a generic person icon. It switches automatically when the image fails to load.
+- **Must:** Expect initials to be cut to two letters and capitalised.
+- **Must not:** Do not make Avatar clickable. It has no onClick; wrap it in a Link or Button that has its own accessible name.
+
+Prop `size` (variant): Overall scale.
+  - `sm`: Compact lists.
+  - `md`: The default.
+  - `lg`: Profile headers.
+Prop `shape` (variant): Outline of the avatar.
+  - `circle`: The default. People.
+  - `square`: Things such as plants, teams or organisations.
+
+# Tokens
+
+## Text (`--color-text`)
+
+Kind: token
+
+The main text color, for body copy, headings and labels.
+
+Rules:
+- **Should:** Use for all text the user needs to read, unless it is secondary.
+
+## Text muted (`--color-text-muted`)
+
+Kind: token
+
+A softer text color for secondary text such as hints, captions and metadata.
+
+Rules:
+- **Should:** Use for supporting text that sits beside main text, such as form hints, captions and timestamps.
+- **Should not:** Do not use for the main content of a page or for error messages.
+
+## Surface (`--color-surface`)
+
+Kind: token
+
+The default background for the page and for components such as Card and Modal.
+
+Rules:
+- **Should:** Use as the background for most surfaces.
+
+## Surface muted (`--color-surface-muted`)
+
+Kind: token
+
+A slightly tinted background that sets an area apart from the default surface.
+
+Rules:
+- **Should:** Use for secondary areas such as card headers, hover states and wells inside a surface.
+
+## Border (`--color-border`)
+
+Kind: token
+
+The subtle border color, for separators and container outlines.
+
+Rules:
+- **Should:** Use for separators and the outlines of containers such as Card and Tooltip.
+- **Should not:** Do not use for the boundary of an interactive control; use color-border-strong.
+
+## Border strong (`--color-border-strong`)
+
+Kind: token
+
+The stronger border color, for the boundaries of interactive controls.
+
+Rules:
+- **Should:** Use for the edges of controls the user interacts with, such as checkboxes, radios and toggles, so they stand out from the surface.
+
+## Primary (`--color-primary`)
+
+Kind: token
+
+Chlorophyll green, reserved for primary actions, links and interactive emphasis.
+
+Rules:
+- **Should:** Use for primary actions, links and selected or active states.
+- **Must not:** Do not use for decoration or for large areas of non-interactive content. Green signals that something can be acted on.
+
+## Primary hover (`--color-primary-hover`)
+
+Kind: token
+
+The primary green for hover and pressed states.
+
+Rules:
+- **Must:** Use only for the hover or pressed state of something that uses color-primary.
+
+## Primary subtle (`--color-primary-subtle`)
+
+Kind: token
+
+A pale green tint for soft emphasis behind content.
+
+Rules:
+- **Should:** Use as a background for selected or highlighted items, with color-text or color-primary on top.
+
+## Error (`--color-error`)
+
+Kind: token
+
+The error color, for error text, icons and borders.
+
+Rules:
+- **Should:** Use for validation messages and the borders of fields with an error.
+- **Must not:** Do not use for destructive actions that haven't failed, such as a Delete button.
+
+## Error strong (`--color-error-strong`)
+
+Kind: token
+
+A darker error color.
+
+Rules:
+- **Should:** Use for error text or icons that sit on a tinted error background, where color-error has too little contrast.
+
+## Focus ring (`--color-focus-ring`)
+
+Kind: token
+
+The outline shown around the element that has keyboard focus.
+
+Rules:
+- **Must:** Use only for focus indicators.
+- **Must:** Show a focus ring on every custom interactive element, using this token.
+
+## Overlay (`--color-overlay`)
+
+Kind: token
+
+The translucent layer that dims the page behind a modal.
+
+Rules:
+- **Must:** Use only for backdrops behind blocking overlays such as Modal.
+
+## Selection (`--color-selection`)
+
+Kind: token
+
+The fill of a selected checkbox, radio or other selected control.
+
+Rules:
+- **Should:** Use for the fill of custom selected controls so they match Checkbox and Radio.
+
+## Selection contrast (`--color-selection-contrast`)
+
+Kind: token
+
+The color of the check mark or dot drawn on top of color-selection.
+
+Rules:
+- **Must:** Use only on top of color-selection.
+
+## Accent moss (`--color-accent-moss`)
+
+Kind: token
+
+A supporting moss tone for decorative touches such as illustrations and category markers.
+
+Rules:
+- **Should:** Use sparingly, for decoration only.
+- **Must not:** Do not use for interactive elements, text or status.
+
+## Accent soil (`--color-accent-soil`)
+
+Kind: token
+
+A supporting soil tone for decorative touches such as illustrations and category markers.
+
+Rules:
+- **Should:** Use sparingly, for decoration only.
+- **Must not:** Do not use for interactive elements, text or status.
+
+## Accent leaf (`--color-accent-leaf`)
+
+Kind: token
+
+A supporting leaf tone for decorative touches such as illustrations and category markers.
+
+Rules:
+- **Should:** Use sparingly, for decoration only.
+- **Must not:** Do not use for interactive elements, text or status.
+
+## Space 1 (`--space-1`)
+
+Kind: token
+
+4px on the 4px spacing scale.
+
+Rules:
+- **Should:** Use for hairline gaps, such as between a label and its required mark.
+
+Common misreadings:
+- **Must not:** Do not use --space-7, --space-9 or --space-11. They don't exist; the scale skips from 6 to 8, 8 to 10 and 10 to 12.
+- **Must not:** Do not use raw pixel values for spacing. If a value isn't on the scale, use the nearest step.
+
+## Space 2 (`--space-2`)
+
+Kind: token
+
+8px on the 4px spacing scale.
+
+Rules:
+- **Should:** Use for tight groupings, such as an icon and its label.
+
+## Space 3 (`--space-3`)
+
+Kind: token
+
+12px on the 4px spacing scale.
+
+Rules:
+- **Should:** Use for space inside components, such as between fields or list rows.
+
+## Space 4 (`--space-4`)
+
+Kind: token
+
+16px on the 4px spacing scale.
+
+Rules:
+- **Should:** Use for component padding and the gap between related items.
+
+## Space 5 (`--space-5`)
+
+Kind: token
+
+20px on the 4px spacing scale.
+
+Rules:
+- **Should:** Use for an in-between step when 16px is too tight and 24px too loose.
+
+## Space 6 (`--space-6`)
+
+Kind: token
+
+24px on the 4px spacing scale.
+
+Rules:
+- **Should:** Use for page and layout padding; the space around Divider.
+
+## Space 8 (`--space-8`)
+
+Kind: token
+
+32px on the 4px spacing scale.
+
+Rules:
+- **Should:** Use for separation between distinct sections.
+
+## Space 10 (`--space-10`)
+
+Kind: token
+
+40px on the 4px spacing scale.
+
+Rules:
+- **Should:** Use for large layout spacing between major page regions.
+- **Must not:** Do not use inside a component. This is a layout-scale step.
+
+## Space 12 (`--space-12`)
+
+Kind: token
+
+48px on the 4px spacing scale.
+
+Rules:
+- **Should:** Use for the largest layout spacing, such as around page heroes.
+- **Must not:** Do not use inside a component. This is a layout-scale step.
+
+## Display size (`--type-display-size`)
+
+Kind: token
+
+Font size for the display step. The largest heading, set in Fraunces for expressive moments.
+
+Rules:
+- **Should:** Prefer the Text component. Use this token only in your own CSS.
+
+## Display line height (`--type-display-line`)
+
+Kind: token
+
+Unitless line height for the display step.
+
+## Heading 1 size (`--type-h1-size`)
+
+Kind: token
+
+Font size for the h1 step. Page titles.
+
+Rules:
+- **Should:** Prefer the Text component. Use this token only in your own CSS.
+
+## Heading 1 line height (`--type-h1-line`)
+
+Kind: token
+
+Unitless line height for the h1 step.
+
+## Heading 2 size (`--type-h2-size`)
+
+Kind: token
+
+Font size for the h2 step. Section titles.
+
+Rules:
+- **Should:** Prefer the Text component. Use this token only in your own CSS.
+
+## Heading 2 line height (`--type-h2-line`)
+
+Kind: token
+
+Unitless line height for the h2 step.
+
+## Heading 3 size (`--type-h3-size`)
+
+Kind: token
+
+Font size for the h3 step. Subsection titles.
+
+Rules:
+- **Should:** Prefer the Text component. Use this token only in your own CSS.
+
+## Heading 3 line height (`--type-h3-line`)
+
+Kind: token
+
+Unitless line height for the h3 step.
+
+## Heading 4 size (`--type-h4-size`)
+
+Kind: token
+
+Font size for the h4 step. Card and group titles.
+
+Rules:
+- **Should:** Prefer the Text component. Use this token only in your own CSS.
+
+## Heading 4 line height (`--type-h4-line`)
+
+Kind: token
+
+Unitless line height for the h4 step.
+
+## Body size (`--type-body-size`)
+
+Kind: token
+
+Font size for the body step. Running text.
+
+Rules:
+- **Should:** Prefer the Text component. Use this token only in your own CSS.
+
+## Body line height (`--type-body-line`)
+
+Kind: token
+
+Unitless line height for the body step.
+
+## Body small size (`--type-bodySm-size`)
+
+Kind: token
+
+Font size for the bodySm step. Smaller supporting text.
+
+Rules:
+- **Should:** Prefer the Text component. Use this token only in your own CSS.
+
+## Body small line height (`--type-bodySm-line`)
+
+Kind: token
+
+Unitless line height for the bodySm step.
+
+## Label size (`--type-label-size`)
+
+Kind: token
+
+Font size for the label step. Form labels and UI text.
+
+Rules:
+- **Should:** Prefer the Text component. Use this token only in your own CSS.
+
+## Label line height (`--type-label-line`)
+
+Kind: token
+
+Unitless line height for the label step.
+
+## Caption size (`--type-caption-size`)
+
+Kind: token
+
+Font size for the caption step. Metadata and footnotes.
+
+Rules:
+- **Should:** Prefer the Text component. Use this token only in your own CSS.
+
+## Caption line height (`--type-caption-line`)
+
+Kind: token
+
+Unitless line height for the caption step.
+
+## Sans (`--font-sans`)
+
+Kind: token
+
+The main typeface, Plus Jakarta Sans, with system fallbacks. Used for body text, UI and headings h1 to h4.
+
+Rules:
+- **Should:** Use for all text except code and expressive display headings.
+
+## Display (`--font-display`)
+
+Kind: token
+
+The expressive serif, Fraunces, with serif fallbacks.
+
+Rules:
+- **Should:** Use only for expressive display headings such as page heroes.
+- **Must not:** Do not use on utility screens such as settings, forms or tables.
+
+## Mono (`--font-mono`)
+
+Kind: token
+
+The code typeface, Fira Code, with monospace fallbacks.
+
+Rules:
+- **Should:** Use only for code and technical values.
+
+## Plus Jakarta Sans face (`--font-sans-face`)
+
+Kind: token
+
+An input you set when loading Plus Jakarta Sans. Greenhouse does not load fonts itself.
+
+Rules:
+- **Must:** Set this variable when you load the font, for example through next/font with variable set to this name.
+
+Common misreadings:
+- **Must not:** Do not use this token in component CSS. Use the matching font-sans, font-display or font-mono token, which include fallbacks.
+
+## Fraunces face (`--font-display-face`)
+
+Kind: token
+
+An input you set when loading Fraunces. Greenhouse does not load fonts itself.
+
+Rules:
+- **Must:** Set this variable when you load the font, for example through next/font with variable set to this name.
+
+Common misreadings:
+- **Must not:** Do not use this token in component CSS. Use the matching font-sans, font-display or font-mono token, which include fallbacks.
+
+## Fira Code face (`--font-mono-face`)
+
+Kind: token
+
+An input you set when loading Fira Code. Greenhouse does not load fonts itself.
+
+Rules:
+- **Must:** Set this variable when you load the font, for example through next/font with variable set to this name.
+
+Common misreadings:
+- **Must not:** Do not use this token in component CSS. Use the matching font-sans, font-display or font-mono token, which include fallbacks.
+
+## Weight regular (`--font-weight-regular`)
+
+Kind: token
+
+Font weight 400.
+
+Rules:
+- **Should:** Use for body text.
+
+Common misreadings:
+- **Must not:** Do not use font weights other than these four tokens. The set is limited on purpose.
+- **Must not:** Do not use the legacy --text-1 to --text-4 sizes. Use the --type-* tokens.
+
+## Weight medium (`--font-weight-medium`)
+
+Kind: token
+
+Font weight 500.
+
+Rules:
+- **Should:** Use for labels and emphasis within body text.
+
+## Weight semibold (`--font-weight-semibold`)
+
+Kind: token
+
+Font weight 600.
+
+Rules:
+- **Should:** Use for headings and strong labels.
+
+## Weight bold (`--font-weight-bold`)
+
+Kind: token
+
+Font weight 700.
+
+Rules:
+- **Should not:** Do not use in UI text. Semibold is the strongest weight components use.
+
+## Radius small (`--radius-sm`)
+
+Kind: token
+
+4px corner radius for small elements.
+
+Rules:
+- **Should:** Use for small elements such as buttons, inputs, badges and checkboxes.
+
+## Radius medium (`--radius-md`)
+
+Kind: token
+
+8px corner radius for containers.
+
+Rules:
+- **Should:** Use for containers such as cards, modals, menus, toasts and tooltips.
+
+## Shadow 1 (`--shadow-1`)
+
+Kind: token
+
+The single elevation shadow, used for raised surfaces.
+
+Rules:
+- **Should:** Use for anything raised above the page, such as cards, menus, tooltips and modals.
+
+Common misreadings:
+- **Must not:** Do not invent other shadow values or names such as --shadow-2. Greenhouse has one elevation level in code.
+
+## Control height (`--control-height`)
+
+Kind: token
+
+44px, the shared height of form controls and the minimum touch target.
+
+Rules:
+- **Must:** Make every custom interactive control at least this tall, so it is easy to tap.
+
+## Control padding x (`--control-padding-x`)
+
+Kind: token
+
+The horizontal padding inside form controls (space-3).
+
+Rules:
+- **Should:** Use in custom inputs so their text lines up with TextInput and Dropdown.
+
+## Control radius (`--control-radius`)
+
+Kind: token
+
+The corner radius of form controls (radius-sm).
+
+Rules:
+- **Should:** Use for the corners of custom inputs so they match TextInput and Dropdown.
+
+Common misreadings:
+- **Must not:** Do not use --control-font-size. It is legacy; use --type-body-size.
+
+# Themes
+
+## Light
+
+Kind: theme
+
+The default Greenhouse theme, with a white surface and chlorophyll green for actions.
+
+Rules:
+- **Should:** Expect light to apply by default. You don't need to set any attribute.
+- **Should:** Set data-theme="light" on an element inside a dark page to keep that area light, such as a preview of printed material.
+
+## Dark
+
+Kind: theme
+
+A dark theme for low-light use. Every semantic token is remapped to keep the same roles and contrast.
+
+Rules:
+- **Must:** Turn on dark mode by setting data-theme="dark" on html, or on any element to make only that area dark. No JavaScript is needed.
+- **Should:** Follow the user's system setting (prefers-color-scheme) unless they have chosen a theme in your app. Greenhouse does not do this automatically; your app sets the attribute.
+- **Must not:** Do not hardcode light or dark colors, or add per-component dark overrides. Use semantic tokens and they switch automatically.
+
+Common misreadings:
+- **Must:** Also set color-scheme to dark on the same element. Greenhouse doesn't set it, so without it native scrollbars and form controls stay light.
+- **Must not:** Do not use a dark class, Tailwind-style dark variants or a ThemeProvider. The only switch is the data-theme attribute.

@@ -1,0 +1,36 @@
+# Greenhouse
+
+> A React component library and token system for calm, plant-themed interfaces.
+
+Install with `npm i @adeeeeta/greenhouse`. For every rule in one file, read llms-full.txt.
+
+## Docs
+
+- [Full agent reference](https://greenhouse-design-system.vercel.app/llms-full.txt): every component, token and theme with its rules
+- [Button](https://greenhouse-design-system.vercel.app/components/button): Triggers an in-page action, such as saving, opening a dialog or submitting a form.
+- [Card](https://greenhouse-design-system.vercel.app/components/card): Groups related content and actions into one container, with flat, elevated, and outlined styles.
+- [Link](https://greenhouse-design-system.vercel.app): Navigates to a URL inline, with an underlined default style and a quieter subtle style.
+- [Alert](https://greenhouse-design-system.vercel.app/components/alert): Shows a persistent message about the page or a form, in success, warning, error or info styles.
+- [Toast](https://greenhouse-design-system.vercel.app/components/toast): A brief notification that confirms an action or flags something time-sensitive, shown in the corner of the screen.
+- [Modal](https://greenhouse-design-system.vercel.app/components/modal): A dialog that opens over the page for a decision or a short focused task, and blocks the page until it closes.
+- [TextInput](https://greenhouse-design-system.vercel.app/components/text-input): A single-line text field with a built-in label, hint and error message.
+- [Dropdown](https://greenhouse-design-system.vercel.app/components/dropdown): A select menu for choosing one option from a list, with an optional description under each option.
+- [Checkbox](https://greenhouse-design-system.vercel.app/components/checkbox): A box the user ticks to turn one choice on or off, usually submitted with a form.
+- [Radio](https://greenhouse-design-system.vercel.app/components/radio): One option in a group where the user can choose exactly one, with every option visible.
+- [Toggle](https://greenhouse-design-system.vercel.app/components/toggle): An on/off switch for a setting that takes effect as soon as it changes.
+- [FormField](https://greenhouse-design-system.vercel.app/components/text-input): Adds a label, hint and error message around a custom input that Greenhouse doesn't provide.
+- [Badge](https://greenhouse-design-system.vercel.app/components/badge): A small read-only label that shows the status of something, such as a plant's health.
+- [Tag](https://greenhouse-design-system.vercel.app/components/tag): A small label for a category, attribute or applied filter, which the user can optionally remove.
+- [Tabs](https://greenhouse-design-system.vercel.app/components/tabs): Switches between related views of the same content in place, such as a plant's overview, care schedule and history.
+- [Tooltip](https://greenhouse-design-system.vercel.app/components/tooltip): A short text hint that appears when the user hovers over or focuses an element.
+- [Text](https://greenhouse-design-system.vercel.app/foundations/typography): Sets all typography, from display headings to captions, separating the HTML element from how it looks.
+- [Spinner](https://greenhouse-design-system.vercel.app/components/spinner): An animated indicator that something is loading and the wait time is unknown.
+- [Divider](https://greenhouse-design-system.vercel.app/components/divider): A horizontal line that separates groups of content, with an optional centered label.
+- [Avatar](https://greenhouse-design-system.vercel.app/components/avatar): A small image or initials that identifies a person or a thing, such as a plant or a team.
+
+## Optional
+
+- [Typography](https://greenhouse-design-system.vercel.app/foundations/typography)
+- [Color](https://greenhouse-design-system.vercel.app/foundations/color)
+- [Spacing](https://greenhouse-design-system.vercel.app/foundations/spacing)
+- [Source on GitHub](https://github.com/adeeeeta/greenhouse-design-system)
