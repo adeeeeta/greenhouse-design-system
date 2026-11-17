@@ -7,6 +7,21 @@ export const metadata = {
 
 const entries = [
   {
+    version: "v1.8.0",
+    tag: "Minor",
+    tagType: "minor",
+    date: "November 17, 2026",
+    added: [
+      "Every component, token and theme documented in the Design System Doc Spec (DSDS) format, the single source for usage rules",
+      "llms.txt and llms-full.txt — the whole system's rules in plain text, so AI tools can build with Greenhouse correctly",
+      "For AI agents section on the Resources page",
+    ],
+    changed: [
+      "Resources setup now includes loading the three typefaces, so brand fonts render instead of system fallbacks",
+    ],
+    fixed: [],
+  },
+  {
     version: "v1.7.0",
     tag: "Minor",
     tagType: "minor",
