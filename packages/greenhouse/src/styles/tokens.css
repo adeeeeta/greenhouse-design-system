@@ -1,4 +1,7 @@
 :root {
+  /* Tells the browser to draw its own scrollbars and form controls in light mode. */
+  color-scheme: light;
+
   /* =========================
      1) Color scales (foundation)
      Raw ramps — no meaning
@@ -308,6 +311,9 @@
    ========================= */
 html[data-theme="dark"],
 [data-theme="dark"] {
+  /* Tells the browser to draw its own scrollbars and form controls in dark mode. */
+  color-scheme: dark;
+
   /* Neutral scale (dark) */
   --neutral-0:   #0b0d0b; /* "surface" becomes ink */
   --neutral-50:  #121412; /* optional elevated surface */
@@ -376,6 +382,9 @@ html[data-theme="dark"],
    inside a dark-mode page
    ========================= */
 [data-theme="light"] {
+  /* Tells the browser to draw its own scrollbars and form controls in light mode. */
+  color-scheme: light;
+
   --neutral-0:   #ffffff;
   --neutral-50:  #fafafa;
   --neutral-100: #f5f6f4;
