@@ -51,12 +51,13 @@ export default function ButtonOverview() {
       <h2 id="loading-state">Loading state</h2>
       <p>
         Pass a <code>Spinner</code> via the <code>icon</code> prop to indicate
-        a loading state. The spinner inherits the button's color automatically.
+        a loading state, and set <code>disabled</code> so the action can't be
+        triggered twice. The spinner inherits the button's color automatically.
       </p>
       <div style={{ display: "flex", gap: 12, flexWrap: "wrap", alignItems: "center" }}>
-        <Button kind="primary" icon={<Spinner size="sm" />}>Saving changes</Button>
-        <Button kind="secondary" icon={<Spinner size="sm" />}>Loading</Button>
-        <Button kind="primary" icon={<Spinner size="sm" />} iconOnly aria-label="Loading" />
+        <Button kind="primary" icon={<Spinner size="sm" />} disabled>Saving changes</Button>
+        <Button kind="secondary" icon={<Spinner size="sm" />} disabled>Loading</Button>
+        <Button kind="primary" icon={<Spinner size="sm" />} iconOnly aria-label="Loading" disabled />
       </div>
       <Divider />
       <h2 id="disabled">Disabled</h2>
