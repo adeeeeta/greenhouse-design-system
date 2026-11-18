@@ -1,7 +1,7 @@
 import styles from "./Tag.module.css"
 import { X } from "../Icons"
 
-type TagVariant = "neutral" | "success" | "warning" | "error" | "info"
+export type TagVariant = "neutral" | "success" | "warning" | "error" | "info"
 type TagSize = "sm" | "md"
 
 interface TagProps {

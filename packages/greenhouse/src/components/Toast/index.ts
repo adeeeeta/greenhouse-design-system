@@ -1,2 +1,3 @@
 export { default } from "./Toast"
 export { ToastProvider, useToast } from "./ToastContext"
+export type { ToastVariant } from "./ToastContext"

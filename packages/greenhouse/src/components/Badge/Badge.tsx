@@ -1,6 +1,6 @@
 import styles from "./Badge.module.css";
 
-type BadgeVariant = "neutral" | "success" | "warning" | "error" | "info";
+export type BadgeVariant = "neutral" | "success" | "warning" | "error" | "info";
 type BadgeSize = "sm" | "md";
 
 type BadgeProps = {
