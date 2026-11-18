@@ -7,6 +7,25 @@ export const metadata = {
 
 const entries = [
   {
+    version: "v1.8.1",
+    tag: "Patch",
+    tagType: "patch",
+    date: "November 18, 2026",
+    added: [
+      "Exported types for Badge, Tag, Tabs, Toast and Tooltip values, plus an ariaLabel prop on Tabs",
+    ],
+    changed: [
+      "Success and info Alerts no longer interrupt screen readers; only errors and warnings do",
+      "Required fields now use the browser's own validation, and screen readers announce them as required",
+      "Radio demos are grouped with a visible legend, and loading Button demos are disabled",
+    ],
+    fixed: [
+      "Clickable Cards and Tabs inside a form no longer submit it",
+      "Radios, Checkboxes and Tabs no longer share element ids, so labels and screen readers point at the right control",
+      "Scrollbars and native form controls now follow dark mode",
+    ],
+  },
+  {
     version: "v1.8.0",
     tag: "Minor",
     tagType: "minor",
