@@ -81,7 +81,7 @@ interface CardProps {
 
   if (onClick) {
     return (
-      <button className={classes} onClick={onClick} style={style}>
+      <button type="button" className={classes} onClick={onClick} style={style}>
         {content}
       </button>
     )
