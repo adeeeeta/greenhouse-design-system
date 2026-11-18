@@ -39,7 +39,11 @@ export default function Alert({
     .join(" ");
 
   return (
-    <div className={classes} role="alert">
+    // Errors and warnings interrupt screen readers; success and info wait their turn.
+    <div
+      className={classes}
+      role={variant === "error" || variant === "warning" ? "alert" : "status"}
+    >
       <span className={styles.icon}>{icons[variant]}</span>
 
       <div className={styles.body}>
