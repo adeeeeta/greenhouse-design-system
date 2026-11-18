@@ -39,6 +39,7 @@ export default function TextInput({
           .join(" ")}
         aria-invalid={error ? true : undefined}
         aria-describedby={hint || error ? `${inputId}-help` : undefined}
+        required={required}
         disabled={disabled}
         {...props}
       />

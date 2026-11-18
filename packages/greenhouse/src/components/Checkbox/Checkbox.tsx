@@ -47,6 +47,7 @@ export default function Checkbox({
           className={styles.native}
           aria-invalid={error ? true : undefined}
           aria-describedby={hint || error ? `${inputId}-help` : undefined}
+          required={required}
           disabled={disabled}
           {...props}
         />

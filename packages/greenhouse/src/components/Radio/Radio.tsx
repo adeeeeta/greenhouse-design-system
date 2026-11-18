@@ -44,6 +44,7 @@ export default function Radio({
           className={styles.native}
           aria-invalid={error ? true : undefined}
           aria-describedby={error ? `${inputId}-help` : undefined}
+          required={required}
           disabled={disabled}
           {...props}
         />
