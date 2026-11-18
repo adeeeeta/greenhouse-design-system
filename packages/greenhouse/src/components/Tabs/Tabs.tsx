@@ -1,11 +1,11 @@
 "use client"
 
-import { useState, useRef } from "react"
+import { useState, useRef, useId } from "react"
 import styles from "./Tabs.module.css"
 
 type TabsVariant = "underline" | "pill"
 
-interface Tab {
+export interface Tab {
   id: string
   label: string
   content: React.ReactNode
@@ -15,13 +15,20 @@ interface TabsProps {
   tabs: Tab[]
   variant?: TabsVariant
   defaultTab?: string
+  /** Names the tab list for screen readers, e.g. "Plant details". */
+  ariaLabel?: string
 }
 
 export default function Tabs({
   tabs,
   variant = "underline",
   defaultTab,
+  ariaLabel,
 }: TabsProps) {
+  // Unique per Tabs instance, so two Tabs on one page never share element ids.
+  const uid = useId()
+  const tabId = (id: string) => `${uid}-tab-${id}`
+  const panelId = (id: string) => `${uid}-panel-${id}`
   const [activeTab, setActiveTab] = useState(defaultTab ?? tabs[0]?.id)
   const tabRefs = useRef<(HTMLButtonElement | null)[]>([])
 
@@ -50,7 +57,7 @@ export default function Tabs({
       {/* Tab list */}
       <div
         role="tablist"
-        aria-label="Tabs"
+        aria-label={ariaLabel}
         className={`${styles.tablist} ${styles[variant]}`}
       >
         {tabs.map((tab, index) => {
@@ -59,10 +66,11 @@ export default function Tabs({
             <button
               key={tab.id}
               ref={(el) => { tabRefs.current[index] = el }}
+              type="button"
               role="tab"
               aria-selected={isActive}
-              aria-controls={`panel-${tab.id}`}
-              id={`tab-${tab.id}`}
+              aria-controls={panelId(tab.id)}
+              id={tabId(tab.id)}
               tabIndex={isActive ? 0 : -1}
               className={`${styles.tab} ${styles[variant]} ${isActive ? styles.active : ""}`}
               onClick={() => setActiveTab(tab.id)}
@@ -79,8 +87,8 @@ export default function Tabs({
         <div
           key={tab.id}
           role="tabpanel"
-          id={`panel-${tab.id}`}
-          aria-labelledby={`tab-${tab.id}`}
+          id={panelId(tab.id)}
+          aria-labelledby={tabId(tab.id)}
           hidden={tab.id !== activeTab}
           className={styles.panel}
         >
