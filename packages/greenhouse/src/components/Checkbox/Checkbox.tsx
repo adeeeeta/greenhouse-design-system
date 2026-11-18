@@ -26,7 +26,8 @@ export default function Checkbox({
   ...props
 }: CheckboxProps) {
   const reactId = useId();
-  const inputId = id ?? props.name ?? `checkbox-${reactId}`;
+  // Never fall back to name: every option in a group shares it, which would duplicate ids.
+  const inputId = id ?? `checkbox-${reactId}`;
 
   return (
     <FormField

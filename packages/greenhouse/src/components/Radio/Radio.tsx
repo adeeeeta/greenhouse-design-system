@@ -23,7 +23,8 @@ export default function Radio({
   ...props
 }: RadioProps) {
   const reactId = useId();
-  const inputId = id ?? props.name ?? `radio-${reactId}`;
+  // Never fall back to name: every option in a group shares it, which would duplicate ids.
+  const inputId = id ?? `radio-${reactId}`;
 
   return (
     <FormField

@@ -20,7 +20,8 @@ export default function TextInput({
   ...props
 }: TextInputProps) {
   const reactId = useId();
-  const inputId = id ?? props.name ?? `text-input-${reactId}`;
+  // Never fall back to name: two forms on one page can share a name, which would duplicate ids.
+  const inputId = id ?? `text-input-${reactId}`;
 
   return (
     <FormField
