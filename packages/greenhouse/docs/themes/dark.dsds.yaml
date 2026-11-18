@@ -4,7 +4,7 @@ name: Dark
 description: A dark theme for low-light use. Every semantic token is remapped to keep the same roles and contrast.
 
 metadata:
-  updated: {date: 2026-11-16}
+  updated: {date: 2026-11-18}
   tags: [theme]
   status: {status: stable}
 
@@ -25,9 +25,6 @@ sections:
     for: agent
     title: Common misreadings
     items:
-      - level: must
-        statement: Also set color-scheme to dark on the same element. Greenhouse doesn't set it, so without it native scrollbars and form controls stay light.
-        checkedBy: manual
       - level: must-not
         statement: Do not use a dark class, Tailwind-style dark variants or a ThemeProvider. The only switch is the data-theme attribute.
         checkedBy: manual

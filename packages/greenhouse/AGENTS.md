@@ -55,7 +55,7 @@ Read `README.md` first. This file adds what agents most often get wrong, and a c
 ### TextInput
 
 - **Must:** Expect only one message below the field. When both error and hint are set, error replaces hint.
-- **Must:** Validate required fields yourself. The required prop adds the asterisk but does not turn on browser validation.
+- **Must:** Expect required to show the asterisk, turn on the browser's own validation, and tell screen readers the field is required. Show your own error message with the error prop.
 - **Must:** Pass native input props such as name, value, onChange, type and autoComplete straight to TextInput. They reach the input element.
 - **Must not:** Do not wrap TextInput in FormField. It already includes one.
 
@@ -69,13 +69,11 @@ Read `README.md` first. This file adds what agents most often get wrong, and a c
 
 ### Checkbox
 
-- **Must:** Give each Checkbox in a group its own id. Without one, every checkbox that shares a name gets the same id.
 - **Must:** Expect hint to appear beside the label and error to appear below the checkbox.
 - **Must not:** Do not wrap Checkbox in FormField. It already includes one.
 
 ### Radio
 
-- **Must:** Give each Radio its own id. Without one, every Radio in the group gets the same id, because the id falls back to the shared name.
 - **Must not:** Do not label the group with a plain paragraph above it. Screen readers only announce the group name from a legend.
 - **Must not:** Do not wrap Radio in FormField. It already includes one.
 
@@ -106,9 +104,9 @@ Read `README.md` first. This file adds what agents most often get wrong, and a c
 
 ### Tabs
 
-- **Must:** Pass tabs as an array of objects with id, label and content. Do not write Tab children.
+- **Must:** Pass tabs as an array of objects with id, label and content, typed as Tab[]. Do not write Tab children.
 - **Must:** Set the starting tab with defaultTab. Tabs is uncontrolled; there is no activeTab or onTabChange, so a URL or parent state can't change the open tab.
-- **Must:** Use tab ids that are unique on the whole page, not just within one Tabs. The ids become element ids.
+- **Must:** Give each tab an id that is unique within its Tabs. Different Tabs on the same page can reuse ids.
 - **Must:** Expect every tab's content to be rendered at once and hidden. Keep heavy content, such as large images or data fetches, out of tabs that may never be opened.
 
 ### Tooltip
@@ -155,7 +153,6 @@ Read `README.md` first. This file adds what agents most often get wrong, and a c
 
 ## Themes
 
-- **Must:** Also set color-scheme to dark on the same element. Greenhouse doesn't set it, so without it native scrollbars and form controls stay light.
 - **Must not:** Do not use a dark class, Tailwind-style dark variants or a ThemeProvider. The only switch is the data-theme attribute.
 
 ## Before you finish

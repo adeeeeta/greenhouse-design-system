@@ -179,7 +179,6 @@ import { Card } from "@adeeeeta/greenhouse";
 - **Should:** Add href or onClick to make the whole card clickable. Interactive cards lift on hover.
 - **Must not:** Do not add padding to content in the header, body, or footer. Those regions already include padding.
 - **Must not:** Do not put links, buttons, or other interactive controls inside a card that sets href or onClick. It’s invalid HTML, and keyboard and screen-reader users can’t reliably reach the inner control.
-- **Must not:** Do not put an onClick card inside a form. It renders a button with no type, so activating it submits the form.
 
 [Live demo](https://greenhouse-design-system.vercel.app/components/card)
 
@@ -392,6 +391,7 @@ import { Tabs } from "@adeeeeta/greenhouse";
 
 - **Should:** Use underline (the default) for the main views of a page or area, and pill for secondary navigation or filtering within a section.
 - **Should:** Keep tab labels to one or two words, and use no more than five tabs.
+- **Should:** Pass ariaLabel to name the tab list, such as "Plant details", when a page has more than one Tabs or the purpose isn't obvious from the heading above.
 
 [Live demo](https://greenhouse-design-system.vercel.app/components/tabs)
 
@@ -627,10 +627,17 @@ See the full set on the [Icons page](https://greenhouse-design-system.vercel.app
 
 ## TypeScript
 
-Prop types are inferred automatically. This type is exported for your own code:
+Prop types are inferred automatically. These types are exported for your own code:
 
 ```tsx
-import type { DropdownOption } from "@adeeeeta/greenhouse";
+import type {
+  BadgeVariant,    // "neutral" | "success" | "warning" | "error" | "info"
+  TagVariant,      // same values as BadgeVariant
+  ToastVariant,    // "success" | "error" | "warning" | "info"
+  TooltipPosition, // "above" | "below" | "left" | "right"
+  Tab,             // { id: string; label: string; content: ReactNode }
+  DropdownOption,  // { value: string; label: string; description?: string }
+} from "@adeeeeta/greenhouse";
 ```
 
 ---

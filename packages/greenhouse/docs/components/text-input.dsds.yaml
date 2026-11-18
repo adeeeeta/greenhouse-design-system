@@ -4,7 +4,7 @@ name: TextInput
 description: A single-line text field with a built-in label, hint and error message.
 
 metadata:
-  updated: {date: 2026-11-15}
+  updated: {date: 2026-11-18}
   tags: [form]
   status: {status: stable}
 
@@ -46,7 +46,7 @@ sections:
         statement: Expect only one message below the field. When both error and hint are set, error replaces hint.
         checkedBy: manual
       - level: must
-        statement: Validate required fields yourself. The required prop adds the asterisk but does not turn on browser validation.
+        statement: Expect required to show the asterisk, turn on the browser's own validation, and tell screen readers the field is required. Show your own error message with the error prop.
         checkedBy: manual
       - level: must
         statement: Pass native input props such as name, value, onChange, type and autoComplete straight to TextInput. They reach the input element.
@@ -78,7 +78,7 @@ traits:
   - traitType: variant
     kind: boolean
     id: required
-    description: Shows an asterisk after the label.
+    description: Shows an asterisk after the label and makes the field required.
   - traitType: state
     kind: boolean
     id: disabled

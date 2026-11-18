@@ -4,7 +4,7 @@ name: Tabs
 description: Switches between related views of the same content in place, such as a plant's overview, care schedule and history.
 
 metadata:
-  updated: {date: 2026-11-16}
+  updated: {date: 2026-11-18}
   tags: [navigation]
   status: {status: stable}
 
@@ -33,18 +33,22 @@ sections:
       - level: should
         statement: Keep tab labels to one or two words, and use no more than five tabs.
         checkedBy: manual
+      - level: should
+        statement: Pass ariaLabel to name the tab list, such as "Plant details", when a page has more than one Tabs or the purpose isn't obvious from the heading above.
+        checkedBy: manual
+        tags: [accessibility]
   - kind: guidelines
     for: agent
     title: Common misreadings
     items:
       - level: must
-        statement: Pass tabs as an array of objects with id, label and content. Do not write Tab children.
+        statement: Pass tabs as an array of objects with id, label and content, typed as Tab[]. Do not write Tab children.
         checkedBy: manual
       - level: must
         statement: Set the starting tab with defaultTab. Tabs is uncontrolled; there is no activeTab or onTabChange, so a URL or parent state can't change the open tab.
         checkedBy: manual
       - level: must
-        statement: Use tab ids that are unique on the whole page, not just within one Tabs. The ids become element ids.
+        statement: Give each tab an id that is unique within its Tabs. Different Tabs on the same page can reuse ids.
         checkedBy: manual
       - level: must
         statement: Expect every tab's content to be rendered at once and hidden. Keep heavy content, such as large images or data fetches, out of tabs that may never be opened.

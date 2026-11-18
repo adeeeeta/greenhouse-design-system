@@ -4,7 +4,7 @@ name: FormField
 description: Adds a label, hint and error message around a custom input that Greenhouse doesn't provide.
 
 metadata:
-  updated: {date: 2026-11-15}
+  updated: {date: 2026-11-18}
   tags: [form]
   status: {status: stable}
 
@@ -82,7 +82,7 @@ traits:
   - traitType: variant
     kind: boolean
     id: required
-    description: Shows an asterisk after the label.
+    description: Shows an asterisk after the label. Also set required on your own input.
   - traitType: state
     kind: boolean
     id: disabled

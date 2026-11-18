@@ -77,7 +77,6 @@ Rules:
 - **Should:** Add href or onClick to make the whole card clickable. Interactive cards lift on hover.
 - **Must not:** Do not add padding to content in the header, body, or footer. Those regions already include padding.
 - **Must not:** Do not put links, buttons, or other interactive controls inside a card that sets href or onClick. It’s invalid HTML, and keyboard and screen-reader users can’t reliably reach the inner control.
-- **Must not:** Do not put an onClick card inside a form. It renders a button with no type, so activating it submits the form.
 
 Common misreadings:
 - **Must:** Expect Card's element to follow its props. With href it renders a link, with onClick a button, and with neither a plain div. Use href for navigation and onClick for an in-page action.
@@ -269,11 +268,11 @@ Rules:
 
 Common misreadings:
 - **Must:** Expect only one message below the field. When both error and hint are set, error replaces hint.
-- **Must:** Validate required fields yourself. The required prop adds the asterisk but does not turn on browser validation.
+- **Must:** Expect required to show the asterisk, turn on the browser's own validation, and tell screen readers the field is required. Show your own error message with the error prop.
 - **Must:** Pass native input props such as name, value, onChange, type and autoComplete straight to TextInput. They reach the input element.
 - **Must not:** Do not wrap TextInput in FormField. It already includes one.
 
-Prop `required` (variant): Shows an asterisk after the label.
+Prop `required` (variant): Shows an asterisk after the label and makes the field required.
 Prop `disabled` (state): Dimmed, can't be focused, and can't be edited.
 
 Alternatives: Dropdown
@@ -324,13 +323,12 @@ Rules:
 - **Should:** Write labels as positive statements, such as "Send frost alerts", not "Don't send frost alerts".
 
 Common misreadings:
-- **Must:** Give each Checkbox in a group its own id. Without one, every checkbox that shares a name gets the same id.
 - **Must:** Expect hint to appear beside the label and error to appear below the checkbox.
 - **Must not:** Do not wrap Checkbox in FormField. It already includes one.
 
 Prop `checked` (state): Ticked. Use checked with onChange, or defaultChecked to set only the starting state.
 Prop `disabled` (state): Dimmed and can't be changed.
-Prop `required` (variant): Shows an asterisk after the label.
+Prop `required` (variant): Shows an asterisk after the label and makes the field required.
 
 Alternatives: Toggle, Radio
 
@@ -353,7 +351,6 @@ Rules:
 - **Should:** Preselect the most common option unless choosing nothing is a valid answer.
 
 Common misreadings:
-- **Must:** Give each Radio its own id. Without one, every Radio in the group gets the same id, because the id falls back to the shared name.
 - **Must not:** Do not label the group with a plain paragraph above it. Screen readers only announce the group name from a legend.
 - **Must not:** Do not wrap Radio in FormField. It already includes one.
 
@@ -416,7 +413,7 @@ Prop `layout` (variant): Where the label sits relative to the input.
   - `stacked`: The default. Label above the input.
   - `inline`: Label beside the input.
 Prop `hideLabel` (variant): Removes the label from the page.
-Prop `required` (variant): Shows an asterisk after the label.
+Prop `required` (variant): Shows an asterisk after the label. Also set required on your own input.
 Prop `disabled` (state): Marks the field as disabled for styling. Disable the input itself too.
 
 Alternatives: TextInput
@@ -512,11 +509,12 @@ When to use:
 Rules:
 - **Should:** Use underline (the default) for the main views of a page or area, and pill for secondary navigation or filtering within a section.
 - **Should:** Keep tab labels to one or two words, and use no more than five tabs.
+- **Should:** Pass ariaLabel to name the tab list, such as "Plant details", when a page has more than one Tabs or the purpose isn't obvious from the heading above.
 
 Common misreadings:
-- **Must:** Pass tabs as an array of objects with id, label and content. Do not write Tab children.
+- **Must:** Pass tabs as an array of objects with id, label and content, typed as Tab[]. Do not write Tab children.
 - **Must:** Set the starting tab with defaultTab. Tabs is uncontrolled; there is no activeTab or onTabChange, so a URL or parent state can't change the open tab.
-- **Must:** Use tab ids that are unique on the whole page, not just within one Tabs. The ids become element ids.
+- **Must:** Give each tab an id that is unique within its Tabs. Different Tabs on the same page can reuse ids.
 - **Must:** Expect every tab's content to be rendered at once and hidden. Keep heavy content, such as large images or data fetches, out of tabs that may never be opened.
 
 Prop `variant` (variant): Visual style of the tab list.
@@ -1256,5 +1254,4 @@ Rules:
 - **Must not:** Do not hardcode light or dark colors, or add per-component dark overrides. Use semantic tokens and they switch automatically.
 
 Common misreadings:
-- **Must:** Also set color-scheme to dark on the same element. Greenhouse doesn't set it, so without it native scrollbars and form controls stay light.
 - **Must not:** Do not use a dark class, Tailwind-style dark variants or a ThemeProvider. The only switch is the data-theme attribute.

@@ -4,7 +4,7 @@ name: Checkbox
 description: A box the user ticks to turn one choice on or off, usually submitted with a form.
 
 metadata:
-  updated: {date: 2026-11-15}
+  updated: {date: 2026-11-18}
   tags: [form]
   status: {status: stable}
 
@@ -45,9 +45,6 @@ sections:
     title: Common misreadings
     items:
       - level: must
-        statement: Give each Checkbox in a group its own id. Without one, every checkbox that shares a name gets the same id.
-        checkedBy: manual
-      - level: must
         statement: Expect hint to appear beside the label and error to appear below the checkbox.
         checkedBy: manual
       - level: must-not
@@ -86,4 +83,4 @@ traits:
   - traitType: variant
     kind: boolean
     id: required
-    description: Shows an asterisk after the label.
+    description: Shows an asterisk after the label and makes the field required.
